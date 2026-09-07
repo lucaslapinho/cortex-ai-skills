@@ -31,6 +31,14 @@ Conclusão: **adaptação necessária para conformidade documental com esse limi
 
 A distinção entre Skills locais e plugins no ChatGPT também foi reconferida. Plugin para ChatGPT web/mobile continua **não incluído**. [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills).
 
+## Particularidade do tooling histórico no Windows
+
+**TOOLS-001 — diretório temporário com nome alternativo, 2026-09-07.**
+
+A primeira execução no GitHub Actions passou no Linux, mas o teste de reescrita de links falhou nos dois runners Windows. O helper 0.1.0 compara o destino resolvido com uma base que deve estar em forma canônica. O fixture histórico não normaliza sua base temporária; um nome alternativo 8.3 do Windows pode causar a comparação incorreta.
+
+O runner de testes desta publicação resolve o diretório temporário antes de executar os sete testes originais. Isso preserva as fontes e seus hashes, não ignora testes e mantém o mesmo tipo de base canônica usado pelo CLI de avaliação. O uso direto do helper com bases não canônicas continua sendo uma limitação da versão histórica, não uma correção de runtime alegada.
+
 ## Conhecimento de projeto
 
 Os documentos de pesquisa são sínteses verificáveis e sanitizadas, não cópias completas dos anexos. Foram preservados o [inventário de fontes acessíveis](../source/research/project-knowledge-inventory.md) e as [divergências com documentação Palo Alto](../source/research/project-vs-official-differences.md).
@@ -45,7 +53,7 @@ Na raiz do repositório, com Python 3.11+:
 python -I scripts/validate_publication.py
 python -I -m unittest discover -s scripts -p "test_*.py" -v
 python -I source/tools/release.py audit --release
-python -I -m unittest discover -s source/tools -p test_release.py -v
+python -I scripts/run_source_tests.py
 ```
 
 O verificador de publicação verifica links locais, padrões de credenciais de alta confiança, limites de arquivos, hashes dos ZIPs, membros contra o manifesto e equivalência com a fonte preservada. É um controle técnico de escopo limitado, não uma garantia absoluta de anonimização ou uma revisão completa de segurança.

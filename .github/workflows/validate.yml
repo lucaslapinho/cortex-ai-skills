@@ -31,4 +31,4 @@ jobs:
       - name: Audit preserved skills
         run: python -I source/tools/release.py audit --release
       - name: Test preserved release tooling
-        run: python -I -m unittest discover -s source/tools -p test_release.py -v
+        run: python -I scripts/run_source_tests.py

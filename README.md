@@ -103,7 +103,7 @@ Requer Python 3.11+ para os comandos de publicação, sem bibliotecas externas:
 python -I scripts/validate_publication.py
 python -I -m unittest discover -s scripts -p "test_*.py" -v
 python -I source/tools/release.py audit --release
-python -I -m unittest discover -s source/tools -p test_release.py -v
+python -I scripts/run_source_tests.py
 ```
 
 Esses comandos verificam arquivos e estrutura; não chamam modelos, não usam quota e não acessam tenant. Veja [como contribuir](CONTRIBUTING.md).
