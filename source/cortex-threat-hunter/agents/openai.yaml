@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cortex Threat Hunter"
+  short_description: "Build evidence-scoped Cortex threat hunts"
+  default_prompt: "Use $cortex-threat-hunter to build or review this hypothesis-driven Cortex threat hunt."

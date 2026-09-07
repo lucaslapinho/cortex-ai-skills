@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cortex Security Engineer"
+  short_description: "Orchestrate bounded Cortex security decisions"
+  default_prompt: "Use $cortex-security-engineer to scope, route, and sequence this Cortex security engineering request with evidence and approval gates."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cortex Detection Engineer"
+  short_description: "Design and review evidence-scoped Cortex detections"
+  default_prompt: "Use $cortex-detection-engineer to design or review this Cortex detection with explicit evidence and lifecycle checks."

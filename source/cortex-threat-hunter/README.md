@@ -1,0 +1,129 @@
+# Cortex Threat Hunter
+
+Version 0.1.0
+
+An evidence-scoped, hypothesis-driven threat-hunting Skill for Cortex XSIAM and Cortex XDR. It produces hunt plans, coverage matrices, pivot strategies, evidence ledgers, conclusions, and detection-opportunity handoffs without claiming access to a tenant.
+
+## Contents
+
+1. What it does
+2. What it does not do
+3. Quick use
+4. Evidence model
+5. Package layout and manifests
+6. Platform matrix
+7. Installation and packaging
+8. Validation status
+
+## 1. What it does
+
+- translates a lead into a falsifiable hypothesis;
+- distinguishes observed facts, derived interpretations, and alternatives;
+- plans endpoint, network, identity, cloud, and enrichment telemetry;
+- exposes retention, permissions, parsing, population, and coverage gaps;
+- plans baselines, XQL handoffs, pivots, timelines, and scope;
+- constrains negative-evidence conclusions;
+- produces bounded ATT&CK interpretations;
+- turns repeatable hunt signals into detection-engineering opportunities.
+
+## 2. What it does not do
+
+This package does not provide a Cortex tenant, execute XQL, validate a tenant schema, guarantee data coverage, install itself, import content into Cortex, modify a production rule, or operate response actions. Examples are CONCEPTUAL and TENANT-UNVERIFIED unless explicitly stated otherwise.
+
+## 3. Quick use
+
+Invoke:
+
+> Use $cortex-threat-hunter to turn this lead into a hypothesis-driven hunt plan, identify telemetry gaps, and produce a detection-opportunity handoff only if the evidence supports one.
+
+Useful inputs:
+
+- Cortex product and release family;
+- lead and decision objective;
+- time window and timezone;
+- tenant-observed dataset/field inventory;
+- available telemetry families and retention;
+- known exclusions, maintenance windows, and trusted administrative activity;
+- redacted results with provenance.
+
+If these are missing, the Skill proceeds with a bounded plan and labels the gaps.
+
+## 4. Evidence model
+
+Every material claim receives a canonical status:
+
+VERIFIED, VERSION-DEPENDENT, INFERRED, CONCEPTUAL, UNSUPPORTED, DEPRECATED, or UNVERIFIED.
+
+Provenance and tenant state are separate qualifiers:
+
+OFFICIAL-CURRENT, OFFICIAL-EXAMPLE, LOCAL-VERIFIED, PROJECT-ASSERTED, DERIVATIVE, REFERENCED-ONLY, TENANT-UNVERIFIED, TENANT-SCHEMA-VERIFIED, TENANT-COMPILED, or TENANT-EXECUTED.
+
+Analytic conclusion confidence is separate again:
+
+CONFIRMED, HIGH, MODERATE, LOW, or INSUFFICIENT EVIDENCE.
+
+## 5. Package layout and manifests
+
+### Runtime manifest
+
+- SKILL.md
+- VERSION
+- agents/
+- references/
+- templates/
+- examples/
+
+Runtime files are self-contained and must not require root research, sibling Skills, tests, or review records.
+
+### Publication manifest
+
+The publication package is the runtime manifest plus:
+
+- README.md
+- CHANGELOG.md
+- VALIDATION.md
+- tests/
+
+### Scorer manifest
+
+- complete publication source, including `tests/` and its authored oracles;
+- isolated forward-model responses for the exact candidate; and
+- scorer notes, per-case results, supersession records, and the independent decision ledger.
+
+`tests/` is part of the complete publication package but is a scorer-only source subset during evaluation. It contains fixtures and authored oracle criteria and must always be excluded from runtime/model-under-test context. Generated responses and score records stay outside the installable runtime and publication source tree unless a release explicitly packages a separate evaluation archive.
+
+## 6. Platform matrix
+
+| Surface | Runtime packaging/loading | Invocation/discovery | Current validation |
+|---|---|---|---|
+| ChatGPT desktop | Runtime-only standalone Skill through the supported workspace mechanism | Select or name the Skill | Independent static package `PASS`; manual load and behavioral runtime `NOT RUN` |
+| ChatGPT web/mobile | Requires plugin packaging not included here | Plugin-defined | Plugin packaging and runtime `NOT RUN` |
+| Codex CLI/IDE | Runtime-only directory in a documented `.agents/skills` location | `$cortex-threat-hunter`; automatic discovery after installation | Independent static package `PASS`; manual load, automatic discovery, and behavioral runtime `NOT RUN` |
+| Claude Code | Runtime-only directory under `.claude/skills/cortex-threat-hunter/` | Host selector or natural name | Independent static package `PASS`; discovery and behavioral runtime `NOT RUN` |
+| claude.ai | Runtime-only ZIP uploaded as a custom Skill; code execution required | Workspace Skill selection | Upload and behavioral runtime `NOT RUN` |
+| Claude API | Uploaded custom Skill referenced by `skill_id`; code execution required | API request configuration | Upload and behavioral runtime `NOT RUN`; no network or runtime package installation assumed |
+| Cortex XSIAM/XDR tenant | Planning and handoff only | No tenant available; `TENANT-UNVERIFIED`; C/E `NOT RUN` |
+
+No platform row is an installation, automatic discovery, import, compilation, or execution claim.
+
+`agents/openai.yaml` provides optional OpenAI UI, invocation-policy, and dependency metadata. Skill discovery and implicit matching use the `SKILL.md` name and description.
+
+## 7. Installation and packaging
+
+Keep `cortex-threat-hunter` as the publication archive root. For host installation, create a separate target directory with only `SKILL.md`, `VERSION`, `agents/`, `references/`, `templates/`, and `examples/`; do not expose the publication-only `README.md`, `CHANGELOG.md`, `VALIDATION.md`, or `tests/` to model runtime. Preserve UTF-8 text, forward-slash Markdown links, exact filename case, and the VERSION file. Exclude editor metadata, credentials, caches, generated outputs, and root/sibling project material.
+
+Before publishing on any operating system:
+
+1. verify the runtime and publication manifests;
+2. resolve every relative link;
+3. parse agents/openai.yaml;
+4. verify Markdown fences;
+5. scan for secrets and absolute local paths;
+6. run quick_validate;
+7. perform an independent security, architecture, documentation, and content review;
+8. test import/loading on each claimed platform;
+9. execute tenant-specific validation separately before making tenant claims.
+
+## 8. Validation status
+
+Author-side static checks and independent static, documentation, cross-domain, adversarial, compatibility, and selected behavioral results are separated in [VALIDATION.md](VALIDATION.md). No Cortex tenant compilation or execution is claimed.

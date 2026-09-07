@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cortex XQL Query Engineer"
+  short_description: "Build and validate evidence-scoped Cortex XQL"
+  default_prompt: "Use $cortex-xql-query-engineer to build or review this XQL query with explicit product and evidence checks."

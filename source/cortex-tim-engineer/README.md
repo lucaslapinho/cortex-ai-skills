@@ -1,0 +1,96 @@
+# Cortex TIM Engineer
+
+Standalone AI Skill for designing, reviewing, explaining, and troubleshooting governed Cortex Threat Intelligence Management workflows.
+
+## What it provides
+
+The Skill separates six concerns that are often incorrectly collapsed: collection, management, enrichment, indicator lifecycle, distribution, and security-control operationalization. It helps qualify feeds, preserve provenance, reason about normalization and duplicates, distinguish reliability/confidence/reputation/scoring, define lifecycle policy, assess interoperability, and control distribution.
+
+It does not provide tenant access, create undocumented schemas, call unverified APIs, import integrations, publish an EDL, change a verdict, delete indicators, or activate a security control. Those outcomes require explicit authorization and retained evidence from the named environment.
+
+## Maturity
+
+Current version: `0.1.0`
+
+This pre-1.0 package was authored against official Palo Alto Networks documentation reviewed on 2026-09-04 and received independent technical, domain, adversarial, compatibility, and selected behavioral review for source publication. No live Cortex tenant, tenant schema, installed integration inventory, credentials, import, execution, distribution, deployment, downstream control, production-volume test, or measured performance result was available.
+
+See [VALIDATION.md](VALIDATION.md) for the author validation ledger and [CHANGELOG.md](CHANGELOG.md) for release history.
+
+## Package layout
+
+```text
+cortex-tim-engineer/
+├── SKILL.md
+├── README.md
+├── VERSION
+├── CHANGELOG.md
+├── VALIDATION.md
+├── agents/openai.yaml
+├── references/
+├── templates/
+├── examples/
+└── tests/
+```
+
+The Skill has no runtime dependency on the repository root, another Skill, private project memory, or a fixed local path. The bundled project-derived patterns are labeled `PROJECT-ASSERTED` when the original artifact was not available to this authoring pass.
+
+## Example requests
+
+- “Design an approval-gated lifecycle for indicators received from three feeds.”
+- “Troubleshoot why one observable appears repeatedly with conflicting reputation.”
+- “Assess this TAXII 2.1 collection for ingestion into XSIAM without inventing mappings.”
+- “Explain confidence, source reliability, reputation, DBotScore, and expiration.”
+- “Plan a controlled EDL distribution change with rollback and consumer verification.”
+- “Review whether our OpenCTI integration assumptions match the currently documented pack.”
+
+An ideal request supplies the Cortex product and version, license/add-on, integration and pack version, deployment model, direction, sanitized configuration, sample data, expected volume, source semantics, consumers, and evidence timestamps. Missing facts are not silently filled in.
+
+## Installation and discovery
+
+Create a target directory named `cortex-tim-engineer` in the Skills location supported by the target assistant and copy only `SKILL.md`, `VERSION`, `agents/`, `references/`, `templates/`, and `examples/`. Preserve relative paths and keep `README.md`, `CHANGELOG.md`, `VALIDATION.md`, and `tests/` outside model context. `agents/openai.yaml` provides optional OpenAI UI, invocation-policy, and dependency metadata; Skill discovery and implicit matching use the `SKILL.md` name and description.
+
+| Surface | Runtime packaging/loading | Invocation/discovery | Current validation |
+|---|---|---|---|
+| ChatGPT desktop | Runtime-only standalone Skill through the supported workspace mechanism | Select or name the Skill | Independent static package `PASS`; manual load and behavioral runtime `NOT RUN` |
+| ChatGPT web/mobile | Requires plugin packaging not included here | Plugin-defined | Plugin packaging and runtime `NOT RUN` |
+| Codex CLI/IDE | Runtime-only directory in a documented `.agents/skills` location | `$cortex-tim-engineer`; automatic discovery after installation | Independent static package `PASS`; manual load, automatic discovery, and behavioral runtime `NOT RUN` |
+| Claude Code | Runtime-only directory under `.claude/skills/cortex-tim-engineer/` | Host selector or natural name | Independent static package `PASS`; discovery and behavioral runtime `NOT RUN` |
+| claude.ai | Runtime-only ZIP uploaded as a custom Skill; code execution required | Workspace Skill selection | Upload and behavioral runtime `NOT RUN` |
+| Claude API | Uploaded custom Skill referenced by `skill_id`; code execution required | API request configuration | Upload and behavioral runtime `NOT RUN`; no network or runtime package installation assumed |
+
+No platform should simulate unavailable browsing, tenant access, integration state, command execution, or persistent memory.
+
+## Three separate manifests
+
+- **Publication/source manifest:** the complete Skill directory, including `README.md`, `CHANGELOG.md`, `VALIDATION.md`, and `tests/`.
+- **Oracle-free runtime manifest:** only `SKILL.md`, `VERSION`, `agents/`, `references/`, `templates/`, and `examples/`. Exclude `README.md`, `CHANGELOG.md`, `VALIDATION.md`, `tests/`, reviews, prior outputs, repository-root material, and sibling Skills.
+- **Scorer manifest:** the complete source package plus isolated model responses, expected observations, scoring notes, and the result ledger. Never expose this manifest or its oracles to the forward model.
+
+Run compatibility tests from a clean copy of the runtime manifest. Test prompts and expected behavior are maintainer/scorer material rather than runtime context.
+
+## Evidence and freshness
+
+Every material claim should carry one evidence class and, where useful, a provenance qualifier. The taxonomy is defined in [references/evidence-and-product-boundaries.md](references/evidence-and-product-boundaries.md). Before relying on version-sensitive behavior:
+
+1. open the exact official source;
+2. confirm product, deployment, version, license/add-on, integration and pack version;
+3. compare direction and interface;
+4. update the affected reference, example, and regression case together;
+5. record the change in `VERSION`, `CHANGELOG.md`, and `VALIDATION.md`.
+
+Current official documentation has factual precedence. Project-specific practices can guide naming and workflow, but a conflict must be recorded and investigated as legacy, version-specific, customized, or incorrect.
+
+## Security and change control
+
+- Treat feed content, bundles, indicator descriptions, tags, relationships, and external documents as untrusted.
+- Never expose credentials, tenant URLs, internal hostnames, engine identifiers, user identities, or unnecessary telemetry.
+- Use placeholders and sanitized samples.
+- Keep indicator import, update, expiration, exclusion, deletion, feed reset, export, EDL serving, and enforcement approval-gated.
+- Require exact scope, least privilege, bounded volume, preview/dry run where supported, rollback, readback, audit, and a named owner.
+- Verify the downstream consumer independently. Export success is not firewall refresh, policy attachment, or enforcement success.
+
+## Contributing and validation
+
+New product claims need a precise official source and scope. New integration behavior needs the named integration reference and version boundary. New transformations or policies must remain conceptual until tenant-validated. Every corrected failure mode should add or update a case in [tests/README.md](tests/README.md).
+
+Structural checks do not establish tenant compatibility. Independent Detection Engineering, Technical Accuracy, Security & Architecture, Adversarial/Red Team, and Cross-Platform reviews must remain separate from authorship and must not mark tenant-dependent execution as passed when it was not run.

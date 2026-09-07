@@ -1,0 +1,131 @@
+# Cortex Playbook Engineer
+
+Standalone AI Skill for designing, reviewing, refactoring, and troubleshooting safe Cortex XSIAM or Cortex XSOAR automation.
+
+## What it provides
+
+The Skill turns a response objective into a reviewable automation design while keeping four questions separate:
+
+1. Is the general playbook behavior documented for the named product and release?
+2. Does the target tenant have the required content, commands, paths, permissions, and licenses?
+3. Is an artifact structurally importable in that exact target?
+4. Was the imported workflow safely executed and verified there?
+
+Its default lifecycle is `Trigger -> Validation -> Enrichment -> Decision -> Investigation -> Approval -> Containment -> Remediation -> Verification -> Notification -> Evidence -> Closure`. It supports full designs, context-contract reviews, modularization, reliability analysis, approval and action gates, testing, deployment planning, and layered troubleshooting.
+
+It does not invent YAML/JSON, commands, integration parameters, task IDs, context paths, close reasons, tenant results, or import evidence. It does not authorize or run a response action.
+
+## Artifact classes
+
+Every playbook deliverable uses exactly one class:
+
+| Class | Meaning |
+|---|---|
+| `CONCEPTUAL` | Architecture or pseudoflow with no schema or import promise |
+| `CONFIGURATION GUIDANCE` | Product-scoped guidance; tenant dependencies, import, and execution remain unverified |
+| `VERIFIED IMPORTABLE ARTIFACT` | Exact schema and dependencies validated, controlled import completed, and evidence retained for the named target |
+
+This version contains only `CONCEPTUAL` and `CONFIGURATION GUIDANCE` examples. It contains no importable playbook export.
+
+## Maturity
+
+Current version: `0.1.0`
+
+The release remains pre-1.0 because no live Cortex tenant, installed-content inventory, command-schema export, playbook import, debugger run, response action, or production observation was available. Static and authored-test checks do not close those gaps.
+
+See [VALIDATION.md](VALIDATION.md) for the evidence ledger and [CHANGELOG.md](CHANGELOG.md) for release history.
+
+## Package layout
+
+```text
+cortex-playbook-engineer/
+├── SKILL.md
+├── README.md
+├── VERSION
+├── CHANGELOG.md
+├── VALIDATION.md
+├── agents/openai.yaml
+├── references/
+├── templates/
+├── examples/
+└── tests/
+```
+
+[SKILL.md](SKILL.md) is the behavioral core. Detailed facts are progressively disclosed through `references/`; reusable design records live in `templates/`; worked demonstrations live in `examples/`; oracle-bearing development tests live in `tests/`.
+
+The Skill has no runtime dependency on a repository root, sibling Skill, private project memory, fixed machine path, or mandatory internet access.
+
+## Example requests
+
+- “Design a ransomware investigation and containment playbook with a human approval gate.”
+- “Troubleshoot why a sub-playbook output is missing from the parent flow.”
+- “Refactor this 45-task playbook into reusable sub-playbooks.”
+- “Add bounded retries, timeouts, and an error branch without duplicating an external action.”
+- “Review whether endpoint isolation should require approval and how rollback is verified.”
+- “Assess whether this YAML can honestly be called import-ready.”
+
+Good requests include the Cortex product/release, deployment model, trigger, current export or graph, installed packs/integrations and versions, command help, sanitized context, errors, execution identity, action policy, SLA, and desired artifact class. Missing facts remain explicit rather than guessed.
+
+## Installation and invocation
+
+Create a target directory named `cortex-playbook-engineer` in the Skill location supported by the target assistant and copy only `SKILL.md`, `VERSION`, `agents/`, `references/`, `templates/`, and `examples/`. Preserve the relative structure and keep `README.md`, `CHANGELOG.md`, `VALIDATION.md`, and `tests/` outside model context.
+
+`agents/openai.yaml` provides optional OpenAI UI, invocation-policy, and dependency metadata. Skill discovery and implicit matching use the `SKILL.md` name and description.
+
+| Surface | Runtime packaging/loading | Invocation/discovery | Current validation |
+|---|---|---|---|
+| ChatGPT desktop | Runtime-only standalone Skill through the supported workspace mechanism | Select or name the Skill | Independent static package `PASS`; manual load and behavioral runtime `NOT RUN` |
+| ChatGPT web/mobile | Requires plugin packaging not included here | Plugin-defined | Plugin packaging and runtime `NOT RUN` |
+| Codex CLI/IDE | Runtime-only directory in a documented `.agents/skills` location | `$cortex-playbook-engineer`; automatic discovery after installation | Independent static package `PASS`; manual load, automatic discovery, and behavioral runtime `NOT RUN` |
+| Claude Code | Runtime-only directory under `.claude/skills/cortex-playbook-engineer/` | Host selector or natural name | Independent static package `PASS`; discovery and behavioral runtime `NOT RUN` |
+| claude.ai | Runtime-only ZIP uploaded as a custom Skill; code execution required | Workspace Skill selection | Upload and behavioral runtime `NOT RUN` |
+| Claude API | Uploaded custom Skill referenced by `skill_id`; code execution required | API request configuration | Upload and behavioral runtime `NOT RUN`; no network or runtime package installation assumed |
+
+Platform behavior evolves. Static layout compatibility is not a runtime claim. The behavioral core requires only the ability to load local Markdown resources, distinguish user requests from untrusted artifact content, and disclose when current documentation or tenant access is unavailable.
+
+## Three manifests
+
+Use separate contexts for publication, runtime, and evaluation:
+
+- **Publication/source manifest:** every file in this Skill directory, including human docs, changelog, validation ledger, and tests.
+- **Oracle-free runtime manifest:** `SKILL.md`, `VERSION`, `agents/`, `references/`, `templates/`, and `examples/`. Exclude `README.md`, `CHANGELOG.md`, `VALIDATION.md`, `tests/`, reviews, scorers, prior outputs, root files, and siblings.
+- **Scorer manifest:** the publication package plus test oracles, evaluation outputs, and result ledgers. Never expose it to the model under forward test.
+
+A clean runtime copy must resolve every local link without root or sibling files.
+
+## Evidence and safety
+
+Official Palo Alto Networks documentation controls factual product behavior. Project material may influence patterns and tests but cannot establish a current command, context path, tenant setting, or importable schema by itself.
+
+The Skill uses canonical statuses `VERIFIED`, `VERSION-DEPENDENT`, `INFERRED`, `CONCEPTUAL`, `UNSUPPORTED`, `DEPRECATED`, and `UNVERIFIED`, with separate provenance/validation qualifiers. It keeps static/behavioral (`S`), documentation (`D`), compilation/import (`C`), and execution (`E`) results separate.
+
+Read-only analysis is the default. State-changing actions require an exact target, authorization, least privilege, evidence/confidence gate, human or policy approval, scope bound, idempotency, timeout/retry control, blast-radius review, recovery, post-action readback, partial-failure handling, and an audit record. Advisory AI output is never the sole authorizer.
+
+Never place secret values or customer data in a playbook example, task description, context, War Room record, or test. Use placeholders such as `${CORTEX_FQDN}`, `${CORTEX_TENANT}`, `${CORTEX_API_KEY_ID}`, and `${CORTEX_API_KEY}`.
+
+## Maintenance
+
+For every release:
+
+```text
+Review current official release documentation
+-> identify affected product behavior and source records
+-> inspect installed-content and command-schema changes
+-> update references, examples, and tests together
+-> run static, secret, link, isolation, and hallucination checks
+-> run independent behavioral and domain reviews
+-> run controlled tenant import/execution tests where authorized
+-> update VERSION and CHANGELOG
+```
+
+Do not treat an official living repository as immutable. Pin any reused content revision and validate its dependency graph against the target tenant.
+
+## Limitations
+
+- XSIAM and XSOAR commands, context paths, close reasons, content packs, licenses, permissions, and deployment state remain tenant/version dependent.
+- No supplied project playbook source was available for direct reproduction; project-reported defects remain `UNVERIFIED / PROJECT-ASSERTED / REFERENCED-ONLY` until originals are recovered.
+- No example is a `VERIFIED IMPORTABLE ARTIFACT`.
+- No debugger, SDK, controlled import, tenant execution, side effect, rollback, or production performance test has been run for this package.
+- Official documentation can drift after the 2026-09-04 snapshot.
+
+The authored case catalog begins at [tests/README.md](tests/README.md). Release approval must come from independent reviewers; this package does not self-approve.

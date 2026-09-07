@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cortex Playbook Engineer"
+  short_description: "Design safe, evidence-scoped Cortex automation"
+  default_prompt: "Use $cortex-playbook-engineer to design or review this Cortex automation with approval and failure-handling gates."

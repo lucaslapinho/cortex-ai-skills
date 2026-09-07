@@ -1,0 +1,10 @@
+# Preserve audited source and package byte identities on every platform.
+source/** -text
+packages/** -text
+*.zip binary
+*.md text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+# Path-specific rules must come last to override extension rules.
+source/** -text
+packages/** -text

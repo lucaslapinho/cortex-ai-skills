@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cortex Platform Engineer"
+  short_description: "Design and troubleshoot evidence-scoped Cortex"
+  default_prompt: "Use $cortex-platform-engineer to design or troubleshoot this Cortex platform path with explicit product, evidence, access, and safety boundaries."

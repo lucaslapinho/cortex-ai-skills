@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cortex TIM Engineer"
+  short_description: "Engineer governed Cortex threat intelligence"
+  default_prompt: "Use $cortex-tim-engineer to design or review this Cortex threat intelligence workflow with lifecycle controls."
