@@ -1,53 +1,55 @@
-# Validação, proveniência e limites
+# Validation, provenance, and limitations
 
-[Início](../README.md) · [Instalação](instalacao.md)
+[Home](../README.md) · [Installation](instalacao.md)
 
-## O que foi preservado
+## What was preserved
 
-A publicação usa o conjunto **0.1.0** preparado e revisado anteriormente. A árvore `source/` e os oito ZIPs mantêm seus bytes originais. README, guias, política de contribuição e verificador de publicação são uma camada nova, fora dessa árvore.
+This publication uses the previously prepared and reviewed **0.1.0** collection. The `source/` tree and all eight ZIPs retain their original bytes. The README, guides, contribution policy, and publication validator form a separate layer outside that tree.
 
-Os relatórios dentro de `source/` e o índice histórico de pacotes descrevem o momento de construção, inclusive a ausência de commit/push naquele momento. Essas declarações são históricas; não significam que este repositório publicado esteja offline. Nenhum marcador histórico de aprovação é uma autorização automática para executar ações.
+Reports within `source/` and the package handoff record describe the build stage, including the absence of a commit or push at that time. These are historical statements; they do not mean this published repository is offline. No historical approval marker automatically authorizes execution of actions.
 
-## Evidência de construção
+The public documentation and package index have been translated into English. Existing guide paths are retained to preserve shared links. Historical source evidence, release assets, checksums, and the release tag have not been rewritten as part of the translation.
 
-| Camada | Registro disponível | O que não demonstra |
+## Build evidence
+
+| Layer | Available record | What it does not demonstrate |
 |---|---|---|
-| Estrutura | 14 validações registradas e auditoria de liberação | Descoberta ou execução nativa em cada aplicativo |
-| Tooling | 7 testes unitários da construção | Eficácia de detecção em produção |
-| Comportamento | 23 casos finais direcionados com Astra aprovados | Execução dos 253 casos do catálogo |
-| Cobertura cumulativa | 74 decisões revisadas, incluindo 51 históricas; 179 não executadas | 74 novos testes no mesmo modelo |
-| Pacotes | Oito ZIPs, 443 arquivos internos, manifesto e checksums | Assinatura de autoria ou ausência semântica de todo dado sensível |
-| Tenant | Compilação/importação/execução não executadas | Validade de schema, desempenho ou aceitação de playbook |
+| Structure | 14 recorded validations and a release audit | Native discovery or execution in each application |
+| Tooling | 7 build-tool unit tests | Production detection efficacy |
+| Behavior | 23 approved final targeted cases with Astra | Execution of all 253 catalog cases |
+| Cumulative coverage | 74 reviewed decisions, including 51 historical decisions; 179 unexecuted | 74 new tests on the same model |
+| Packages | Eight ZIPs, 443 internal files, manifest, and checksums | An authorship signature or a semantic guarantee that all sensitive data is absent |
+| Tenant | Compilation/import/execution not performed | Schema validity, performance, or playbook acceptance |
 
-Detalhes: [QA final](../source/reviews/final-qa.md), [revisão Astra](../source/reviews/astra-review.md) e [limitações históricas](../source/reviews/known-limitations.md).
+Details: [Final QA](../source/reviews/final-qa.md), [Astra review](../source/reviews/astra-review.md), and [historical limitations](../source/reviews/known-limitations.md).
 
-## Diferença de compatibilidade identificada na publicação
+## Compatibility difference identified during publication
 
-**HOST-001 — metadados claude.ai, 2026-09-07.**
+**HOST-001 — claude.ai metadata, 2026-09-07.**
 
-O [guia atual de Skills personalizadas do Claude](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) limita `description` a 200 caracteres. As sete descrições preservadas ultrapassam esse limite. Isso restringe a conclusão histórica de compatibilidade estática: o formato geral de diretório não basta para declarar aceitação pelo importador atual.
+The [current Claude custom Skills guide](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) limits `description` to 200 characters. All seven preserved descriptions exceed this limit. This narrows the historical static compatibility conclusion: the general directory format is insufficient to establish acceptance by the current importer.
 
-Conclusão: **adaptação necessária para conformidade documental com esse limite; upload ainda não executado**. Não generalizar esse limite para o Claude Code ou outras superfícies. A versão 0.1.0 não foi modificada para aparentar que o teste ocorreu. O [guia de instalação](instalacao.md) explica uso manual e preparação de uma cópia adaptada, que precisa de nova identidade e validação.
+Conclusion: **adaptation is required to meet this documented limit; upload has not been performed**. Do not generalize this limit to Claude Code or other surfaces. Version 0.1.0 was not modified to imply that testing occurred. The [installation guide](instalacao.md) explains manual use and preparation of an adapted copy, which requires a new identity and validation.
 
-A distinção entre Skills locais e plugins no ChatGPT também foi reconferida. Plugin para ChatGPT web/mobile continua **não incluído**. [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills).
+The distinction between local Skills and plugins in ChatGPT was also rechecked. A ChatGPT web/mobile plugin remains **not included**. [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills).
 
-## Particularidade do tooling histórico no Windows
+## Historical tooling detail on Windows
 
-**TOOLS-001 — diretório temporário com nome alternativo, 2026-09-07.**
+**TOOLS-001 — alternate temporary-directory spelling, 2026-09-07.**
 
-A primeira execução no GitHub Actions passou no Linux, mas o teste de reescrita de links falhou nos dois runners Windows. O helper 0.1.0 compara o destino resolvido com uma base que deve estar em forma canônica. O fixture histórico não normaliza sua base temporária; um nome alternativo 8.3 do Windows pode causar a comparação incorreta.
+The first GitHub Actions run passed on Linux, but the link-rewriting test failed on both Windows runners. The 0.1.0 helper compares the resolved target with a base that must be canonical. The historical fixture does not normalize its temporary base; a Windows 8.3 alternate name can cause an incorrect comparison.
 
-O runner de testes desta publicação resolve o diretório temporário antes de executar os sete testes originais. Isso preserva as fontes e seus hashes, não ignora testes e mantém o mesmo tipo de base canônica usado pelo CLI de avaliação. O uso direto do helper com bases não canônicas continua sendo uma limitação da versão histórica, não uma correção de runtime alegada.
+This publication's test runner resolves the temporary directory before executing the seven original tests. This preserves source files and their hashes, skips no tests, and uses the same kind of canonical base supplied by the evaluation CLI. Directly calling the helper with noncanonical bases remains a limitation of the historical version, not a claimed runtime fix.
 
-## Conhecimento de projeto
+## Project knowledge
 
-Os documentos de pesquisa são sínteses verificáveis e sanitizadas, não cópias completas dos anexos. Foram preservados o [inventário de fontes acessíveis](../source/research/project-knowledge-inventory.md) e as [divergências com documentação Palo Alto](../source/research/project-vs-official-differences.md).
+Research documents are verifiable, sanitized summaries, not complete copies of the attachments. The [accessible-source inventory](../source/research/project-knowledge-inventory.md) and [differences from Palo Alto documentation](../source/research/project-vs-official-differences.md) were preserved.
 
-Esta etapa de publicação não repetiu toda a pesquisa factual Palo Alto nem os testes comportamentais. Respeite as datas e o escopo de cada registro. Documentação nova de hosts não é validação nova de comportamento Cortex.
+This publication stage did not repeat all factual Palo Alto research or behavioral testing. Respect the dates and scope of each record. New host documentation is not new validation of Cortex behavior.
 
-## Reprodução local
+## Local reproduction
 
-Na raiz do repositório, com Python 3.11+:
+From the repository root, with Python 3.11+:
 
 ```text
 python -I scripts/validate_publication.py
@@ -56,15 +58,15 @@ python -I source/tools/release.py audit --release
 python -I scripts/run_source_tests.py
 ```
 
-O verificador de publicação verifica links locais, padrões de credenciais de alta confiança, limites de arquivos, hashes dos ZIPs, membros contra o manifesto e equivalência com a fonte preservada. É um controle técnico de escopo limitado, não uma garantia absoluta de anonimização ou uma revisão completa de segurança.
+The publication validator checks local links, high-confidence credential patterns, file limits, ZIP hashes, members against the manifest, and equivalence with the preserved source. It is a scoped technical control, not an absolute anonymization guarantee or a comprehensive security review.
 
-Os mesmos comandos são executados pelo workflow de validação. Consulte o resultado real na aba Actions; a existência do workflow não significa que uma execução passou.
+The same commands run in the validation workflow. Check the actual result in the Actions tab; the existence of a workflow does not mean a run passed.
 
-## Uso seguro
+## Safe use
 
-- Use apenas ambientes e investigações autorizados.
-- Comece com análise somente leitura e dados minimizados.
-- Não exponha credenciais, evidência real sensível ou informações de clientes em issues.
-- Valide schema e comandos no produto, versão, licença e integração aplicáveis.
-- Exija autorização específica, plano de recuperação e verificação antes de mudanças.
-- Não interprete ausência de evidência como prova de ausência.
+- Use only authorized environments and investigations.
+- Start with read-only analysis and minimized data.
+- Do not expose credentials, sensitive real-world evidence, or customer information in issues.
+- Validate schemas and commands against the applicable product, version, license, and integration.
+- Require specific authorization, a recovery plan, and verification before changes.
+- Do not interpret an absence of evidence as proof of absence.

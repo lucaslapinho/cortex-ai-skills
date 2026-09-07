@@ -1,34 +1,36 @@
-# Entrega final — Cortex AI Skills 0.1.0
+# Final delivery — Cortex AI Skills 0.1.0
 
-As sete Skills foram revisadas e melhoradas com Astra, seguindo o prompt principal anexado e o conhecimento de projeto acessível. A skill-creator orientou a padronização, a autonomia dos pacotes e a separação dos testes/gabaritos do conteúdo de uso.
+The seven Skills were reviewed and improved with Astra, following the attached master prompt and accessible project knowledge. The skill-creator guidance informed standardization, package independence, and separation of tests and answer keys from runtime content.
 
-## Pacotes individuais de uso
+This is an English translation of the build-time handoff record. For current host requirements and compatibility limitations, consult the [installation guide](../../docs/instalacao.md) and [validation guide](../../docs/validacao.md). Translating this index does not change the ZIPs or their checksums.
 
-Descompacte o ZIP escolhido e use o diretório da Skill no mecanismo suportado pelo seu host. Cada pacote contém apenas SKILL.md, VERSION, agents, references, templates e examples. Não houve instalação global ou alteração de tenant.
+## Individual runtime packages
 
-| Skill | Pacote |
+Extract the selected ZIP and use the Skill directory through your host's supported mechanism. Each package contains only SKILL.md, VERSION, agents, references, templates, and examples. No global installation or tenant changes were performed.
+
+| Skill | Package |
 |---|---|
-| Engenharia XQL | [Baixar ZIP](cortex-xql-query-engineer-0.1.0-runtime.zip) |
-| Engenharia de detecções | [Baixar ZIP](cortex-detection-engineer-0.1.0-runtime.zip) |
-| Engenharia de playbooks | [Baixar ZIP](cortex-playbook-engineer-0.1.0-runtime.zip) |
-| Threat hunting | [Baixar ZIP](cortex-threat-hunter-0.1.0-runtime.zip) |
-| Threat Intelligence Management | [Baixar ZIP](cortex-tim-engineer-0.1.0-runtime.zip) |
-| Engenharia de plataforma | [Baixar ZIP](cortex-platform-engineer-0.1.0-runtime.zip) |
-| Engenharia de segurança e coordenação | [Baixar ZIP](cortex-security-engineer-0.1.0-runtime.zip) |
+| XQL engineering | [Download ZIP](cortex-xql-query-engineer-0.1.0-runtime.zip) |
+| Detection engineering | [Download ZIP](cortex-detection-engineer-0.1.0-runtime.zip) |
+| Playbook engineering | [Download ZIP](cortex-playbook-engineer-0.1.0-runtime.zip) |
+| Threat hunting | [Download ZIP](cortex-threat-hunter-0.1.0-runtime.zip) |
+| Threat Intelligence Management | [Download ZIP](cortex-tim-engineer-0.1.0-runtime.zip) |
+| Platform engineering | [Download ZIP](cortex-platform-engineer-0.1.0-runtime.zip) |
+| Security engineering and coordination | [Download ZIP](cortex-security-engineer-0.1.0-runtime.zip) |
 
-## Fontes e evidências
+## Source and evidence
 
-[Código completo e relatórios](cortex-ai-skills-0.1.0-source.zip), [manifesto por arquivo](release-manifest.json) e [checksums dos oito ZIPs](SHA256SUMS).
+[Complete source and reports](cortex-ai-skills-0.1.0-source.zip), [per-file manifest](release-manifest.json), and [checksums for all eight ZIPs](SHA256SUMS).
 
-O ZIP de fontes inclui testes e gabaritos: não deve ser instalado como runtime. Inclui o inventário de conhecimento, as divergências com documentação oficial, os relatórios independentes e as respostas retidas.
+The source ZIP includes tests and answer keys and must not be installed as a runtime. It includes the knowledge inventory, differences from official documentation, independent reports, and retained responses.
 
-## Validação e limites
+## Validation and limitations
 
-- 23/23 testes finais direcionados com Astra passaram em sessões individuais e revisão independente.
-- Cobertura S cumulativa: 74/253 decisões revisadas, sendo 23 novas e 51 históricas preservadas por análise de impacto; 179 casos permanecem NOT RUN.
-- 14 validações de estrutura das Skills, 7 testes do tooling e auditoria final de liberação passaram.
-- Os oito arquivos ZIP e seus 443 arquivos internos foram conferidos por hash e descompactação; nenhum teste/gabarito foi incluído nos sete runtimes.
-- Compilação, importação e execução em tenant Cortex permanecem NOT RUN. Descoberta automática e equivalência entre hosts/modelos não estão certificadas.
-- Fontes oficiais foram verificadas nas datas registradas; conflitos documentais foram preservados, sem inventar contexto de projeto inacessível.
+- 23/23 final targeted Astra tests passed in individual sessions with independent review.
+- Cumulative S coverage: 74/253 reviewed decisions, consisting of 23 new decisions and 51 historical decisions retained through impact analysis; 179 cases remain NOT RUN.
+- 14 Skill structure validations, 7 tooling tests, and the final release audit passed.
+- The eight ZIPs and their 443 internal files were checked by hash and decompression; no tests or answer keys were included in the seven runtimes.
+- Compilation, import, and execution in a Cortex tenant remain NOT RUN. Automatic discovery and equivalence across hosts/models are not certified.
+- Official sources were checked on the recorded dates; documentation conflicts were preserved without inventing inaccessible project context.
 
-Pronto para uso como pacote de instruções/referências com os limites documentados; não constitui certificação de implantação em produção. Nenhum commit, push ou deployment foi realizado.
+Ready for use as an instruction/reference package within the documented limitations; this is not certification for production deployment. At the time of the original build handoff, no commit, push, or deployment had been performed.

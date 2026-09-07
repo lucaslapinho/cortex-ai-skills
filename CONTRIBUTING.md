@@ -1,19 +1,19 @@
-# Como contribuir
+# Contributing
 
-Obrigado por contribuir com o Cortex AI Skills.
+Thank you for contributing to Cortex AI Skills.
 
-Para melhorias nas instruções ou exemplos técnicos, siga a [política detalhada](source/CONTRIBUTING.md) e a [arquitetura](source/ARCHITECTURE.md). Inclua produto, versão, fonte oficial específica e escopo de validação.
+For improvements to instructions or technical examples, follow the [detailed policy](source/CONTRIBUTING.md) and [architecture](source/ARCHITECTURE.md). Include the product, version, specific official source, and validation scope.
 
-## Documentação
+## Documentation
 
-README e `docs/` são a documentação atual de uso. Preserve os relatórios históricos e diferencie fatos verificados, mudanças documentais e testes ainda não executados.
+The README and `docs/` contain the current usage documentation. Preserve historical reports and distinguish verified facts, documentation changes, and tests that have not been performed.
 
-## Pacotes
+## Packages
 
-Os artefatos de `packages/0.1.0/` são preservados; não os substitua silenciosamente. Mudanças no runtime exigem versão, hashes e validação adequados. Não distribua testes e gabaritos dentro dos runtimes.
+Preserve the versioned archives, manifest, and checksums under `packages/0.1.0/`; do not silently replace them. The human-readable package index may be translated without changing those artifacts. Runtime changes require appropriate versioning, hashes, and validation. Do not distribute tests or answer keys inside runtime packages.
 
-## Verificações antes de enviar uma mudança
+## Checks before submitting a change
 
-Execute os quatro comandos de validação no [README](README.md). Não publique credenciais, dados brutos de clientes, dumps ou identificadores privados. Use exemplos sintéticos ou anonimizados.
+Run the four validation commands in the [README](README.md). Do not publish credentials, raw customer data, dumps, or private identifiers. Use synthetic or anonymized examples.
 
-Este projeto não instala integrações, executa consultas ou aplica alterações no seu tenant como parte dos testes de publicação.
+This project does not install integrations, execute queries, or apply changes to your tenant as part of its publication tests.

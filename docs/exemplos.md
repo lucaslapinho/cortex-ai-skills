@@ -1,193 +1,193 @@
-# Exemplos de uso
+# Usage examples
 
-[Início](../README.md) · [Instalação](instalacao.md) · [Limites](validacao.md)
+[Home](../README.md) · [Installation](instalacao.md) · [Limitations](validacao.md)
 
-Os prompts abaixo são exemplos de pedidos, não consultas executadas, regras habilitadas ou playbooks importáveis. Antes de usá-los, disponibilize a Skill pelo mecanismo do seu aplicativo. Não pressuponha que apenas mencionar o nome carregará um pacote ausente.
+The prompts below are example requests, not executed queries, enabled rules, or importable playbooks. Before using them, make the Skill available through your application's supported mechanism. Do not assume that mentioning a name loads a package that is not present.
 
-## Contexto que melhora qualquer resposta
+## Context that improves any response
 
-Preencha somente o que realmente souber:
+Provide only what you actually know:
 
 ```text
-Produto: [XSIAM, XDR ou XSOAR; não os trate como equivalentes].
-Versão, licença e superfície: [informações disponíveis].
-Objetivo: [resultado que preciso obter].
-Dados: [schema, consulta, erro, eventos anonimizados ou configuração].
-Janela de análise e fuso: [informe].
-Restrições: [retenção, privacidade, integrações disponíveis].
-Autorização: somente análise; nenhuma ação no tenant.
-Entrega: [consulta proposta, diagnóstico, desenho ou checklist].
+Product: [XSIAM, XDR, or XSOAR; do not treat them as interchangeable].
+Version, license, and surface: [available information].
+Objective: [the outcome I need].
+Data: [schema, query, error, anonymized events, or configuration].
+Analysis window and time zone: [specify].
+Constraints: [retention, privacy, available integrations].
+Authorization: analysis only; no tenant actions.
+Deliverable: [proposed query, diagnosis, design, or checklist].
 ```
 
-Não inclua credenciais, chaves, tokens, nomes reais de clientes ou dados pessoais desnecessários. Campos entre colchetes são entradas a preencher, não fatos presumidos.
+Do not include credentials, keys, tokens, real customer names, or unnecessary personal data. Bracketed fields are inputs to complete, not assumed facts.
 
-## 1. Revisar uma consulta XQL
+## 1. Review an XQL query
 
 Skill: [cortex-xql-query-engineer](../source/cortex-xql-query-engineer/README.md).
 
 ```text
 Use cortex-xql-query-engineer.
 
-Produto: Cortex XSIAM.
-Objetivo: revisar minha consulta de investigação de PowerShell.
-Consulta atual: [cole].
-Schema e tipos dos campos: [anexe o que estiver disponível].
-Erro observado: [cole a mensagem exata ou informe que não há erro].
-Janela: [informe datas e fuso].
+Product: Cortex XSIAM.
+Objective: review my PowerShell investigation query.
+Current query: [paste].
+Schema and field types: [attach whatever is available].
+Observed error: [paste the exact message or state that there is no error].
+Window: [specify dates and time zone].
 
-Preserve a intenção original. Explique as correções e os possíveis
-efeitos sobre o resultado. Não invente datasets, campos ou funções.
-Se faltar schema, entregue primeiro as verificações necessárias.
-Consulte a documentação oficial aplicável e proponha testes.
-Não declare compilação, execução ou ganho de desempenho sem evidência.
+Preserve the original intent. Explain corrections and their potential
+effects on the results. Do not invent datasets, fields, or functions.
+If the schema is missing, provide the required checks first.
+Consult the applicable official documentation and propose tests.
+Do not claim compilation, execution, or performance gains without evidence.
 ```
 
-**Entrega esperada:** revisão, proposta condicionada ao schema, explicação e roteiro de verificação. Não é um resultado real do tenant.
+**Expected deliverable:** review, schema-dependent proposal, explanation, and verification plan. This is not an actual tenant result.
 
-## 2. Propor uma detecção
+## 2. Propose a detection
 
 Skill: [cortex-detection-engineer](../source/cortex-detection-engineer/README.md).
 
 ```text
 Use cortex-detection-engineer.
 
-Quero avaliar uma detecção para repetidas falhas de autenticação
-seguidas de sucesso, dentro da mesma identidade.
-Produto: [informe].
-Telemetria e schema disponíveis: [anexe].
-Comportamentos legítimos conhecidos: [descreva].
+I want to assess a detection for repeated authentication failures
+followed by a success for the same identity.
+Product: [specify].
+Available telemetry and schema: [attach].
+Known legitimate behaviors: [describe].
 
-Defina hipótese, pré-requisitos, lógica de correlação, janela,
-agrupamento, entidades e possíveis falsos positivos.
-Não escolha um limiar como se estivesse validado sem uma baseline.
-Inclua casos positivos, negativos e ambíguos, além de um plano
-de tuning e critérios de promoção.
-Não crie nem habilite regras no tenant.
+Define the hypothesis, prerequisites, correlation logic, window,
+grouping, entities, and potential false positives.
+Do not present a threshold as validated without a baseline.
+Include positive, negative, and ambiguous cases, a tuning plan,
+and promotion criteria.
+Do not create or enable rules in the tenant.
 ```
 
-**Entrega esperada:** especificação de detecção, lacunas e testes; eficácia e limiares continuam dependentes da validação.
+**Expected deliverable:** detection specification, gaps, and tests; efficacy and thresholds still require validation.
 
-## 3. Desenhar um playbook de phishing
+## 3. Design a phishing playbook
 
 Skill: [cortex-playbook-engineer](../source/cortex-playbook-engineer/README.md).
 
 ```text
 Use cortex-playbook-engineer.
 
-Desenhe, sem executar, um playbook para investigação de phishing.
-Produto e versão: [informe].
-Integrações e comandos confirmados: [anexe o inventário].
-Entradas do incidente: [liste].
+Design, without executing, a phishing investigation playbook.
+Product and version: [specify].
+Confirmed integrations and commands: [attach the inventory].
+Incident inputs: [list].
 
-Defina fluxo principal, subplaybooks, contratos de entrada/saída,
-decisões determinísticas e tratamento de evidência inconclusiva.
-Inclua timeouts, repetição segura, falhas parciais e recuperação.
-Exija aprovação humana antes de contenção ou remoção de mensagens.
-Se um comando não estiver comprovado, marque-o como pendente.
-Não apresente o desenho como YAML importável sem validar o formato.
+Define the main workflow, subplaybooks, input/output contracts,
+deterministic decisions, and handling of inconclusive evidence.
+Include timeouts, safe retries, partial failures, and recovery.
+Require human approval before containment or message removal.
+If a command is not verified, mark it as pending.
+Do not present the design as importable YAML without validating the format.
 ```
 
-**Entrega esperada:** desenho operacional, contratos e plano de testes; nenhuma contenção ou importação é autorizada.
+**Expected deliverable:** operational design, contracts, and a test plan; no containment or import is authorized.
 
-## 4. Conduzir threat hunting
+## 4. Conduct threat hunting
 
 Skill: [cortex-threat-hunter](../source/cortex-threat-hunter/README.md).
 
 ```text
 Use cortex-threat-hunter.
 
-Hipótese: uma identidade comprometida pode ter sido usada
-para acessar vários endpoints por administração remota.
-Produto, período e fuso: [informe].
-Telemetria disponível e lacunas: [anexe].
+Hypothesis: a compromised identity may have been used to access
+multiple endpoints through remote administration.
+Product, period, and time zone: [specify].
+Available telemetry and gaps: [attach].
 
-Crie um plano de hunting com perguntas, pivôs, correlação temporal,
-entidades e fontes necessárias.
-Considere explicações administrativas legítimas.
-Diferencie ausência de eventos de ausência de cobertura.
-Não conclua comprometimento apenas por um indicador.
-Entregue critérios para confirmar, refutar ou manter a hipótese
-em aberto e uma proposta de passagem para engenharia de detecção.
+Create a hunting plan with questions, pivots, temporal correlation,
+entities, and required sources.
+Consider legitimate administrative explanations.
+Distinguish an absence of events from an absence of coverage.
+Do not conclude that a compromise occurred based on one indicator alone.
+Provide criteria to confirm, refute, or leave the hypothesis open,
+and propose a handoff to detection engineering.
 ```
 
-**Entrega esperada:** plano investigativo com hipóteses concorrentes e limites de cobertura.
+**Expected deliverable:** investigation plan with competing hypotheses and coverage limitations.
 
-## 5. Revisar Threat Intelligence Management
+## 5. Review Threat Intelligence Management
 
 Skill: [cortex-tim-engineer](../source/cortex-tim-engineer/README.md).
 
 ```text
 Use cortex-tim-engineer.
 
-Quero revisar o ciclo de vida de indicadores recebidos de feeds.
-Produto, versão, integrações e formatos: [informe].
-Regras atuais de confiança e expiração: [descreva].
-Consumidores de exportação: [liste sem credenciais].
+I want to review the lifecycle of indicators received from feeds.
+Product, version, integrations, and formats: [specify].
+Current confidence and expiration rules: [describe].
+Export consumers: [list without credentials].
 
-Analise ingestão, normalização, deduplicação, enriquecimento,
-conflitos de classificação, expiração, revogação e distribuição.
-Separe a gestão de inteligência das ações de bloqueio executadas
-pelos consumidores.
-Documente falhas de feed e reversão de uma distribuição incorreta.
-Não publique indicadores nem altere políticas.
+Analyze ingestion, normalization, deduplication, enrichment,
+classification conflicts, expiration, revocation, and distribution.
+Separate intelligence management from blocking actions performed
+by downstream consumers.
+Document feed failures and recovery from an incorrect distribution.
+Do not publish indicators or change policies.
 ```
 
-**Entrega esperada:** diagnóstico de governança e desenho do ciclo de vida; exportação não implica bloqueio.
+**Expected deliverable:** governance assessment and lifecycle design; exporting indicators does not imply blocking.
 
-## 6. Diagnosticar ingestão e mapeamento
+## 6. Troubleshoot ingestion and mapping
 
 Skill: [cortex-platform-engineer](../source/cortex-platform-engineer/README.md).
 
 ```text
 Use cortex-platform-engineer.
 
-Sintoma: vejo eventos no dataset bruto, mas não os encontro
-na consulta que usa o mapeamento esperado.
-Produto e versão: [informe].
-Fonte, configuração anonimizada, schema, consulta e exemplos: [anexe].
+Symptom: I can see events in the raw dataset, but cannot find them
+in the query that uses the expected mapping.
+Product and version: [specify].
+Source, anonymized configuration, schema, query, and examples: [attach].
 
-Monte uma sequência de verificações somente leitura.
-Considere ingestão, parsing, mapeamento, tipos, tempo, consulta
-e permissões como hipóteses distintas.
-Peça evidência antes de atribuir uma causa.
-Não altere RBAC, coletores ou regras de parsing.
-Entregue diagnóstico diferencial e informações para um escalonamento.
+Build a sequence of read-only checks.
+Consider ingestion, parsing, mapping, types, time, query logic,
+and permissions as separate hypotheses.
+Request evidence before attributing a cause.
+Do not change RBAC, collectors, or parsing rules.
+Provide a differential diagnosis and information for escalation.
 ```
 
-**Entrega esperada:** verificações ordenadas e hipóteses sustentadas; não uma causa inventada.
+**Expected deliverable:** ordered checks and evidence-supported hypotheses, not an invented cause.
 
-## 7. Coordenar um caso entre especialidades
+## 7. Coordinate a case across specialties
 
 Skill: [cortex-security-engineer](../source/cortex-security-engineer/README.md).
 
 ```text
 Use cortex-security-engineer.
 
-Tenho um alerta de identidade, uma consulta com erro e um
-playbook que parou durante enriquecimento.
-Produto e versão: [informe].
-Evidências e erros anonimizados: [anexe].
+I have an identity alert, a query with an error, and a playbook
+that stopped during enrichment.
+Product and version: [specify].
+Anonymized evidence and errors: [attach].
 
-Separe as frentes de investigação, consulta, detecção e automação.
-Defina prioridades, dependências, entradas e saídas de cada frente.
-Indique a Skill recomendada para cada parte.
-Não presuma que outras Skills ou subagentes estejam disponíveis;
-se não estiverem, entregue um plano independente e os contratos
-para continuação manual.
-Não execute nenhuma ação no ambiente.
+Separate investigation, query, detection, and automation workstreams.
+Define priorities, dependencies, inputs, and outputs for each.
+Identify the recommended Skill for each area.
+Do not assume other Skills or subagents are available;
+if they are not, provide a standalone plan and contracts
+for manual continuation.
+Do not execute any actions in the environment.
 ```
 
-**Entrega esperada:** triagem integrada e plano de passagem entre especialidades, sem delegação automática presumida.
+**Expected deliverable:** integrated triage and a handoff plan between specialties, without assuming automatic delegation.
 
-## Como conferir a resposta
+## How to check the response
 
-Uma resposta útil deve:
+A useful response should:
 
-- usar somente dados e referências realmente acessíveis;
-- indicar produto, superfície, versão e premissas relevantes;
-- apontar fontes oficiais específicas para afirmações técnicas;
-- distinguir fatos, inferências e conceitos;
-- informar exatamente quais verificações não foram executadas;
-- pedir autorização específica antes de propor a execução de uma mudança.
+- use only data and references that are actually accessible;
+- identify the relevant product, surface, version, and assumptions;
+- cite specific official sources for technical claims;
+- distinguish facts, inferences, and concepts;
+- state exactly which checks were not performed;
+- request specific authorization before proposing to execute a change.
 
-Se faltar uma entrada essencial, esclarecer a lacuna é melhor do que entregar uma solução aparentemente pronta. Para avaliar a Skill, use seus próprios casos anonimizados; não forneça os gabaritos do repositório ao assistente.
+When an essential input is missing, explaining the gap is better than delivering an apparently ready-made solution. To evaluate a Skill, use your own anonymized cases; do not provide the repository's answer keys to the assistant.
