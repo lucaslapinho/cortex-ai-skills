@@ -5,6 +5,10 @@ This is the standalone source register for `cortex-xql-query-engineer`. It recor
 **Review date:** 2026-09-04  
 **Review rule:** product behavior is time-sensitive. Re-open the specific page for the target product/version before a production decision. A successful link check does not prove tenant availability or execution.
 
+## Focused refresh — 2026-10-23
+
+Read the [dated semantic refresh](2026-10-23-refresh.md) for newly inspected language, BIOC/correlation and API claims. The `regextract`, `dedup` and real-time-action discrepancies remain; API origin/counting ambiguities are now explicitly retained. This supplements the historical register rather than redating every entry. `D: PASS` is claim-scoped; new-runtime `S/C/E: NOT RUN`.
+
 ## Targeted Astra semantic recheck — 2026-09-06
 
 This is a claim-level refresh, not a blanket redating of the original register. The following official pages were reopened and their relevant content inspected; no tenant was accessed.

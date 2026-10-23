@@ -1,6 +1,25 @@
 # Validation ledger
 
-## Current completion decision — 2026-09-06
+## Current documentation refresh — 2026-10-23
+
+**Skill version:** `0.1.1`. The [dated source review](references/2026-10-23-refresh.md)
+identifies seven reopened pages and the bounded claims reviewed. The runtime gains
+that reference and a source-register link; the operating contract, examples,
+templates, and tests are unchanged. Earlier counts, hashes, approvals, and passes
+below describe `0.1.0` only and are not current-runtime attestations.
+
+| Level | Refresh result | Scope |
+|---|---|---|
+| S | `NOT RUN` | No new isolated controlled behavioral response was evaluated. |
+| D | `PASS` | The dated reference records exact source checks and the unresolved Case artifacts HTTP-method discrepancy; other register rows retain their prior dates. |
+| C | `NOT RUN` | No host import, tenant editor, schema, or API acceptance was exercised. |
+| E | `NOT RUN` | No tenant execution, data-path test, deployment, or recovery was exercised. |
+
+Local metadata and package checks are reported separately from these levels by the
+distribution validation. Plugin import, skill discovery, and host behavior remain
+unverified until the exact distribution is tested in the target account.
+
+## Historical completion decision — 2026-09-06
 
 **Current reviewed runtime:** 24 files / 150,595 bytes; ordinal SHA-256 `3960f33a98b7de1044d06ffac9f18adec15edce6b4e0425be362376642bebb8c`.
 

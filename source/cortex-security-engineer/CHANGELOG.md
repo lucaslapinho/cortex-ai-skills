@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.1] — 2026-10-23
+
+- Added a bounded documentation refresh for XSOAR SaaS product scope, XSIAM access,
+  Query Center permissions, integration command restrictions, and XQL writes.
+- Reconfirmed the raw-dataset/XDM scope diagnostic and explicit authorization for
+  persistent query output; no tenant observation or control change was performed.
+- Preserved the operating contract, examples, templates, and historical evaluations.
+  New behavioral evaluation, tenant acceptance, and execution remain `NOT RUN`.
+
 ### Astra forward-evaluation correction — 2026-09-06
 
 - Made empty-result diagnostic branches and common time/entity handoff contracts explicit after selected forward omissions; require accurate local-reference attribution. Historical attempts retained; reruns required.

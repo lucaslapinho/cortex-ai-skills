@@ -1,5 +1,9 @@
 # Official sources
 
+## Focused refresh — 2026-10-23
+
+Read the [dated semantic refresh](2026-10-23-refresh.md) for newly inspected query/graph permissions, XDR issue-dataset exclusions, iterative investigation and grouping-population claims. Those bounded observations have `D: PASS`; new-runtime `S/C/E: NOT RUN`. The remaining register and evaluation dates are historical.
+
 ## Targeted Astra semantic recheck — 2026-09-06
 
 Only the following bounded claims were refreshed; this does not redate the whole register or establish tenant behavior.

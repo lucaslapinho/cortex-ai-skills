@@ -2,6 +2,14 @@
 
 All notable repository-level changes are documented here. Individual Skill histories remain in their own `CHANGELOG.md` files.
 
+## [0.1.1] — 2026-10-23
+
+- Refreshed selected current official Palo Alto sources in all seven Skills, with standalone dated records and product/tenant boundaries.
+- Preserved conflicting API methods, query-origin/counting statements, context-example spelling and OpenCTI output paths as unresolved.
+- Added focused scorer scenarios separately from the historical 253-case catalog; no new behavioral/tenant pass is inferred.
+- Updated human version/host descriptions for the repository-generated ChatGPT plugin. Skill runtime files are copied unchanged by packaging.
+- Historical 0.1.0 ZIPs, checksums and dated review evidence remain preserved.
+
 ## [0.1.0] — 2026-09-04
 
 ### Pre-publication completion — 2026-09-06

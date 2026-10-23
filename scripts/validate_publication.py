@@ -15,7 +15,9 @@ ROOT = Path(__file__).resolve().parents[1]
 MAX_FILE_BYTES = 6_000_000
 MAX_ARCHIVE_BYTES = 12_000_000
 ROOT_FILES = {"README.md", "LICENSE", "CONTRIBUTING.md", ".gitignore", ".gitattributes"}
-ROOT_DIRS = {"source", "packages", "docs", "scripts", ".github"}
+ROOT_FILES |= {"CHANGELOG.md", "requirements-dev.txt"}
+ROOT_DIRS = {"source", "packages", "docs", "scripts", ".github", "plugin"}
+BASELINE_MANIFEST_SHA256 = "66d7a34594fac43d2291ecccfef93c6b8d52296f9d7709041b355ed299f07742"
 SKIP = {".git", "__pycache__", ".pytest_cache"}
 TEXT_EXTENSIONS = {".md", ".py", ".yaml", ".yml", ".json"}
 PATTERNS = (
@@ -83,7 +85,8 @@ def validate(root: Path = ROOT) -> dict:
     release = load_release(root)
     source = root / "source"
     packages = root / "packages/0.1.0"
-    files = release.checked_files(root)
+    # Ignore only generated build output, not the published packages or source.
+    files = [p for p in release.checked_files(root) if p.relative_to(root).parts[0] != "dist"]
     texts = {}
     for path in files:
         rel = path.relative_to(root)
@@ -95,8 +98,10 @@ def validate(root: Path = ROOT) -> dict:
         if path.stat().st_size > MAX_FILE_BYTES:
             errors.append(f"File too large: {rel.as_posix()}")
             continue
-        if path.suffix == ".zip" and path.parent == packages:
+        if path.suffix == ".zip" and path.parent.parent == root / "packages":
             continue
+        if path.suffix == ".svg" and path.parent == root / "plugin/assets":
+            continue  # Parsed and constrained by build_plugin.validate_manifest.
         if path.suffix not in TEXT_EXTENSIONS and path.name not in (
                 ROOT_FILES | {"VERSION", "SHA256SUMS", "LICENSE"}):
             errors.append(f"Unexpected file type: {rel.as_posix()}")
@@ -132,12 +137,13 @@ def validate(root: Path = ROOT) -> dict:
                 if unquote(parsed.fragment) not in release.anchors(texts[target]):
                     errors.append(f"Missing anchor: {path.relative_to(root)}: {href}")
 
-    manifest = json.loads((packages / "release-manifest.json").read_text(encoding="utf-8"))
+    baseline_bytes = (packages / "release-manifest.json").read_bytes()
+    if sha256(baseline_bytes) != BASELINE_MANIFEST_SHA256:
+        errors.append("Historical 0.1.0 manifest changed")
+    manifest = json.loads(baseline_bytes.decode("utf-8"))
     source_files = release.checked_files(source)
-    if release.identity(source, source_files) != manifest["source"]:
-        errors.append("Source tree differs from archived 0.1.0 identity")
-    if release.manifests(source) != manifest["skills"]:
-        errors.append("Skill runtime/publication identities differ from manifest")
+    # The archived 0.1.0 source is verified member-by-member below. Current
+    # source is allowed to evolve and is matched to the new runtime build.
 
     checksums = {}
     for line in (packages / "SHA256SUMS").read_text(encoding="utf-8").splitlines():
@@ -175,8 +181,41 @@ def validate(root: Path = ROOT) -> dict:
             members += validate_archive(path, prefix, entries)
         except (ValueError, zipfile.BadZipFile, RuntimeError) as exc:
             errors.append(f"Invalid archive {path.name}: {exc}")
-    source_audit = release.audit(source, release=True)
+    source_audit = release.audit(source)
     errors.extend(source_audit["errors"])
+    plugin_spec = importlib.util.spec_from_file_location("current_plugin_builder", root / "scripts/build_plugin.py")
+    plugin = importlib.util.module_from_spec(plugin_spec)
+    plugin_spec.loader.exec_module(plugin)
+    plugin.validate_payload(plugin.payload(root), root)
+    current_packages = root / "packages/0.1.1"
+    if current_packages.exists():
+        current_manifest = json.loads((current_packages / "release-manifest.json").read_text(encoding="utf-8"))
+        current_checksums = dict(line.split("  ", 1)[::-1] for line in
+                                 (current_packages / "SHA256SUMS").read_text(encoding="utf-8").splitlines())
+        current_records = current_manifest["archives"]
+        if ({record["file"] for record in current_records} != set(current_checksums)
+                or set(current_checksums) != {p.name for p in current_packages.glob("*.zip")}):
+            errors.append("Current release ZIPs differ from manifest/checksums")
+        for record in current_records:
+            safe_relative(record["file"])
+            archive_path = current_packages / record["file"]
+            data = archive_path.read_bytes()
+            if (sha256(data) != record["sha256"] or len(data) != record["bytes"]
+                    or current_checksums.get(record["file"]) != record["sha256"]):
+                errors.append("Current release checksum mismatch: " + record["file"])
+                continue
+            reopened = plugin.read_zip(archive_path)
+            if "-plugin-" in archive_path.name:
+                plugin.validate_zip(archive_path, root)
+                if plugin.inventory(reopened) != current_manifest["files"]:
+                    errors.append("Plugin file inventory differs from release manifest")
+            else:
+                skill = archive_path.name.removesuffix("-0.1.1-runtime.zip")
+                expected = {f"{skill}/{path.removeprefix(f'skills/{skill}/')}": contents
+                            for path, contents in plugin.payload(root).items()
+                            if path.startswith(f"skills/{skill}/")}
+                if skill not in release.SKILLS or reopened != expected:
+                    errors.append("Standalone runtime differs from canonical source")
     return {
         "result": "FAIL" if errors else "PASS",
         "files": len(files),

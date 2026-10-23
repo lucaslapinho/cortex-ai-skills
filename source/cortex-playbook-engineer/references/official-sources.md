@@ -4,6 +4,8 @@
 **Scope:** current first-party Palo Alto Networks documentation and version-pinned official repositories.  
 **Freshness rule:** re-open the exact product/release page before a production or import decision. HTTP reachability does not prove tenant availability.
 
+**Targeted refresh:** [2026-10-23 refresh record](2026-10-23-refresh.md) rechecks seven XSIAM pages. Its claim-level observations supplement this historical register; uninspected sources retain their earlier review date.
+
 ## Classification policy
 
 - `VERIFIED / OFFICIAL-CURRENT` applies only to the behavior stated by the cited page for its named product/surface.

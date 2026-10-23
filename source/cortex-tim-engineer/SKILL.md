@@ -197,7 +197,7 @@ If any item is absent, provide a plan or template, not an instruction to execute
 - Lifecycle and governance: [references/lifecycle-and-governance.md](references/lifecycle-and-governance.md)
 - Interoperability and distribution: [references/interoperability-and-distribution.md](references/interoperability-and-distribution.md)
 - Troubleshooting: [references/troubleshooting.md](references/troubleshooting.md)
-- Official source register: [references/official-sources.md](references/official-sources.md)
+- Official source register: [references/official-sources.md](references/official-sources.md); use the [2026-10-23 targeted refresh](references/2026-10-23-refresh.md) for the inspected scoring, lifecycle, OpenCTI, TAXII, and EDL claims and retained source conflicts
 - Reusable forms: [templates/feed-onboarding.md](templates/feed-onboarding.md), [templates/lifecycle-design.md](templates/lifecycle-design.md), [templates/interoperability-assessment.md](templates/interoperability-assessment.md), [templates/distribution-change.md](templates/distribution-change.md), and [templates/troubleshooting.md](templates/troubleshooting.md)
 - Worked demonstrations: [examples/README.md](examples/README.md)
 

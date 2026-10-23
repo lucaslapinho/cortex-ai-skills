@@ -52,7 +52,7 @@ Invoke it using the host-supported selector or by naming the Skill naturally. Th
 | Surface | Required packaging/loading | Repository evidence |
 |---|---|---|
 | ChatGPT desktop | Runtime-only standalone Skill through the supported workspace mechanism | Static package compatibility reviewed; manual load and behavioral runtime `NOT RUN` |
-| ChatGPT web/mobile | Plugin packaging | Plugin package not included; runtime `NOT RUN` |
+| ChatGPT web/mobile | Plugin generated from canonical runtimes by the repository-level build | Local checks and account import/listing observed; task behavior `NOT RUN` |
 | Codex CLI/IDE | Runtime-only directory in a documented `.agents/skills` location | Static package compatibility reviewed; automatic discovery `NOT RUN`; only XQL has a separately recorded tests-free manual-load smoke result |
 | Claude Code | Runtime-only directory under `.claude/skills/<skill-name>/` | Static package compatibility reviewed; discovery and runtime `NOT RUN` |
 | claude.ai | Runtime-only ZIP custom Skill with code execution | Upload and runtime `NOT RUN` |
@@ -74,16 +74,16 @@ Tests, expected observations, prohibited behaviors, authored results, review rep
 
 ### Reproduce the audit and build runtime ZIPs
 
-With Python 3.10+ and no third-party packages, run from this repository:
+For current 0.1.1 packaging, run from the parent repository root with Python 3.11+:
 
 ```text
-python -B tools/release.py audit --release
-python -B -m unittest discover -s tools -p test_release.py -v
-python -B tools/release.py manifest
-python -B tools/release.py package --output ../cortex-ai-skills-release-new
+python -m pip install -r requirements-dev.txt
+python -I scripts/build_plugin.py build --output dist/local-build
+python -I scripts/build_plugin.py validate --zip dist/local-build/cortex-ai-skills-plugin-0.1.1.zip
+python -I scripts/run_source_tests.py
 ```
 
-The output directory must not exist and must be outside this source tree. Packaging creates seven individually rooted runtime-only ZIPs, one complete source ZIP, a per-file identity manifest, and `SHA256SUMS`. It refuses unresolved release markers, escaping runtime links, reparse dependencies, and overwrites. ZIP timestamps/order/permissions are fixed; CRC and source stability are checked. Nothing is installed globally or deployed to Cortex. The source ZIP contains tests and review evidence and must not be used as a runtime Skill.
+The output directory must be new. Current packaging creates one plugin, seven individually rooted runtime ZIPs, a per-file identity manifest and SHA256SUMS. It checks the actual archive, references and canonical identities. Historical tools/release.py and September approval markers describe the original 0.1.0 source publication; they are not fresh approvals of the revised Skills. Nothing is installed globally or deployed to Cortex by the build.
 
 The tool checks static structure; it does not replace official-document review, independent behavioral evaluation, host discovery, or tenant tests. See the [Astra review](reviews/astra-review.md) for the final improvement pass and its exact evidence boundaries.
 
@@ -114,7 +114,7 @@ Project-specific material can influence workflow and conventions, but it cannot 
 
 Read-only analysis is the default. State-changing guidance requires explicit authorization, least privilege, scope, blast-radius control, partial-failure handling, recovery, verification, and evidence retention as applicable.
 
-This `0.1.0` repository does not by itself certify a specific Cortex tenant, schema, license, role, compiler, import format, execution result, deployment, production efficacy, or measured performance. Check the per-Skill validation ledgers and the final QA report before relying on a capability claim.
+This repository does not by itself certify a specific Cortex tenant, schema, license, role, compiler, import format, execution result, deployment, production efficacy, or measured performance. The Skills are now `0.1.1`, with targeted source refreshes dated 2026-10-23. September reports describe historical `0.1.0` identities and tests. Check the current per-Skill validation sections before relying on a capability claim.
 
 ## License
 

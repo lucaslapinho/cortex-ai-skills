@@ -1,5 +1,18 @@
 # Validation ledger
 
+## Version 0.1.1 refresh snapshot — 2026-10-23
+
+**Scope:** rule-surface, prevention and grouping qualifications documented in [references/2026-10-23-refresh.md](references/2026-10-23-refresh.md). Earlier runtime identities and approvals below remain historical and do not certify this changed revision.
+
+| Level | Result for this revision | Boundary |
+|---|---|---|
+| S | NOT RUN | No fresh independent controlled response evaluation for version 0.1.1 |
+| D | PASS — scoped | Only the actually inspected sources/claims in the dated refresh |
+| C | NOT RUN | No tenant editor, compiler, import or prevention-conversion acceptance |
+| E | NOT RUN | No rule execution, mutation, generated issue, grouping or prevention outcome |
+
+Any release package checks are separate from behavioral S and tenant C/E. The next release audit must retain a new exact runtime identity; September hashes below apply only to their recorded snapshots.
+
 ## Current completion decision — 2026-09-06
 
 **Current reviewed runtime:** 22 files / 123,904 bytes; ordinal SHA-256 `b2c8a42b879b12df22b4efccc413d32d771cdbd119713021e7bdfc966349cb81`.

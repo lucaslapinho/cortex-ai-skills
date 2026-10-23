@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 — 2026-10-23
+
+- Added a bounded, actually consulted official-source refresh for `regextract`, `dedup`, `target`, XSIAM rule surfaces and the XQL API.
+- Retained known language/action discrepancies and made current API query-origin and multi-tenant counting inconsistencies explicit rather than guessing a contract.
+- Preserved all September evaluations and runtime hashes as historical evidence; new-runtime behavioral `S` and tenant `C/E` remain `NOT RUN`.
+
 ### Independent Astra oracle reconciliation — 2026-09-06
 
 - Aligned XQL-REG-07 expected observations with the already-recorded real-time-action documentation discrepancy. Fixture, prompt, runtime and prohibited behaviors are unchanged; independent rescoring uses the retained response.

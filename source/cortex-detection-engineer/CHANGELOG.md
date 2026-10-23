@@ -2,6 +2,12 @@
 
 All notable changes to this Skill are documented here. Versions follow Semantic Versioning.
 
+## 0.1.1 — 2026-10-23
+
+- Added a focused official-document refresh for XSIAM/XDR BIOC and correlation surfaces, prevention conversion and XSIAM Case grouping.
+- Clarified prevention-specific `alter`/`NOT IN` restrictions and domain/severity grouping qualification without claiming tenant acceptance or outcomes.
+- Preserved the real-time action discrepancy and historical evaluations; new-runtime behavioral `S` and tenant `C/E` remain `NOT RUN`.
+
 ## Astra completion delta — 2026-09-06 (0.1.0 candidate)
 
 - Read all 33 package files afresh and reopened applicable BIOC/correlation source content.

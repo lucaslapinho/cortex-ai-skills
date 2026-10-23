@@ -12,9 +12,12 @@ It records product, deployment, version, license, trust boundary, owner, health 
 
 ## Maturity
 
-Current version: `0.1.0`
+Current version: `0.1.1`
 
-Independent technical, architecture, adversarial, compatibility, and domain reviews are recorded for this `0.1.0` publication candidate. Their static/documentation and selected behavioral results do not establish tenant compilation, import, deployment, or execution; `C` and `E` remain `NOT RUN`.
+Independent technical, architecture, adversarial, compatibility, and domain reviews
+are retained for the historical `0.1.0` snapshot. The `0.1.1` update adds a
+[scoped documentation refresh](references/2026-10-23-refresh.md). New behavioral
+evaluation, tenant acceptance, execution, and host import remain `NOT RUN`.
 
 See [VALIDATION.md](VALIDATION.md) for the validation ledger.
 
@@ -54,7 +57,7 @@ For host installation, create a target directory named `cortex-platform-engineer
 | Surface | Runtime packaging/loading | Invocation/discovery | Current validation |
 |---|---|---|---|
 | ChatGPT desktop | Runtime-only standalone Skill through the supported workspace mechanism | Select or name the Skill | Independent static package `PASS`; manual load and behavioral runtime `NOT RUN` |
-| ChatGPT web/mobile | Requires plugin packaging not included here | Plugin-defined | Plugin packaging and runtime `NOT RUN` |
+| ChatGPT web/mobile | Standalone Skill must be included in a plugin distribution | Plugin-defined | Account import/listing observed; behavioral runtime `NOT RUN` |
 | Codex CLI/IDE | Runtime-only directory in a documented `.agents/skills` location | `$cortex-platform-engineer`; automatic discovery after installation | Independent static package `PASS`; manual load, automatic discovery, and behavioral runtime `NOT RUN` |
 | Claude Code | Runtime-only directory under `.claude/skills/cortex-platform-engineer/` | Host selector or natural name | Independent static package `PASS`; discovery and behavioral runtime `NOT RUN` |
 | claude.ai | Runtime-only ZIP uploaded as a custom Skill; code execution required | Workspace Skill selection | Upload and behavioral runtime `NOT RUN` |

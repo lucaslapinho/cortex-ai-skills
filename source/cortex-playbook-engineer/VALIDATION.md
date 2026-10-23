@@ -1,5 +1,20 @@
 # Validation ledger
 
+## Current revision — 0.1.1, 2026-10-23
+
+This section governs the updated source. Earlier completion decisions, runtime hashes, case counts, and host matrices below are historical 0.1.0 records and do not attest to this revision or a new plugin host.
+
+| Level | Result | Rationale |
+|---|---|---|
+| S | NOT RUN | No new independent oracle-isolated response evaluation was performed on 0.1.1. Structural checks are recorded separately and do not extend historical selected-case passes. |
+| D | PASS | Targeted author review reopened seven official XSIAM pages. Only the claims enumerated in [the dated refresh](references/2026-10-23-refresh.md) were refreshed; other sources retain historical dates. |
+| C | NOT RUN | No tenant schema, SDK validation, controlled import, or host-native acceptance was tested. |
+| E | NOT RUN | No debugger, command, playbook, response action, deployment, or downstream readback was run. |
+
+Plugin identity, build results, independent release decisions, and final artifact hashes must be recorded by the release workflow. This ledger does not certify them.
+
+Author-side checks on 2026-10-23: framework quick validation and whitespace/diff checks passed. The source audit passed local-link, anchor, fence, UTF-8, required-file, runtime-isolation, and authored-case checks at the inspected working snapshot. These are structural checks, not independent S evidence or a final release identity.
+
 ## Current completion decision — 2026-09-06
 
 **Current reviewed runtime:** 20 files / 151,241 bytes; ordinal SHA-256 `ee2624e64bbb650b98a9a7e7594bc8c3896d6f49bbc12fcf19801578f119ed4a`.

@@ -347,6 +347,18 @@ No artifact records the selected application for each export, the reason for the
 | OpenCTI command schema and pagination | Only derivative descriptions and a referenced template exist. | Installed OpenCTI integration version, command help/output, test fixtures. |
 | Endpoint/application membership | Files omit application/filter metadata. | Export screenshots/metadata or a documented generating XQL/UI procedure. |
 
+## Targeted refresh differences — 2026-10-23
+
+| ID | Preserved context and current official evidence | Conclusion and next evidence |
+|---|---|---|
+| OCT-01 | Project playbooks use explicit parent context contracts. The current [XSIAM context guide](https://cortex-docs.paloaltonetworks.com/cortex-xsiam/configure-cortex-xsiam/automations/context-data/use-context-data-in-a-playbook) documents parentIncidentContext but a Jira example uses parentIncidentContent. | Official-example inconsistency; preserve history without inventing an alternative selector. Verify the exact path against applicable metadata or controlled evidence. |
+| OCT-02 | Exact API methods matter. The [XSIAM API release notes](https://cortex-docs.paloaltonetworks.com/xsiam-api/api-release-notes) give GET for Case artifacts in a migration table and POST in the 3.5 section. | Unresolved official method conflict; consult the exact operation/version specification before writing a client. |
+| OCT-03 | Query workflows distinguish Query Center and APIs. The [XQL API page](https://cortex-docs.paloaltonetworks.com/xsiam-api/cortex-platform/xql-query.md) restricts query origin but query_id prose mentions Query Center/Cortex XDR; multitenant prose and its multiplication example diverge. | Origin/count semantics remain UNVERIFIED; do not guess cross-product execution or aggregate limits. |
+| OCT-04 | OpenCTI pagination is project-specific. Its [integration page](https://xsoar.pan.dev/docs/reference/integrations/open-cti-feed-4x) still conflicts among argument path, declared outputs and example nesting/case. | Retained discrepancy; resolve using version-pinned implementation and installed output, not a guessed cursor selector. |
+| OCT-05 | [EDL service guidance](https://xsoar.pan.dev/docs/reference/integrations/edl) describes service ports and an inline-query cap; [TAXII2 Server](https://xsoar.pan.dev/docs/reference/integrations/taxii2-server) describes cache-related 429 behavior. | Scoped integration diagnostics, not universal port exposure, measured capacity or proof of a tenant cause; details remain in the TIM refresh record. |
+
+Other regextract/dedup and correlation-action discrepancies retain the scope stated in the owning October records. Inaccessible legacy pages retain their historical status. A new consultation date does not revalidate every historical claim.
+
 ## Resolution order
 
 ### Astra completion reconciliation — 2026-09-06

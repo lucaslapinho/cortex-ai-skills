@@ -1,72 +1,77 @@
 # Validation, provenance, and limitations
 
-[Home](../README.md) · [Installation](instalacao.md)
+[Home](../README.md) · [Install](instalacao.md) · [Format evidence](plugin-format.md)
 
-## What was preserved
+## Version and evidence boundaries
 
-This publication uses the previously prepared and reviewed **0.1.0** collection. The `source/` tree and all eight ZIPs retain their original bytes. The README, guides, contribution policy, and publication validator form a separate layer outside that tree.
+Plugin distribution **0.1.1** includes seven Skills currently at **0.1.1**, following a targeted official-source refresh on **2026-10-23**. The canonical source is `source/`. Build output is a generated view, with every packaged runtime byte compared against that source.
 
-Reports within `source/` and the package handoff record describe the build stage, including the absence of a commit or push at that time. These are historical statements; they do not mean this published repository is offline. No historical approval marker automatically authorizes execution of actions.
+The eight historical archives, their manifest, and SHA256SUMS in `packages/0.1.0/` remain unchanged. The historical source ZIP is checked member by member against its original manifest. Current source is separately validated against the new release rather than falsely required to equal 0.1.0.
 
-The public documentation and package index have been translated into English. Existing guide paths are retained to preserve shared links. Historical source evidence, release assets, checksums, and the release tag have not been rewritten as part of the translation.
+## What the checks establish
 
-## Build evidence
+| Check | Evidence boundary |
+|---|---|
+| Manifest and metadata | JSON/YAML parsing; exactly seven unique names; valid paths, SemVer and presentation asset |
+| Canonical preservation | All runtime files identical to current source; changes from 0.1.0 listed in the new manifest |
+| Runtime completeness | Local references and anchors resolve within each standalone Skill |
+| Archive integrity | Actual ZIP re-read/CRC checks, unsafe paths/types/collisions rejected, hidden manifest retained |
+| Determinism | Two complete builds produce identical archives and release metadata |
+| Individual distribution | Seven independently rooted runtime ZIPs generated alongside the plugin |
+| Regression tooling | Missing manifests, incomplete Skills, missing references, malformed metadata, altered files, unsafe ZIPs and invalid SemVer exercised |
+| Knowledge refresh | Selected current Palo Alto source claims inspected; every Skill includes a dated scope record |
 
-| Layer | Available record | What it does not demonstrate |
-|---|---|---|
-| Structure | 14 recorded validations and a release audit | Native discovery or execution in each application |
-| Tooling | 7 build-tool unit tests | Production detection efficacy |
-| Behavior | 23 approved final targeted cases with Astra | Execution of all 253 catalog cases |
-| Cumulative coverage | 74 reviewed decisions, including 51 historical decisions; 179 unexecuted | 74 new tests on the same model |
-| Packages | Eight ZIPs, 443 internal files, manifest, and checksums | An authorship signature or a semantic guarantee that all sensitive data is absent |
-| Tenant | Compilation/import/execution not performed | Schema validity, performance, or playbook acceptance |
+The [release manifest](../packages/0.1.1/release-manifest.json) and [SHA256SUMS](../packages/0.1.1/SHA256SUMS) identify the artifacts. Independent review and executed test counts are recorded in the [0.1.1 package index](../packages/0.1.1/README.md).
 
-Details: [Final QA](../source/reviews/final-qa.md), [Astra review](../source/reviews/astra-review.md), and [historical limitations](../source/reviews/known-limitations.md).
+## Account import and remaining tests
 
-## Compatibility difference identified during publication
+| Layer | Result |
+|---|---|
+| Personal ChatGPT import acceptance | PASS — observed in the user's account on 2026-10-23 |
+| Installation and seven-Skill interface listing | PASS — installed entry, Manage/Try in chat and seven names observed |
+| Supporting-reference loading after installation | NOT RUN |
+| Fresh controlled behavioral evaluation of all revised Skills | NOT RUN |
+| Cortex tenant schema/compiler or playbook import | NOT RUN |
+| Cortex execution, deployment, efficacy, or performance | NOT RUN |
 
-**HOST-001 — claude.ai metadata, 2026-09-07.**
+**Local validation and one-account import/installation completed.** See [UI test evidence](plugin-ui-test.md) and the [independent review](plugin-review-0.1.1.md).
 
-The [current Claude custom Skills guide](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) limits `description` to 200 characters. All seven preserved descriptions exceed this limit. This narrows the historical static compatibility conclusion: the general directory format is insufficient to establish acceptance by the current importer.
+With the user's explicit confirmation, Add plugin accepted the generated ZIP. Install plugin then completed, and the installed details showed version 0.1.1 and all seven Skill names. No task was sent or tenant accessed during this UI check. The deterministic build manifest retains its build-time NOT RUN labels; this separate UI record adds the later observation without changing archive bytes.
 
-Conclusion: **adaptation is required to meet this documented limit; upload has not been performed**. Do not generalize this limit to Claude Code or other surfaces. Version 0.1.0 was not modified to imply that testing occurred. The [installation guide](instalacao.md) explains manual use and preparation of an adapted copy, which requires a new identity and validation.
+## Historical results remain historical
 
-The distinction between local Skills and plugins in ChatGPT was also rechecked. A ChatGPT web/mobile plugin remains **not included**. [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills).
+The September 0.1.0 record includes 23 final targeted Astra cases, 74 cumulative reviewed decisions from a 253-case catalog, and 179 cases not run. Those numbers do not become fresh passes for 0.1.1.
 
-## Historical tooling detail on Windows
+Three additional October scenarios address updated behavior and documented contradictions. They are authored separately from the 253 historical cases and remain NOT RUN unless an independent evaluation is explicitly retained. Historical source reports and old runtime hashes remain traceable in the archived source and dated ledgers.
 
-**TOOLS-001 — alternate temporary-directory spelling, 2026-09-07.**
+## Source and review findings
 
-The first GitHub Actions run passed on Linux, but the link-rewriting test failed on both Windows runners. The 0.1.0 helper compares the resolved target with a base that must be canonical. The historical fixture does not normalize its temporary base; a Windows 8.3 alternate name can cause an incorrect comparison.
+The refresh preserves contradictory official examples and APIs instead of choosing an unsupported method or context path. See the [difference register](../source/research/project-vs-official-differences.md) and each Skill's dated refresh reference.
 
-This publication's test runner resolves the temporary directory before executing the seven original tests. This preserves source files and their hashes, skips no tests, and uses the same kind of canonical base supplied by the evaluation CLI. Directly calling the helper with noncanonical bases remains a limitation of the historical version, not a claimed runtime fix.
+Independent packaging review found two malformed-input issues during development: permissive SemVer prerelease parsing and ZIP names normalized/truncated by Python before validation. Both were corrected, regression-tested, and independently rechecked. Neither finding required changing technical Skill content.
+
+The historical helper's Windows temporary-path spelling limitation remains documented in its source context; the existing test runner canonicalizes its fixture directory. This does not change packaged runtime behavior.
+
+## Reproduce the checks
+
+With Python 3.11+ from the repository root:
+
+```text
+python -m pip install -r requirements-dev.txt
+python -I scripts/validate_publication.py
+python -I -m unittest discover -s scripts -p "test_*.py" -v
+python -I source/tools/release.py audit
+python -I scripts/run_source_tests.py
+python -I scripts/build_plugin.py build --output dist/review-build
+python -I scripts/build_plugin.py validate --zip dist/review-build/cortex-ai-skills-plugin-0.1.1.zip
+```
+
+Use a new build directory. The CI matrix runs the checks on Linux and Windows with Python 3.11/3.13. Inspect the actual Actions run rather than inferring success from workflow presence.
+
+Repository-level research inventory and prior case evidence are developer material and are excluded from the importable ZIP. Each Skill retains its bundled official-source register. Public-reference links are retained, but host network access is never presumed.
 
 ## Project knowledge
 
-Research documents are verifiable, sanitized summaries, not complete copies of the attachments. The [accessible-source inventory](../source/research/project-knowledge-inventory.md) and [differences from Palo Alto documentation](../source/research/project-vs-official-differences.md) were preserved.
+The [inventory](../source/research/project-knowledge-inventory.md) records material that was actually accessible and consumed, including this task's repository ZIP. No additional ChatGPT project library, original private tenant export, or live tenant was fabricated or claimed as ingested.
 
-This publication stage did not repeat all factual Palo Alto research or behavioral testing. Respect the dates and scope of each record. New host documentation is not new validation of Cortex behavior.
-
-## Local reproduction
-
-From the repository root, with Python 3.11+:
-
-```text
-python -I scripts/validate_publication.py
-python -I -m unittest discover -s scripts -p "test_*.py" -v
-python -I source/tools/release.py audit --release
-python -I scripts/run_source_tests.py
-```
-
-The publication validator checks local links, high-confidence credential patterns, file limits, ZIP hashes, members against the manifest, and equivalence with the preserved source. It is a scoped technical control, not an absolute anonymization guarantee or a comprehensive security review.
-
-The same commands run in the validation workflow. Check the actual result in the Actions tab; the existence of a workflow does not mean a run passed.
-
-## Safe use
-
-- Use only authorized environments and investigations.
-- Start with read-only analysis and minimized data.
-- Do not expose credentials, sensitive real-world evidence, or customer information in issues.
-- Validate schemas and commands against the applicable product, version, license, and integration.
-- Require specific authorization, a recovery plan, and verification before changes.
-- Do not interpret an absence of evidence as proof of absence.
+The current source review is a targeted refresh, not a fresh verification of every historical source. Respect each record's dates, scope, and limitations.

@@ -4,6 +4,10 @@
 **Scope:** current official Palo Alto Networks documentation and one pinned official example repository  
 **Tenant status:** no tenant was accessed; product documentation does not prove tenant availability, compilation, execution, or outcomes
 
+## Focused refresh — 2026-10-23
+
+The [dated semantic refresh](2026-10-23-refresh.md) records actual XSIAM/XDR BIOC and correlation rechecks, prevention conversion restrictions and Case-grouping qualification. The real-time action discrepancy remains unresolved. Only those inspected claims have fresh `D: PASS`; new-runtime `S/C/E: NOT RUN`. All other source dates below remain historical.
+
 ## Targeted Astra semantic recheck — 2026-09-06
 
 S06/S07 were reopened: product-specific BIOC pages still document source restrictions, required `event_type`, non-aggregate filter/alter logic, case-insensitive evaluation, the initial historical-match bound and automatic PROCESS-SHA256 exception. S06 also reconfirmed the hit-disable safeguard. S08/S09 were reopened for the documented scheduled-correlation timing and safeguard boundaries; this does not imply identical product surfaces.

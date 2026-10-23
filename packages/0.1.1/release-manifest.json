@@ -1,0 +1,1053 @@
+{
+  "archives": [
+    {
+      "bytes": 440288,
+      "file": "cortex-ai-skills-plugin-0.1.1.zip",
+      "sha256": "de85688224c01a32f59d49fbb3aa6dae72ba13503ef50e6146344db56ac646ea"
+    },
+    {
+      "bytes": 58823,
+      "file": "cortex-detection-engineer-0.1.1-runtime.zip",
+      "sha256": "2d72ccc29aa1c08d94ad5550d7453a75c107997067e966bc9cf31b984f3ccfa5"
+    },
+    {
+      "bytes": 66719,
+      "file": "cortex-platform-engineer-0.1.1-runtime.zip",
+      "sha256": "083bdaf8a715b0aba914003dcb17407e8200041fdc0e31eb02027fa8d6ac8076"
+    },
+    {
+      "bytes": 67152,
+      "file": "cortex-playbook-engineer-0.1.1-runtime.zip",
+      "sha256": "f9741cfe5b3ee5ba72f2a80d0275422c626ab6a3e481e8adee0449d57af815ac"
+    },
+    {
+      "bytes": 59852,
+      "file": "cortex-security-engineer-0.1.1-runtime.zip",
+      "sha256": "dcffe8946a357841f6f3d426a29bfdbb97447c406e050546dc9328cfb35cf0c5"
+    },
+    {
+      "bytes": 38665,
+      "file": "cortex-threat-hunter-0.1.1-runtime.zip",
+      "sha256": "02d849c9db51dd1a4bcea6e9f8b6598cc4ed154dda2f8918bcb4b0b20089cd85"
+    },
+    {
+      "bytes": 58633,
+      "file": "cortex-tim-engineer-0.1.1-runtime.zip",
+      "sha256": "75452c1175bc4ebfc6f392bfacc0fcec06d7798feeeebf32995d80627b40ee75"
+    },
+    {
+      "bytes": 86387,
+      "file": "cortex-xql-query-engineer-0.1.1-runtime.zip",
+      "sha256": "2d269fa0efa3a9507a3e80ebbb4f6865da967d0b5413d7265d914d2d495ad4e3"
+    }
+  ],
+  "changes_since_0.1.0": [
+    {
+      "baseline_sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "current_sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c",
+      "path": "skills/cortex-detection-engineer/VERSION",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": null,
+      "current_sha256": "1605fdae98ed4d9baa5aa5bc5b9406e0ec58233feb5966ca4235a39f0d16aac6",
+      "path": "skills/cortex-detection-engineer/references/2026-10-23-refresh.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "10ec9a0e8c67530ff66b169c3b02ea6666a9f37bd836fc143bb6619ac6c6a634",
+      "current_sha256": "5cadb66aa34f654219ca9d9eebbfa152f63a6b7bacf752eac13be87cffa0bcf8",
+      "path": "skills/cortex-detection-engineer/references/official-sources.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "4d7b25c46e1de18e7a20e7f6c5bf67c0077de028cb00982cb540cbd66c9d7869",
+      "current_sha256": "45fd9ee83c122298488e70acfb5c196a2564d48023c1652d8336355b106f686e",
+      "path": "skills/cortex-detection-engineer/references/rule-surfaces.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "current_sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c",
+      "path": "skills/cortex-platform-engineer/VERSION",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": null,
+      "current_sha256": "8a073101cfc08a2f09ac3e63219d354000113e40dced35877bc2516b66073df5",
+      "path": "skills/cortex-platform-engineer/references/2026-10-23-refresh.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "362c37936a8ce79debb9a92c904524cd3f523bec1d37d3d0e06881dfc455968e",
+      "current_sha256": "a2970b6069492da2e854707bb2d31fc387fa4183e2c78dbc3351b7264a93b1cd",
+      "path": "skills/cortex-platform-engineer/references/official-sources.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "a4e254e841e94d14a45714e2e8c9cf514de1ef92306143b38cc7b826a293f96a",
+      "current_sha256": "985874ddf83dd0a70851d0e369b6515eaaa6190248169384f60cabfa65712437",
+      "path": "skills/cortex-playbook-engineer/SKILL.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "current_sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c",
+      "path": "skills/cortex-playbook-engineer/VERSION",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": null,
+      "current_sha256": "fc2c40a2e4d1fa57892a17540cc6458b0e82bb1e95d49f7c2511b5be2c5013c8",
+      "path": "skills/cortex-playbook-engineer/references/2026-10-23-refresh.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "495f6562c1acbab48055c8c38b3fc515e4d111a2ac77084bb2cf3f76f29d30dc",
+      "current_sha256": "cdac66f4f2db81e5c45bc2eca176be0916a75fadff39122a597954edf3bee966",
+      "path": "skills/cortex-playbook-engineer/references/official-sources.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "current_sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c",
+      "path": "skills/cortex-security-engineer/VERSION",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": null,
+      "current_sha256": "c3a0c7ec80d492b0846abcecdb3ce01c7a8d01ec896817a38a68d06ff0e6a199",
+      "path": "skills/cortex-security-engineer/references/2026-10-23-refresh.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "2c1df35d56439e6cff791f7885e800b71f601d9123341020036433489869a2bf",
+      "current_sha256": "50941edf3d4c754c16f6ff9b3e38658d3b629375f91c688c9a475ee347ddd43c",
+      "path": "skills/cortex-security-engineer/references/official-sources.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "df327804dc01ef49a1c682bfed555f8e03fcebe373e9ef59f059842d07db8f4f",
+      "current_sha256": "c20033c73971c7abf7b302a5b2edcdf2ac2f0ee13abaf39decb7884d0a0e6a46",
+      "path": "skills/cortex-threat-hunter/SKILL.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "current_sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c",
+      "path": "skills/cortex-threat-hunter/VERSION",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": null,
+      "current_sha256": "f59366fe9eeda93246a4165b5095685b65b90c2956058d5540bf32d2899a6512",
+      "path": "skills/cortex-threat-hunter/references/2026-10-23-refresh.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "dd88eb57622b5cab0596f146a208d0d5a4905a82660ba2ee255b3a93b6b17e02",
+      "current_sha256": "1030f5eef23bf93935c424be238068e33b6e2b36d67d0e93fae3474f6c14a31a",
+      "path": "skills/cortex-threat-hunter/references/official-sources.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "ccce6b04df63f5ad1ab3e0f3198c0562728cda8745ff6fb2b5a4f65f20bba0a7",
+      "current_sha256": "12ccdd69e535f8c621c989b01ffb27ae6c1c17905b25f46fe42ef705d1b2a3cb",
+      "path": "skills/cortex-tim-engineer/SKILL.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "current_sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c",
+      "path": "skills/cortex-tim-engineer/VERSION",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": null,
+      "current_sha256": "5432c612483e2739585f3750f366779cd77ff69833a2e5e66cdc3ddd886d443a",
+      "path": "skills/cortex-tim-engineer/references/2026-10-23-refresh.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "f8245933e61bbefcd35ff19df902f668f721b0e857523ada88791f8f5510343d",
+      "current_sha256": "e4b3c6d4945183bf24a934a949abff2d15d04e76555c03c2ee08bfd46818486e",
+      "path": "skills/cortex-tim-engineer/references/official-sources.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "current_sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c",
+      "path": "skills/cortex-xql-query-engineer/VERSION",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": null,
+      "current_sha256": "58d4c1080abe37e609dd49d33d57c27f52da74fce977617bf6da9255f75e657d",
+      "path": "skills/cortex-xql-query-engineer/references/2026-10-23-refresh.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "4e0c94c4408d4383ddfc1e489e26c95a8efef72852fc7ca63100123b3639d9d9",
+      "current_sha256": "6c9a50b6d20895f428209b33e7c2ee693c51d262307f9a1ab63214d55167bccd",
+      "path": "skills/cortex-xql-query-engineer/references/official-sources.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    },
+    {
+      "baseline_sha256": "474480111ee220770a4c94608c826c818768e4ad6c23fc40ce5288768a3544ad",
+      "current_sha256": "670caafd78359789397d7980ba8020c9eb98860cd05c8ebd32834ccc85b306fa",
+      "path": "skills/cortex-xql-query-engineer/references/xql-language.md",
+      "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."
+    }
+  ],
+  "exceptions_to_canonical_copy": [],
+  "files": [
+    {
+      "bytes": 1532,
+      "path": ".codex-plugin/plugin.json",
+      "sha256": "8220bcb43d861dba5fe7531d89b6e638d307811cf339a3269265dfcdd34edaf8"
+    },
+    {
+      "bytes": 1086,
+      "path": "LICENSE",
+      "sha256": "5658920da7fe5d482c8b9ced8e48903853e3a5349a2cfc8faf896fdca31084af"
+    },
+    {
+      "bytes": 586,
+      "path": "assets/cortex-skills.svg",
+      "sha256": "234c50bff8d3865a7fb2c646a9daf201d843fb7d105c2a470c042e16614e5b9e"
+    },
+    {
+      "bytes": 16743,
+      "path": "skills/cortex-detection-engineer/SKILL.md",
+      "sha256": "75487482f199ae8c0552b32d13c23df9a6d9956ceb0d469b44854a5803d575af"
+    },
+    {
+      "bytes": 6,
+      "path": "skills/cortex-detection-engineer/VERSION",
+      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
+    },
+    {
+      "bytes": 272,
+      "path": "skills/cortex-detection-engineer/agents/openai.yaml",
+      "sha256": "1f155ac45102162537a44e24622044c7f42507b58eed1229394c644639f86d2a"
+    },
+    {
+      "bytes": 1377,
+      "path": "skills/cortex-detection-engineer/examples/README.md",
+      "sha256": "e8dc9f5dc9bded9a17947946c4b6baced634d92a335385b7d5021513c2557292"
+    },
+    {
+      "bytes": 4625,
+      "path": "skills/cortex-detection-engineer/examples/design/hunt-to-detection.md",
+      "sha256": "03c8f33010052aff16cb011a3a36e7c168cd146b05249f914a3eecfb1a507e2a"
+    },
+    {
+      "bytes": 3039,
+      "path": "skills/cortex-detection-engineer/examples/design/scheduled-vs-real-time.md",
+      "sha256": "367e7152657baa9ec9c63cf59fa70cb4e87429088a26840f6aa9ea703e76a5ae"
+    },
+    {
+      "bytes": 6076,
+      "path": "skills/cortex-detection-engineer/examples/design/suspicious-powershell.md",
+      "sha256": "ea1ef76873279fb4c915b2743c79d06b99c506ad7b56be84aedb2f6471ed7a0c"
+    },
+    {
+      "bytes": 2958,
+      "path": "skills/cortex-detection-engineer/examples/troubleshooting/missing-telemetry.md",
+      "sha256": "e95915c4bc2fab0ef8b1b516a203ba2263cd8e30e2b8a296388c953892f4cbad"
+    },
+    {
+      "bytes": 3543,
+      "path": "skills/cortex-detection-engineer/examples/tuning/overbroad-correlation.md",
+      "sha256": "8933e4cd74ae2b445006e0de93d335d8ba118ecc509caf5bc8d97b55ae240fef"
+    },
+    {
+      "bytes": 4519,
+      "path": "skills/cortex-detection-engineer/references/2026-10-23-refresh.md",
+      "sha256": "1605fdae98ed4d9baa5aa5bc5b9406e0ec58233feb5966ca4235a39f0d16aac6"
+    },
+    {
+      "bytes": 6335,
+      "path": "skills/cortex-detection-engineer/references/baselines-thresholds-and-tuning.md",
+      "sha256": "62a008d4a7033fd80929252aa083092d83786cc3a5c15478856f2eb1c3247691"
+    },
+    {
+      "bytes": 9560,
+      "path": "skills/cortex-detection-engineer/references/detection-lifecycle.md",
+      "sha256": "bc4cecee9c8a39d43ecff7bed0cd956a76c027aec447b06550dc34176f365a6f"
+    },
+    {
+      "bytes": 6793,
+      "path": "skills/cortex-detection-engineer/references/evidence-and-product-boundaries.md",
+      "sha256": "3b1fc4df96f6b35774aa066e2dccdebac686843bf2faedb634be4e8a9144c019"
+    },
+    {
+      "bytes": 15121,
+      "path": "skills/cortex-detection-engineer/references/official-sources.md",
+      "sha256": "5cadb66aa34f654219ca9d9eebbfa152f63a6b7bacf752eac13be87cffa0bcf8"
+    },
+    {
+      "bytes": 12851,
+      "path": "skills/cortex-detection-engineer/references/rule-surfaces.md",
+      "sha256": "45fd9ee83c122298488e70acfb5c196a2564d48023c1652d8336355b106f686e"
+    },
+    {
+      "bytes": 6402,
+      "path": "skills/cortex-detection-engineer/references/telemetry-signal-and-query-handoff.md",
+      "sha256": "430f82464a9a2dadaad92f4e3f12017732bb7a711205ea34479c66b05092007b"
+    },
+    {
+      "bytes": 6807,
+      "path": "skills/cortex-detection-engineer/references/troubleshooting.md",
+      "sha256": "a6dc2cafb94efffbc2cea18e2276fd227b180284fea9ecdad403dd0a2fe7a94d"
+    },
+    {
+      "bytes": 7182,
+      "path": "skills/cortex-detection-engineer/references/validation-monitoring-and-governance.md",
+      "sha256": "555f6aff41bf120f4c00b75a2a040cd6b705024614e9d687f32fa26c0a59af23"
+    },
+    {
+      "bytes": 4738,
+      "path": "skills/cortex-detection-engineer/templates/detection-specification.md",
+      "sha256": "129e2ac4bc9d382ce30d64fb7fb092b355a366659ec0e19efce71f4186ac932b"
+    },
+    {
+      "bytes": 2298,
+      "path": "skills/cortex-detection-engineer/templates/monitoring-and-retirement.md",
+      "sha256": "94ef59e15e4b81d54509865f636fe55b67beb0e12f15da5e26d962490e4ba040"
+    },
+    {
+      "bytes": 2993,
+      "path": "skills/cortex-detection-engineer/templates/rule-readiness-review.md",
+      "sha256": "73349e24835e141dcbed27b8807ac8e4dc41cea5dafd1fb86559332da6b3f325"
+    },
+    {
+      "bytes": 2192,
+      "path": "skills/cortex-detection-engineer/templates/tuning-plan.md",
+      "sha256": "e7158177d346f5b3bc4d0406e8eb2118afc6684f88440cfc0ba7ed92eb59254e"
+    },
+    {
+      "bytes": 3180,
+      "path": "skills/cortex-detection-engineer/templates/validation-plan.md",
+      "sha256": "64f85066406733c912a090b6afa518d60b4208666b25570cd76ce3a62b726710"
+    },
+    {
+      "bytes": 19706,
+      "path": "skills/cortex-platform-engineer/SKILL.md",
+      "sha256": "12183e9531df78c167232c7f1bcf6e33d230eaf84f18a0b7d8825a97997e6266"
+    },
+    {
+      "bytes": 6,
+      "path": "skills/cortex-platform-engineer/VERSION",
+      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
+    },
+    {
+      "bytes": 290,
+      "path": "skills/cortex-platform-engineer/agents/openai.yaml",
+      "sha256": "e6887734e3870f0078f6a65cc16841e10d83388659a46486383db0c7530eb6ba"
+    },
+    {
+      "bytes": 1310,
+      "path": "skills/cortex-platform-engineer/examples/README.md",
+      "sha256": "eeb12124256a9c9ecbacd71428edd51551173f381fb0acaa5a092137947eecc5"
+    },
+    {
+      "bytes": 2074,
+      "path": "skills/cortex-platform-engineer/examples/access/api-forbidden.md",
+      "sha256": "ee34051c9f9e1adf954c868ded3eebe65af2625d1568aee9977e63b3a5bc6040"
+    },
+    {
+      "bytes": 2918,
+      "path": "skills/cortex-platform-engineer/examples/architecture/broker-vs-collector.md",
+      "sha256": "610bc442977e2a95f9a740665ee451d5640a62304e4d6db4f5a7a243897faebe"
+    },
+    {
+      "bytes": 4053,
+      "path": "skills/cortex-platform-engineer/examples/architecture/end-to-end-syslog.md",
+      "sha256": "338fb2d79cbd3605f941ea72f990c571c41781a546d2c08997b6d3dcf77b0a43"
+    },
+    {
+      "bytes": 2107,
+      "path": "skills/cortex-platform-engineer/examples/migration/legacy-alert-ingestion.md",
+      "sha256": "c3b94d29b859a4bd966be33d53b987481e6486bd6f0f5dba03dc7792da907f85"
+    },
+    {
+      "bytes": 3018,
+      "path": "skills/cortex-platform-engineer/examples/troubleshooting/missing-telemetry.md",
+      "sha256": "b8e3ee7415540049c053ca7cbe7064a3f23a608a08ca1839ad2062d3df72eae9"
+    },
+    {
+      "bytes": 4762,
+      "path": "skills/cortex-platform-engineer/references/2026-10-23-refresh.md",
+      "sha256": "8a073101cfc08a2f09ac3e63219d354000113e40dced35877bc2516b66073df5"
+    },
+    {
+      "bytes": 10601,
+      "path": "skills/cortex-platform-engineer/references/agents-broker-and-collectors.md",
+      "sha256": "3d476595eef6c6f538525fb37a61c7cce86d253399530949401087feb3eebe39"
+    },
+    {
+      "bytes": 9831,
+      "path": "skills/cortex-platform-engineer/references/api-auth-and-access.md",
+      "sha256": "468985e1e9b94f467a964f6fe5c06b74224e69c0df85ff9ca86adef64726b01a"
+    },
+    {
+      "bytes": 8309,
+      "path": "skills/cortex-platform-engineer/references/data-flow-and-trust-boundaries.md",
+      "sha256": "8d93b78a738d947ba215ced71fe35763561d91f160c4834c927a0cd24c598552"
+    },
+    {
+      "bytes": 11554,
+      "path": "skills/cortex-platform-engineer/references/evidence-and-product-boundaries.md",
+      "sha256": "0be0185b31d13d27be367e0f44c44642326aa96ef3c68fc240765e1eabbc95c7"
+    },
+    {
+      "bytes": 9533,
+      "path": "skills/cortex-platform-engineer/references/ingestion-parsing-and-datasets.md",
+      "sha256": "0d0dd402771bc317de6e6c2042c42753c4bb015546d0fc480bb6075f80495565"
+    },
+    {
+      "bytes": 12059,
+      "path": "skills/cortex-platform-engineer/references/integrations-forwarding-and-cloud-sources.md",
+      "sha256": "0d1d8d86927c2fdfbaa543d701ce8ca15c66dfac3f27cd9ff375a3b69a442be2"
+    },
+    {
+      "bytes": 18159,
+      "path": "skills/cortex-platform-engineer/references/official-sources.md",
+      "sha256": "a2970b6069492da2e854707bb2d31fc387fa4183e2c78dbc3351b7264a93b1cd"
+    },
+    {
+      "bytes": 8900,
+      "path": "skills/cortex-platform-engineer/references/platform-and-deployment-models.md",
+      "sha256": "f7e98d0439e018b97960d9c3c03cddcc61cc71629b673d41ac7782a2256972ff"
+    },
+    {
+      "bytes": 9164,
+      "path": "skills/cortex-platform-engineer/references/troubleshooting.md",
+      "sha256": "18e60c7b8298b4f004b40ecfe7e033773868262e149fac8ee21f967143343079"
+    },
+    {
+      "bytes": 3049,
+      "path": "skills/cortex-platform-engineer/templates/api-access-review.md",
+      "sha256": "645a6de9af8b041a80b05e061611f6fb540c93baeb4dcb6796e3dd1362b13414"
+    },
+    {
+      "bytes": 3555,
+      "path": "skills/cortex-platform-engineer/templates/architecture-record.md",
+      "sha256": "d9fce22e8aa6576295521ee6aa106fdbf766f82161d410e2efa09f2acd158e40"
+    },
+    {
+      "bytes": 2490,
+      "path": "skills/cortex-platform-engineer/templates/change-plan.md",
+      "sha256": "d2fb6b70b0c6cdb6ce74b4c1748e7e85ed3777dbe76af71bd4462a7160994a4c"
+    },
+    {
+      "bytes": 3349,
+      "path": "skills/cortex-platform-engineer/templates/ingestion-design.md",
+      "sha256": "2b8b7addbb504243f53c875be67e42f2dc6a1ed5dd08687c8db8edd0ecbc1fa7"
+    },
+    {
+      "bytes": 2352,
+      "path": "skills/cortex-platform-engineer/templates/tenant-validation.md",
+      "sha256": "585d728be629b384c0b811d0d4779f796a3c86b899f91c212a19b3769cd779b8"
+    },
+    {
+      "bytes": 2457,
+      "path": "skills/cortex-platform-engineer/templates/troubleshooting-record.md",
+      "sha256": "a4603dfb460010d470c2e8a57ce88aaacc0342cbf1310004b4c6dec061d6a6ce"
+    },
+    {
+      "bytes": 19423,
+      "path": "skills/cortex-playbook-engineer/SKILL.md",
+      "sha256": "985874ddf83dd0a70851d0e369b6515eaaa6190248169384f60cabfa65712437"
+    },
+    {
+      "bytes": 6,
+      "path": "skills/cortex-playbook-engineer/VERSION",
+      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
+    },
+    {
+      "bytes": 263,
+      "path": "skills/cortex-playbook-engineer/agents/openai.yaml",
+      "sha256": "9a94b0a310707bf20a248549f9c465682d20cbf8704473e0996a3380099d3904"
+    },
+    {
+      "bytes": 1218,
+      "path": "skills/cortex-playbook-engineer/examples/README.md",
+      "sha256": "91ed7096f264ffaefbb9e2a0678caea71656d9470fa0e2f5b67568346ce59590"
+    },
+    {
+      "bytes": 8286,
+      "path": "skills/cortex-playbook-engineer/examples/design/ransomware-response.md",
+      "sha256": "9419df4623499d3af2da818bd111161538b85ef5080c970d1d72e074040a4df0"
+    },
+    {
+      "bytes": 5841,
+      "path": "skills/cortex-playbook-engineer/examples/refactoring/monolith-to-subplaybooks.md",
+      "sha256": "e95d25770c2e238051182609972caab1f9b7e4766a6b9099d33b4624dc3b3365"
+    },
+    {
+      "bytes": 4539,
+      "path": "skills/cortex-playbook-engineer/examples/safety/endpoint-isolation-approval.md",
+      "sha256": "499b2df70acae77ff01bde6e232821c7c71639fbe39781b431fab58dee8137ed"
+    },
+    {
+      "bytes": 4095,
+      "path": "skills/cortex-playbook-engineer/examples/troubleshooting/missing-parent-output.md",
+      "sha256": "3ce768b9f99ff36beb9619c967f1c539113de9bb1b92ffacb91210b62565e768"
+    },
+    {
+      "bytes": 6281,
+      "path": "skills/cortex-playbook-engineer/references/2026-10-23-refresh.md",
+      "sha256": "fc2c40a2e4d1fa57892a17540cc6458b0e82bb1e95d49f7c2511b5be2c5013c8"
+    },
+    {
+      "bytes": 9150,
+      "path": "skills/cortex-playbook-engineer/references/data-contracts-and-context.md",
+      "sha256": "0cdf084093d4580f13b80c85143b2667580be9bc5208ff662cd4adae24729281"
+    },
+    {
+      "bytes": 10060,
+      "path": "skills/cortex-playbook-engineer/references/evidence-and-product-boundaries.md",
+      "sha256": "685220968b871af0b20c97fecdaf71922dcc81d8ef5ad4362dbe33678525d385"
+    },
+    {
+      "bytes": 13916,
+      "path": "skills/cortex-playbook-engineer/references/official-sources.md",
+      "sha256": "cdac66f4f2db81e5c45bc2eca176be0916a75fadff39122a597954edf3bee966"
+    },
+    {
+      "bytes": 11386,
+      "path": "skills/cortex-playbook-engineer/references/playbook-concepts.md",
+      "sha256": "134179a219981950f68f18c4e6b5255afce81faffee1b5dc8954adffab6d81e6"
+    },
+    {
+      "bytes": 10636,
+      "path": "skills/cortex-playbook-engineer/references/playbook-design-patterns.md",
+      "sha256": "bd78e29c9e9895cd4b2f18d15f69381227dc08d637df2ce455071d8a0bca3637"
+    },
+    {
+      "bytes": 12437,
+      "path": "skills/cortex-playbook-engineer/references/reliability-safety-security.md",
+      "sha256": "cd79f4aef447e5b71c4baf6e13e1f343ca7d5b6db38b03d484a34fb7b9d8b256"
+    },
+    {
+      "bytes": 12017,
+      "path": "skills/cortex-playbook-engineer/references/testing-deployment-troubleshooting.md",
+      "sha256": "dbe4215a32f3dbe3d8d2b035e5cde5ee3c6e40aedff469984268767623893e1f"
+    },
+    {
+      "bytes": 4969,
+      "path": "skills/cortex-playbook-engineer/templates/action-gate.md",
+      "sha256": "7b3f47faeb35ef78b5da9531d87742547447fb9f995845e6857765215098bb9e"
+    },
+    {
+      "bytes": 4606,
+      "path": "skills/cortex-playbook-engineer/templates/context-contract.md",
+      "sha256": "93d693284c9e5f6c59645a89ab1057bf0213691e672f796540770edbbc7661fa"
+    },
+    {
+      "bytes": 8506,
+      "path": "skills/cortex-playbook-engineer/templates/playbook-design.md",
+      "sha256": "c3a2e057cc5ecddfe489c3b84f700fc0115e818c1d1fe265e61a723979f81a67"
+    },
+    {
+      "bytes": 4868,
+      "path": "skills/cortex-playbook-engineer/templates/playbook-review.md",
+      "sha256": "cc9bf2a5760b2d6671becb8ffb5fb2db6cecbb25281db14571cc4a94ca2ffa78"
+    },
+    {
+      "bytes": 5503,
+      "path": "skills/cortex-playbook-engineer/templates/tenant-validation.md",
+      "sha256": "7bf96ec023c411fb140dcacf091806ba0e4bfa86e6a721d803f64f481c1db0d4"
+    },
+    {
+      "bytes": 13682,
+      "path": "skills/cortex-security-engineer/SKILL.md",
+      "sha256": "da1fbc97b73c635db35125d2295b3146989fbb30e4963d5e67ac0831c1ace1c3"
+    },
+    {
+      "bytes": 6,
+      "path": "skills/cortex-security-engineer/VERSION",
+      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
+    },
+    {
+      "bytes": 278,
+      "path": "skills/cortex-security-engineer/agents/openai.yaml",
+      "sha256": "75fd92b8d630fa6e7256a005d9709f59018016a2cc7760ab30dd8ec20072f627"
+    },
+    {
+      "bytes": 1225,
+      "path": "skills/cortex-security-engineer/examples/README.md",
+      "sha256": "531c6dd9dd84283484695180b5d2eafbfde03d464d8f5d67f0a3e772e87db7b5"
+    },
+    {
+      "bytes": 6935,
+      "path": "skills/cortex-security-engineer/examples/credential-theft-containment.md",
+      "sha256": "70e8279603516547056d600b955cf4f6f56a854cc8795534075531e8fe80b665"
+    },
+    {
+      "bytes": 3151,
+      "path": "skills/cortex-security-engineer/examples/cross-product-boundary.md",
+      "sha256": "f0129f7118fc1e18c03d7f205b10e097a2441defd647961f39941209893d79a7"
+    },
+    {
+      "bytes": 4092,
+      "path": "skills/cortex-security-engineer/examples/missing-telemetry-routing.md",
+      "sha256": "99842c692554f4e95c761255e64e08c6d6170aa765785245ad09a024a27b1642"
+    },
+    {
+      "bytes": 5643,
+      "path": "skills/cortex-security-engineer/examples/suspicious-dns-program.md",
+      "sha256": "038097824a70497366daaaa47f6591956556f2941905fd571458c935aac517d9"
+    },
+    {
+      "bytes": 4214,
+      "path": "skills/cortex-security-engineer/references/2026-10-23-refresh.md",
+      "sha256": "c3a0c7ec80d492b0846abcecdb3ce01c7a8d01ec896817a38a68d06ff0e6a199"
+    },
+    {
+      "bytes": 1353,
+      "path": "skills/cortex-security-engineer/references/README.md",
+      "sha256": "b65152f5b6779ea6c9882fad69462e70d0e3e2e60cb27f5b8eb3c328570f23a1"
+    },
+    {
+      "bytes": 9012,
+      "path": "skills/cortex-security-engineer/references/decision-record-method.md",
+      "sha256": "2e69ccbf9bcfba2725c4c43b7499d7f31bf65e0a0b7cfab109a7007f36f51f38"
+    },
+    {
+      "bytes": 9049,
+      "path": "skills/cortex-security-engineer/references/evidence-and-product-boundaries.md",
+      "sha256": "b2c666a0b69eb39f083aac7caf54719d1996d89fb8d0795b0ba2ae8aa908c0ea"
+    },
+    {
+      "bytes": 9561,
+      "path": "skills/cortex-security-engineer/references/official-sources.md",
+      "sha256": "50941edf3d4c754c16f6ff9b3e38658d3b629375f91c688c9a475ee347ddd43c"
+    },
+    {
+      "bytes": 9821,
+      "path": "skills/cortex-security-engineer/references/product-surface-map.md",
+      "sha256": "b18c69788f30210b29a9ba10a1ec8b2475f60091bf187f40b763c9d8bf5e8e55"
+    },
+    {
+      "bytes": 7986,
+      "path": "skills/cortex-security-engineer/references/routing-and-ownership.md",
+      "sha256": "af39e80b5a4a36c9c0bb00058e4a3c6049057ba51c78b198176eba52d4dbb1c0"
+    },
+    {
+      "bytes": 6575,
+      "path": "skills/cortex-security-engineer/references/safety-and-authorization.md",
+      "sha256": "5c3ec01831d85e60bcf69603422f81a79e663e3b21a5f0637ada84eef823432b"
+    },
+    {
+      "bytes": 6907,
+      "path": "skills/cortex-security-engineer/references/troubleshooting.md",
+      "sha256": "806c4a1baaf50567af86e5fd0d4cb6f0cbd0031f73e9627db18e782ff3667747"
+    },
+    {
+      "bytes": 7389,
+      "path": "skills/cortex-security-engineer/references/validation-and-operations.md",
+      "sha256": "ab0eaba2a7fe5b0c33d1d085deeb5a91f7543ae6a5e14fa5c5ccf81181dc2e1b"
+    },
+    {
+      "bytes": 4407,
+      "path": "skills/cortex-security-engineer/templates/control-validation-plan.md",
+      "sha256": "97d482af37089ea2e424f3d0e751e588fcaa7fd0e144f1517f53ca24b4fed185"
+    },
+    {
+      "bytes": 4716,
+      "path": "skills/cortex-security-engineer/templates/multi-domain-roadmap.md",
+      "sha256": "d4246ce1af66f22c606f7a578b5ea05d392d89259ef72c12f93d268b99bfeb6a"
+    },
+    {
+      "bytes": 4482,
+      "path": "skills/cortex-security-engineer/templates/operational-handoff.md",
+      "sha256": "279562b4be547faf9a18fc9341a7bd4416810d3a2cdcd004c8feb317ef230755"
+    },
+    {
+      "bytes": 4554,
+      "path": "skills/cortex-security-engineer/templates/request-intake.md",
+      "sha256": "ef8148abb7c7ec8e93648b0193f80c94dfa0e5c2f0fc87e57a2212aba9870943"
+    },
+    {
+      "bytes": 4263,
+      "path": "skills/cortex-security-engineer/templates/security-decision-record.md",
+      "sha256": "6e4be8013f3bcf3170c51c8eb20432168c9a8e6be5c1463c46c33bbc6c3db3fa"
+    },
+    {
+      "bytes": 16384,
+      "path": "skills/cortex-threat-hunter/SKILL.md",
+      "sha256": "c20033c73971c7abf7b302a5b2edcdf2ac2f0ee13abaf39decb7884d0a0e6a46"
+    },
+    {
+      "bytes": 6,
+      "path": "skills/cortex-threat-hunter/VERSION",
+      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
+    },
+    {
+      "bytes": 227,
+      "path": "skills/cortex-threat-hunter/agents/openai.yaml",
+      "sha256": "7f3e823bdaf86aa81e6a100c998a75bd1dcc0ffcb145b0fcf219a4add1acf360"
+    },
+    {
+      "bytes": 669,
+      "path": "skills/cortex-threat-hunter/examples/README.md",
+      "sha256": "2fd5fb066858352a1fad35e7639157613da757df2f8fb2b2f2138c4488b6586d"
+    },
+    {
+      "bytes": 3018,
+      "path": "skills/cortex-threat-hunter/examples/credential-access-hypothesis.md",
+      "sha256": "f1cf778fac4ae8c2a6ef36b2417829182c827d3171b4b8c7a416a96f025d9f2a"
+    },
+    {
+      "bytes": 1813,
+      "path": "skills/cortex-threat-hunter/examples/dns-activity-scope.md",
+      "sha256": "8719e07e9290b7ef7fa31306999a81bcda85b590fb3d607f9673d66bf99e6a49"
+    },
+    {
+      "bytes": 2078,
+      "path": "skills/cortex-threat-hunter/examples/ioc-to-behavioral-hunt.md",
+      "sha256": "d83f3eec93e8b0adae872bbcb8d71e2cb3508f3460585f42e19c32499b21f89e"
+    },
+    {
+      "bytes": 2427,
+      "path": "skills/cortex-threat-hunter/examples/suspicious-process-pivot.md",
+      "sha256": "3d37ac5a0857016474fed85122c7b9c03ee6baecf05c4984287dce9e2e6f9aa9"
+    },
+    {
+      "bytes": 1969,
+      "path": "skills/cortex-threat-hunter/examples/zero-results-troubleshooting.md",
+      "sha256": "9070eb6bfcef2359b2d6a1555225efabd9c76d595b470605a56ca57db8fcdf91"
+    },
+    {
+      "bytes": 4344,
+      "path": "skills/cortex-threat-hunter/references/2026-10-23-refresh.md",
+      "sha256": "f59366fe9eeda93246a4165b5095685b65b90c2956058d5540bf32d2899a6512"
+    },
+    {
+      "bytes": 6671,
+      "path": "skills/cortex-threat-hunter/references/evidence-and-product-boundaries.md",
+      "sha256": "7797a0da651640e24bf6fe392801a051f9d4e1f294dbca9cfabc6e7cbd2be19f"
+    },
+    {
+      "bytes": 3355,
+      "path": "skills/cortex-threat-hunter/references/findings-and-detection-handoff.md",
+      "sha256": "80c668332b6cb396a9fffa206a21370b0315d85b588a6ad32f19f2895bb739d7"
+    },
+    {
+      "bytes": 5204,
+      "path": "skills/cortex-threat-hunter/references/hunt-methodology.md",
+      "sha256": "0e64f9493451c01ae215ef4158aac0f2481ec20b0cd8543fc8811562320c221b"
+    },
+    {
+      "bytes": 8281,
+      "path": "skills/cortex-threat-hunter/references/official-sources.md",
+      "sha256": "1030f5eef23bf93935c424be238068e33b6e2b36d67d0e93fae3474f6c14a31a"
+    },
+    {
+      "bytes": 3685,
+      "path": "skills/cortex-threat-hunter/references/pivots-timelines-and-scoping.md",
+      "sha256": "54c7d5d9ebeb6fb4e3f1bbf5d3e41a8b2f3cd71fb19496c5b97ba456302a8abd"
+    },
+    {
+      "bytes": 2570,
+      "path": "skills/cortex-threat-hunter/references/project-operational-patterns.md",
+      "sha256": "bab4596973a3c3180513fe138aa1cde305bae48153b8067f13f30eae57d60769"
+    },
+    {
+      "bytes": 4565,
+      "path": "skills/cortex-threat-hunter/references/telemetry-and-coverage.md",
+      "sha256": "de5dfb604b7890b90ea6305992070402021d1d9772aac0f649fed474e0325d20"
+    },
+    {
+      "bytes": 2785,
+      "path": "skills/cortex-threat-hunter/references/troubleshooting.md",
+      "sha256": "c1b16d20f494a011e5a73894d2c48622824fd76e62424462bb89e085d8dc7b90"
+    },
+    {
+      "bytes": 1399,
+      "path": "skills/cortex-threat-hunter/templates/detection-opportunity.md",
+      "sha256": "2dfb2c640b8c6080f0ffbe08da296e3c6dc1d56fbdc37e2deffb735c74262acc"
+    },
+    {
+      "bytes": 1147,
+      "path": "skills/cortex-threat-hunter/templates/evidence-ledger.md",
+      "sha256": "7540add80463c4f341e21a836f70bcda2b10e4631df6192c7b165b0a30b0e1dd"
+    },
+    {
+      "bytes": 2673,
+      "path": "skills/cortex-threat-hunter/templates/hunt-plan.md",
+      "sha256": "041912d5bbb13b9122b0d9d7713c018c477e1b50dd9e7931052c1eb6e3a041e1"
+    },
+    {
+      "bytes": 1965,
+      "path": "skills/cortex-threat-hunter/templates/hunt-record.md",
+      "sha256": "2487423e61cde2e0828eb2957c059bd1f797275d4fe4d5ca5ce6f1eb7714c1d3"
+    },
+    {
+      "bytes": 1302,
+      "path": "skills/cortex-threat-hunter/templates/tenant-validation.md",
+      "sha256": "4ab2da50d239074893fc9d899a5517a2491af63af040027ac97a66603558df56"
+    },
+    {
+      "bytes": 18353,
+      "path": "skills/cortex-tim-engineer/SKILL.md",
+      "sha256": "12ccdd69e535f8c621c989b01ffb27ae6c1c17905b25f46fe42ef705d1b2a3cb"
+    },
+    {
+      "bytes": 6,
+      "path": "skills/cortex-tim-engineer/VERSION",
+      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
+    },
+    {
+      "bytes": 252,
+      "path": "skills/cortex-tim-engineer/agents/openai.yaml",
+      "sha256": "bd7e659b6b702216639f6d6c426e3e0a1997f0a5815076ab69d19da3a8844947"
+    },
+    {
+      "bytes": 1522,
+      "path": "skills/cortex-tim-engineer/examples/README.md",
+      "sha256": "040cfb10922a6e3852d4a9fad7205cf095e941fc1a933e545b1ea40d74903001"
+    },
+    {
+      "bytes": 3414,
+      "path": "skills/cortex-tim-engineer/examples/distribution/edl-rollout.md",
+      "sha256": "4eecef701f6e33a3f1301d6756297becf2e8cc3a2e051754873ca9f1b420b5d9"
+    },
+    {
+      "bytes": 3083,
+      "path": "skills/cortex-tim-engineer/examples/feeds/multi-source-duplicates.md",
+      "sha256": "11003466c99742715669c6697363d36d8e3de5cc143cb5e037391b2c9fc50b40"
+    },
+    {
+      "bytes": 3132,
+      "path": "skills/cortex-tim-engineer/examples/interoperability/taxii-ingestion.md",
+      "sha256": "844ee5522828da8ebadb0c8f0b9aed1ded6ad2aeb994fdaf2b328fb14a40c652"
+    },
+    {
+      "bytes": 3911,
+      "path": "skills/cortex-tim-engineer/examples/lifecycle/indicator-lifecycle.md",
+      "sha256": "ffa2938a1d71b7e89a0e6340c65219aff594ed01eec3f6dd5124617f78cecf6d"
+    },
+    {
+      "bytes": 3159,
+      "path": "skills/cortex-tim-engineer/examples/troubleshooting/opencti-version-mismatch.md",
+      "sha256": "ec41dd6dbdad93a6b0efc5c42d6cb6ece416c061e847d525e6147ed370b9c3f6"
+    },
+    {
+      "bytes": 7891,
+      "path": "skills/cortex-tim-engineer/references/2026-10-23-refresh.md",
+      "sha256": "5432c612483e2739585f3750f366779cd77ff69833a2e5e66cdc3ddd886d443a"
+    },
+    {
+      "bytes": 10067,
+      "path": "skills/cortex-tim-engineer/references/evidence-and-product-boundaries.md",
+      "sha256": "2021e4081d1e59795881fc7d149d5cfd950fc45004cdf230181d0da240022b0f"
+    },
+    {
+      "bytes": 9055,
+      "path": "skills/cortex-tim-engineer/references/feeds-and-source-quality.md",
+      "sha256": "102eb064350a3a8c6c2cbd996c5bfe3634e9afe23e18133cf15400b23464253d"
+    },
+    {
+      "bytes": 13132,
+      "path": "skills/cortex-tim-engineer/references/interoperability-and-distribution.md",
+      "sha256": "090ffecfc7b9e4ecf699ea79f009d01d9fd0cc70569c0f06de6116fb04928c71"
+    },
+    {
+      "bytes": 8364,
+      "path": "skills/cortex-tim-engineer/references/lifecycle-and-governance.md",
+      "sha256": "f11367c6422f96381fc6e4d933ee452635b2be5acec7b880089cc34ebbdc55e6"
+    },
+    {
+      "bytes": 15191,
+      "path": "skills/cortex-tim-engineer/references/official-sources.md",
+      "sha256": "e4b3c6d4945183bf24a934a949abff2d15d04e76555c03c2ee08bfd46818486e"
+    },
+    {
+      "bytes": 8311,
+      "path": "skills/cortex-tim-engineer/references/scoring-enrichment-and-relationships.md",
+      "sha256": "88c14d3733d9bb675f35bddc1fbdd6348fe5dc7c620bc22a9d33d18a2f349391"
+    },
+    {
+      "bytes": 8367,
+      "path": "skills/cortex-tim-engineer/references/troubleshooting.md",
+      "sha256": "ff06bff7ab3c29270f2db643e89851decde88e4e26cb9e7176cf91c2355c3251"
+    },
+    {
+      "bytes": 3851,
+      "path": "skills/cortex-tim-engineer/templates/distribution-change.md",
+      "sha256": "d826472da3aab432926afc14eec334caf4fa3101f291f6d3a47254f78dc66dcb"
+    },
+    {
+      "bytes": 4419,
+      "path": "skills/cortex-tim-engineer/templates/feed-onboarding.md",
+      "sha256": "48078084eef4f0b7cc1530ff7d09c89c53930d71bcd7b4ddf658fea9ebfcacd8"
+    },
+    {
+      "bytes": 2966,
+      "path": "skills/cortex-tim-engineer/templates/interoperability-assessment.md",
+      "sha256": "abce64b708d343bec295cb3da9ce7d4de4c99ac460fa705913eaad0d630c4473"
+    },
+    {
+      "bytes": 3407,
+      "path": "skills/cortex-tim-engineer/templates/lifecycle-design.md",
+      "sha256": "d80e4434513d0bba1a515baf7cc44a59581879ecdc210b128bd86c245bcb0e54"
+    },
+    {
+      "bytes": 3284,
+      "path": "skills/cortex-tim-engineer/templates/troubleshooting.md",
+      "sha256": "65798091c5037d65ab8b42738c9ec716d62999e2533cdc62bb1701708921070f"
+    },
+    {
+      "bytes": 19487,
+      "path": "skills/cortex-xql-query-engineer/SKILL.md",
+      "sha256": "a1d1abe61381e3a516ba10e6499651da2394a245a01370cee5d6688a3e16381f"
+    },
+    {
+      "bytes": 6,
+      "path": "skills/cortex-xql-query-engineer/VERSION",
+      "sha256": "80447316529fc62014fbaa047fb67c51ac30e32830cda370405349d8d66d196c"
+    },
+    {
+      "bytes": 256,
+      "path": "skills/cortex-xql-query-engineer/agents/openai.yaml",
+      "sha256": "b094b4155c38c7908f66fdccf7405732af1a8acf7d525cf7f81145cffb6cedb4"
+    },
+    {
+      "bytes": 1578,
+      "path": "skills/cortex-xql-query-engineer/examples/README.md",
+      "sha256": "2e28a6f3135b430544d7333cd9678770d6a98bca841365dc31d0a6a343b5944e"
+    },
+    {
+      "bytes": 8908,
+      "path": "skills/cortex-xql-query-engineer/examples/detection/detection-handoff.md",
+      "sha256": "63f2f0069d8db2accf67990aebb6d41d6b180d130a73048f3a072520717a62f7"
+    },
+    {
+      "bytes": 8376,
+      "path": "skills/cortex-xql-query-engineer/examples/hunting/lateral-movement.md",
+      "sha256": "25bc5847ad627f7bcf50f77224c59cef44441545beea589e946f442ee33cda75"
+    },
+    {
+      "bytes": 6910,
+      "path": "skills/cortex-xql-query-engineer/examples/investigation/last-process-per-host.md",
+      "sha256": "df481b9bc9653347088c407def5e81a751c09990b84288ed13e4af464c988275"
+    },
+    {
+      "bytes": 9497,
+      "path": "skills/cortex-xql-query-engineer/examples/investigation/suspicious-powershell.md",
+      "sha256": "a52ffcec36cd30ce46516b4a10bb2f3466b8a0d72175557e71c8ef06626f064f"
+    },
+    {
+      "bytes": 7224,
+      "path": "skills/cortex-xql-query-engineer/examples/troubleshooting/fabricated-schema.md",
+      "sha256": "936c83db317ebc7c21a7b689515ee7925ac75da398a7db1a6ad9c45ec0d2e221"
+    },
+    {
+      "bytes": 4702,
+      "path": "skills/cortex-xql-query-engineer/references/2026-10-23-refresh.md",
+      "sha256": "58d4c1080abe37e609dd49d33d57c27f52da74fce977617bf6da9255f75e657d"
+    },
+    {
+      "bytes": 9317,
+      "path": "skills/cortex-xql-query-engineer/references/datasets.md",
+      "sha256": "b86b0fd44fb56bd01ba73cebc3e191c8408be6e61ab6f0d45aabb639ca9f900e"
+    },
+    {
+      "bytes": 12012,
+      "path": "skills/cortex-xql-query-engineer/references/evidence-and-product-boundaries.md",
+      "sha256": "87415c2de21a5ee7d0e6c874831d672c58d0dedf6868ce479849bf8b1c39df79"
+    },
+    {
+      "bytes": 11509,
+      "path": "skills/cortex-xql-query-engineer/references/fields-and-schema.md",
+      "sha256": "2d29a21ff6d44473d3377c9d47c7b617ac00117158417fc28904d09e282cb6d1"
+    },
+    {
+      "bytes": 21277,
+      "path": "skills/cortex-xql-query-engineer/references/official-sources.md",
+      "sha256": "6c9a50b6d20895f428209b33e7c2ee693c51d262307f9a1ab63214d55167bccd"
+    },
+    {
+      "bytes": 9584,
+      "path": "skills/cortex-xql-query-engineer/references/optimization.md",
+      "sha256": "9d49eabc9863a089c13a89b507181109620fc188c2266032f3d3502604baeaa1"
+    },
+    {
+      "bytes": 12218,
+      "path": "skills/cortex-xql-query-engineer/references/query-patterns.md",
+      "sha256": "35e203a4aaac29ed2921077ed0b8df871dd81aa711b16384646f288c06b157e6"
+    },
+    {
+      "bytes": 12509,
+      "path": "skills/cortex-xql-query-engineer/references/troubleshooting.md",
+      "sha256": "c32fca9577420e03b58dab89d18dae5a6393c0a2db7483136976874d5f5ead18"
+    },
+    {
+      "bytes": 18893,
+      "path": "skills/cortex-xql-query-engineer/references/xql-language.md",
+      "sha256": "670caafd78359789397d7980ba8020c9eb98860cd05c8ebd32834ccc85b306fa"
+    },
+    {
+      "bytes": 7147,
+      "path": "skills/cortex-xql-query-engineer/templates/detection-query.md",
+      "sha256": "8c3379c1c6a7fb6dfd83a188130386bb3258ec0afbca3fbc3bc3de2815f450ea"
+    },
+    {
+      "bytes": 5370,
+      "path": "skills/cortex-xql-query-engineer/templates/investigation-query.md",
+      "sha256": "ee17788fa638f1be7744885c7cf7aa990dcd8e0868dcb4978003d73d3aaa5392"
+    },
+    {
+      "bytes": 8154,
+      "path": "skills/cortex-xql-query-engineer/templates/query-build.md",
+      "sha256": "0fb00592c4c978aaa27a9555387c62114aa42708ae0e04af03f33ce676790048"
+    },
+    {
+      "bytes": 6388,
+      "path": "skills/cortex-xql-query-engineer/templates/query-review.md",
+      "sha256": "b35a89e73120fafb1394699bebd7c79f1177b713ac49879c311127271454342b"
+    },
+    {
+      "bytes": 6663,
+      "path": "skills/cortex-xql-query-engineer/templates/tenant-validation.md",
+      "sha256": "779a28b1d0326cc7d3821cf2d86c7c68d586829cf8b810445a12d7979fd3f267"
+    }
+  ],
+  "format": "codex-compatibility",
+  "plugin": "cortex-ai-skills",
+  "plugin_version": "0.1.1",
+  "skill_versions": {
+    "cortex-detection-engineer": "0.1.1",
+    "cortex-platform-engineer": "0.1.1",
+    "cortex-playbook-engineer": "0.1.1",
+    "cortex-security-engineer": "0.1.1",
+    "cortex-threat-hunter": "0.1.1",
+    "cortex-tim-engineer": "0.1.1",
+    "cortex-xql-query-engineer": "0.1.1"
+  },
+  "source_revision_boundary": "Canonical source/ at build time; history in packages/0.1.0",
+  "validation": {
+    "canonical_files_identical": true,
+    "chatgpt_import": "NOT RUN",
+    "deterministic_rebuild": true,
+    "discovery_and_behavior": "NOT RUN",
+    "files": 163,
+    "plugin_version": "0.1.1",
+    "relative_references": 523,
+    "sha256": "de85688224c01a32f59d49fbb3aa6dae72ba13503ef50e6146344db56ac646ea",
+    "skills": [
+      "cortex-detection-engineer",
+      "cortex-platform-engineer",
+      "cortex-playbook-engineer",
+      "cortex-security-engineer",
+      "cortex-threat-hunter",
+      "cortex-tim-engineer",
+      "cortex-xql-query-engineer"
+    ],
+    "tenant_compilation_execution": "NOT RUN"
+  }
+}

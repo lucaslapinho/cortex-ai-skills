@@ -2,6 +2,10 @@
 
 Standalone first-party source register for `cortex-platform-engineer`.
 
+**Scoped refresh — 2026-10-23:** see [the dated refresh](2026-10-23-refresh.md)
+for the exact pages reopened, current claim boundaries, API release-note changes,
+and the unresolved HTTP-method discrepancy. Unlisted rows retain their prior dates.
+
 **Review date:** 2026-09-04  
 **Rule:** re-open the exact product/version page before a production decision. Link availability and documentation support do not prove tenant entitlement, configuration, health, or execution.
 

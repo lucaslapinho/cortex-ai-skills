@@ -2,6 +2,12 @@
 
 All notable changes to this Skill are recorded here.
 
+## 0.1.1 - 2026-10-23
+
+- Reopened eleven official pages covering DBotScore, XSIAM feed/expiration/lifecycle behavior, OpenCTI 4.x, TAXII feed/server boundaries, Generic Export Indicators Service, and legacy EDL deprecation.
+- Added exact consulted URLs and bounded observations, including current service-port/cache considerations and retained OpenCTI pagination-output inconsistencies.
+- Preserved XSOAR-specific mapping/collection wording without transposing it to XSIAM. Historical behavioral evidence remains historical; S/C/E are NOT RUN for 0.1.1.
+
 ## 0.1.0 - 2026-09-04
 
 ### Added

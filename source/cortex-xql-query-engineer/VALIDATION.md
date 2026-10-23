@@ -1,5 +1,18 @@
 # Validation ledger
 
+## Version 0.1.1 refresh snapshot — 2026-10-23
+
+**Scope:** focused official-document review and the API ambiguity qualification recorded in [references/2026-10-23-refresh.md](references/2026-10-23-refresh.md). Historical runtime hashes and S decisions below identify earlier bytes only and do not certify this changed runtime.
+
+| Level | Result for this revision | Boundary |
+|---|---|---|
+| S | NOT RUN | No fresh independent controlled response evaluation for version 0.1.1 |
+| D | PASS — scoped | Only the actually read claims and discrepancies in the dated refresh; not every registered source |
+| C | NOT RUN | No tenant schema, editor, compiler, API contract acceptance or import |
+| E | NOT RUN | No tenant query, API request, persistence, result or performance observation |
+
+Package syntax/link checks, if separately recorded by release tooling, do not change these behavioral/tenant results. A new release audit must identify the exact new runtime; do not reuse the September identity below.
+
 ## Current completion decision — 2026-09-06
 
 **Current reviewed runtime:** 22 files / 202,475 bytes; ordinal SHA-256 `d51eac19cdadd0852a4d2d7bf63dd894389aa621e972e1c09f39194f038af7f7`.

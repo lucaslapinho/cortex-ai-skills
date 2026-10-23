@@ -23,6 +23,8 @@ Precedence:
 
 No secondary sources are needed for the bundled factual baseline.
 
+The [2026-10-23 targeted refresh](2026-10-23-refresh.md) rechecks eleven specific product/integration pages, including current lifecycle URLs and retained OpenCTI documentation conflicts. This supplements the historical register; it does not assign a new review date to other entries.
+
 ## Core Cortex XSIAM TIM sources
 
 | ID | Official source | Narrow supported use | Boundary |

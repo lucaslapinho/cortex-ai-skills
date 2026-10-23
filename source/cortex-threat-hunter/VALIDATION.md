@@ -1,5 +1,18 @@
 # Validation ledger
 
+## Version 0.1.1 refresh snapshot — 2026-10-23
+
+**Scope:** the bounded source inspection and dataset-population refinement in [references/2026-10-23-refresh.md](references/2026-10-23-refresh.md). The September hashes, evaluations and approvals below are historical identities, not approval of these changed bytes.
+
+| Level | Result for this revision | Boundary |
+|---|---|---|
+| S | NOT RUN | No fresh independent controlled hunt-response evaluation for version 0.1.1 |
+| D | PASS — scoped | Only the read query/graph, issue-dataset, investigation and grouping claims |
+| C | NOT RUN | No tenant identity, schema, editor/compiler or import acceptance |
+| E | NOT RUN | No tenant query, graph execution, hunt result or response observation |
+
+Release structure/link checks cannot establish behavioral or tenant validation. The release audit must calculate a new runtime identity; earlier hashes below remain tied to their original recorded dates.
+
 ## Current completion decision — 2026-09-06
 
 **Current reviewed runtime:** 22 files / 73,435 bytes; ordinal SHA-256 `af98de5883f06eea19adf89b9c6ce6cf1676830441f11f774d74a1b286f8f092`.
