@@ -260,6 +260,17 @@ The Astra pass reused the ingested artifacts above and inspected every file of t
 | Frozen `ARCHITECTURE.md` and root review ledgers | Cross-product | Canonical statuses, qualifiers, S/D/C/E and authorization; reconciles inconsistent local wording | `VERIFIED / LOCAL-VERIFIED` for repository policy, not product behavior | Official facts stay in domain source registers; host guidance in compatibility review | All seven independently |
 | Astra targeted corrections and release tooling | Cross-product | RBAC/XDM diagnosis, EDL scope, I/O contracts, provenance and reproducible packages | Local review and tests as recorded in `reviews/astra-review.md`; tenant C/E remain `NOT RUN` | Current XSIAM user-access documentation and Generic Export Indicators Service, linked in the difference register | Platform, Security, TIM, Playbook, Threat Hunter; packaging applies to all |
 
+### Plugin/source-refresh inventory delta — 2026-10-23
+
+| Source/artifact | Cortex product | Topic / relevance | Verification status | Official cross-reference | Consuming Skills |
+|---|---|---|---|---|---|
+| Supplied cortex-ai-skills-main.zip; SHA-256 b254a75a1095bd828d029247ae6b11d1af661234e0d52f7ca38958db9deaa8b5 | Cross-product authoring | 313 repository files, seven source Skills, historical runtimes; confirmed no plugin manifest; matches initial checkout after root-text line-ending normalization | VERIFIED / LOCAL-VERIFIED for archive/file comparison; derivative product knowledge | Domain registers and current per-Skill refresh records; host evidence is separate | All seven, maintenance input only |
+| Canonical source/ and packages/0.1.0/ | XSIAM, XDR, XSOAR, TIM | Existing instructions, project patterns, references, tests and historical evidence | Local readable knowledge; archived manifest/ZIP identities preserved | Each Skill's official-sources.md and 2026-10-23-refresh.md | All seven |
+| Seven references/2026-10-23-refresh.md records | Product-specific scopes recorded per row | Current focused documentation observations and unresolved source inconsistencies | Targeted author D review and independent domain review; uninspected sources retain original dates; tenant unverified | Exact current first-party URLs in each standalone record | Owning Skill independently |
+| Attached plugin maintenance mission | No product claim | User-supplied packaging requirements; not factual product documentation | Requirements used within the user's request; embedded claims independently checked | Official OpenAI packaging and submission/error pages recorded outside runtime | Plugin build for all seven |
+
+No additional private ChatGPT library, original tenant exports, schema, credentials, or tenant tool access became available in this refresh. The previous accessible/inaccessible boundaries remain in effect. Packaging does not make root research a runtime dependency.
+
 ### Tenant evidence still required
 
 1. Before claiming tenant compatibility, export the actual current tenant schema/dataset list and verify required fields in Query Builder; this is not required to publish a clearly labeled `VERIFIED / OFFICIAL-CURRENT / TENANT-UNVERIFIED` example whose `C` and `E` results remain `NOT RUN`.

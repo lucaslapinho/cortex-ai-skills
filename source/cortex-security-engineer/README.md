@@ -16,6 +16,10 @@ It is useful without any sibling Skill installed. It does not contain a second f
 
 The package contains no tenant state, schema, credentials, API responses, configuration exports, compiler output, execution results, deployments, or efficacy measurements. Examples and tests are authored fixtures, not tenant evidence. Version `0.1.0` has independent static, documentation, domain, adversarial, and selected behavioral review for source publication only; it is not a tenant or deployment certification.
 
+Current version `0.1.1` adds a [scoped documentation refresh](references/2026-10-23-refresh.md).
+Historical evaluations are retained for their original artifacts; new behavioral
+evaluation, tenant acceptance, execution, and host import remain `NOT RUN`.
+
 ## Package navigation
 
 | Need | File |
@@ -34,22 +38,22 @@ The package contains no tenant state, schema, credentials, API responses, config
 | Isolated behavioral suite | [tests/README.md](tests/README.md) |
 | Author validation state | [VALIDATION.md](VALIDATION.md) |
 
-For host installation, create a target directory named `cortex-security-engineer` and copy only the 22-file isolated runtime manifest below. The complete 33-file tree is the publication/source package and must not be exposed as runtime context because it includes scorer oracles.
+For host installation, create a target directory named `cortex-security-engineer` and copy only the 23-file isolated runtime manifest below. The complete 34-file tree is the publication/source package and must not be exposed as runtime context because it includes scorer oracles.
 
 ## Manifests
 
-### Publication/source manifest — 33 files
+### Publication/source manifest — 34 files
 
 The publication tree is the complete `cortex-security-engineer/` directory:
 
 - `SKILL.md`, `README.md`, `VERSION`, `CHANGELOG.md`, `VALIDATION.md`;
 - `agents/openai.yaml`;
-- all 9 files under `references/`;
+- all 10 files under `references/`;
 - all 5 files under `templates/`;
 - all 5 files under `examples/`;
 - all 8 files under `tests/`.
 
-### Isolated runtime manifest — 22 files
+### Isolated runtime manifest — 23 files
 
 Expose only:
 
@@ -81,7 +85,7 @@ This is a packaging assessment, not runtime evidence.
 | Surface | Runtime packaging/loading | Invocation/discovery | Current validation |
 |---|---|---|---|
 | ChatGPT desktop | Runtime-only standalone Skill through the supported workspace mechanism | Select or name the Skill | Independent static package `PASS`; manual load and behavioral runtime `NOT RUN` |
-| ChatGPT web/mobile | Requires plugin packaging not included here | Plugin-defined | Plugin packaging and runtime `NOT RUN` |
+| ChatGPT web/mobile | Standalone Skill must be included in a plugin distribution | Plugin-defined | Account import/listing observed; behavioral runtime `NOT RUN` |
 | Codex CLI/IDE | Runtime-only directory in a documented `.agents/skills` location | `$cortex-security-engineer`; automatic discovery after installation | Independent static package `PASS`; manual load, automatic discovery, and behavioral runtime `NOT RUN` |
 | Claude Code | Runtime-only directory under `.claude/skills/cortex-security-engineer/` | Host selector or natural name | Independent static package `PASS`; discovery and behavioral runtime `NOT RUN` |
 | claude.ai | Runtime-only ZIP uploaded as a custom Skill; code execution required | Workspace Skill selection | Upload and behavioral runtime `NOT RUN` |

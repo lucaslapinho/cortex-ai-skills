@@ -147,6 +147,8 @@ Keep source time, ingestion time, and analysis/display time distinct. Record tim
 
 State in-scope entities, out-of-scope entities, coverage gaps, retention boundaries, deduplication logic, and unit of counting. Distinguish events, unique entities, alerts, issues, and cases. Avoid expanding scope through ambiguous joins without documenting the ambiguity.
 
+Include the queried dataset's documented population exclusions in the denominator. In the Cortex XDR 5 `issues` context, informational issues are excluded and available fields are a limited API-aligned subset; its counts and negative results do not represent every issue or underlying event. Keep that contract product-specific. See the [2026-10-23 source refresh](references/2026-10-23-refresh.md).
+
 ### Step 11 — Test competing explanations
 
 Give each material explanation a discriminator and a result status. Include administrative activity, software deployment, service accounts, scanners, proxies, shared infrastructure, time skew, parser changes, and collection gaps when relevant.

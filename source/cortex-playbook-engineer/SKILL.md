@@ -70,7 +70,7 @@ Add provenance or validation qualifiers separately when useful:
 
 Do not promote a design through evidence levels. Official documentation can establish general behavior; it cannot prove that a tenant has the pack, integration, command, context key, role, license, or data. Static review cannot establish import. Import cannot establish correct execution or safe production behavior.
 
-Use [official sources](references/official-sources.md) for exact traceability. Refresh material claims when current-document access exists; otherwise disclose the 2026-09-04 snapshot and staleness risk.
+Use [official sources](references/official-sources.md) for exact traceability. The [2026-10-23 targeted refresh](references/2026-10-23-refresh.md) covers seven XSIAM pages, their applicability, and a context-example inconsistency. Refresh material claims when current-document access exists; otherwise disclose the applicable bundled source date and staleness risk. The targeted refresh does not refresh the entire historical register or establish tenant behavior.
 
 ## Keep XSIAM and XSOAR separate
 

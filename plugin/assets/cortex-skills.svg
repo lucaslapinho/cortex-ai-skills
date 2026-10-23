@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Cortex AI Skills independent project">
+  <rect width="128" height="128" rx="24" fill="#10253D"/>
+  <path d="M36 32H92M36 60H92M36 32V60L64 96L92 60V32M64 32V96" fill="none" stroke="#6085A2" stroke-width="4"/>
+  <g fill="#42D6C4">
+    <circle cx="36" cy="32" r="9"/><circle cx="64" cy="32" r="9"/><circle cx="92" cy="32" r="9"/>
+    <circle cx="36" cy="60" r="9"/><circle cx="64" cy="60" r="9"/><circle cx="92" cy="60" r="9"/>
+    <circle cx="64" cy="96" r="9"/>
+  </g>
+</svg>

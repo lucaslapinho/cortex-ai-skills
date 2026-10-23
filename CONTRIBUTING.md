@@ -14,6 +14,6 @@ Preserve the versioned archives, manifest, and checksums under `packages/0.1.0/`
 
 ## Checks before submitting a change
 
-Run the four validation commands in the [README](README.md). Do not publish credentials, raw customer data, dumps, or private identifiers. Use synthetic or anonymized examples.
+Run the build and validation commands in the [README](README.md). Do not publish credentials, raw customer data, dumps, or private identifiers. Use synthetic or anonymized examples.
 
 This project does not install integrations, execute queries, or apply changes to your tenant as part of its publication tests.

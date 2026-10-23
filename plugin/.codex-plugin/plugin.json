@@ -1,0 +1,35 @@
+{
+  "name": "cortex-ai-skills",
+  "version": "0.1.1",
+  "description": "Seven independent Cortex Skills for XQL, detections, playbooks, hunting, threat intelligence, platform engineering, and security coordination.",
+  "author": {
+    "name": "Cortex AI Skills contributors"
+  },
+  "homepage": "https://github.com/lucaslapinho/cortex-ai-skills",
+  "repository": "https://github.com/lucaslapinho/cortex-ai-skills",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Cortex AI Skills",
+    "shortDescription": "Cortex security workflows",
+    "longDescription": "Seven modular Skills informed by official Palo Alto Networks documentation and verified project experience. Includes instructions, references, templates, and examples for evidence-scoped defensive security work. Independent project; human validation is required.",
+    "developerName": "Cortex AI Skills contributors",
+    "category": "Security",
+    "capabilities": [
+      "Review XQL queries",
+      "Design evidence-scoped detections",
+      "Design playbooks and approvals",
+      "Plan hypothesis-driven hunts",
+      "Review threat intelligence lifecycles",
+      "Troubleshoot platform data flows",
+      "Scope security engineering handoffs"
+    ],
+    "defaultPrompt": [
+      "Review an XQL query using my supplied schema.",
+      "Design a phishing investigation workflow.",
+      "Plan a hunt and identify telemetry gaps."
+    ],
+    "logo": "./assets/cortex-skills.svg",
+    "composerIcon": "./assets/cortex-skills.svg"
+  }
+}

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 — 2026-10-23
+
+- Added a focused official-source refresh for XSIAM query/graph permissions, investigation and Case grouping, plus XDR 5 issue-dataset scope.
+- Required count/negative-result denominators to preserve the documented exclusion of informational issues in the XDR 5 `issues` context.
+- Kept unavailable project originals, historical evaluations and tenant limitations explicit; new-runtime behavioral `S` and tenant `C/E` remain `NOT RUN`.
+
 ## Astra completion delta — 2026-09-06 (0.1.0 candidate)
 
 - Read all 33 package files afresh and reopened selected official permission, object and investigation pages.

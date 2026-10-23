@@ -20,6 +20,8 @@ Select the surface from behavior, telemetry relationships, time requirements, an
 
 All facts below use the 2026-09-04 source snapshot. Numerical limits, licenses, UI controls, stages/functions, and actions are version-sensitive and require source refresh plus tenant verification.
 
+The [2026-10-23 focused refresh](2026-10-23-refresh.md) supplements this snapshot for the inspected claims only; it does not redate the whole matrix or resolve the real-time action discrepancy.
+
 ## Surface matrix
 
 | Surface | Best fit | Current documented boundary | Required caution |
@@ -72,6 +74,8 @@ See [S06](official-sources.md#s06--create-a-bioc-rule-in-cortex-xsiam) and [S07]
 ## BIOC-derived custom prevention
 
 Current BIOC pages describe optional conversion to custom prevention through Restrictions profiles with rule-structure, supported-field, OS, and agent requirements. This is prevention, not merely detection.
+
+The XSIAM and XDR 5 creation pages rechecked on 2026-10-23 advise avoiding `alter` and explicitly disallow `NOT IN` for custom-prevention conversion. These are conversion requirements, not a blanket prohibition in ordinary BIOC detection XQL. Do not silently delete a transformation or invert an exclusion: first prove the redesigned admission logic equivalent, then validate in the conversion surface.
 
 Required gates:
 
@@ -156,6 +160,7 @@ Preserve literal Incident/Alert names only where official compatibility interfac
 
 Current XSIAM documentation says field mapping can help grouping by supplying supported artifacts, but mapping does not guarantee grouping. Case logic is broader and dynamic. Therefore:
 
+- record the documented qualification boundary: Security/Posture domain and Medium-or-higher severity, as inspected on 2026-10-23; qualification alone does not prove a specific grouping outcome;
 - validate mapped field type/format and non-null presence;
 - avoid overbroad identifiers that merge unrelated activity;
 - measure fragmentation and over-grouping;

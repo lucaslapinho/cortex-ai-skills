@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.1] — 2026-10-23
+
+- Added a bounded documentation refresh for API authentication/migration, effective
+  dataset access, Broker VM, XSIAM Engines, event collectors, and command permissions.
+- Preserved the API release notes' conflicting Case artifacts HTTP methods as an
+  unresolved source discrepancy; no endpoint method or payload was substituted.
+- Recorded the 3.6 API documentation changes without asserting tenant availability.
+- Preserved the operating contract, examples, templates, and historical evaluations.
+  New behavioral evaluation, tenant acceptance, and execution remain `NOT RUN`.
+
 ### Astra forward-evaluation correction — 2026-09-06
 
 - Required explicit disposition of every access layer, including object-level sharing, after PLAT-REG-08 omitted that layer. Historical attempt retained; rerun required.

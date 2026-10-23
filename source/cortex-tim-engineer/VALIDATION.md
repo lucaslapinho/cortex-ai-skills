@@ -1,5 +1,20 @@
 # Validation ledger
 
+## Current revision — 0.1.1, 2026-10-23
+
+This section governs the updated source. Earlier completion decisions, runtime hashes, case counts, and host matrices below are historical 0.1.0 records and do not attest to this revision or a new plugin host.
+
+| Level | Result | Rationale |
+|---|---|---|
+| S | NOT RUN | No new independent oracle-isolated response evaluation was performed on 0.1.1. Historical selected-case passes were preserved without promotion to the changed runtime. |
+| D | PASS | Targeted author review reopened eleven official pages. Only the claims enumerated in [the dated refresh](references/2026-10-23-refresh.md) were refreshed; other sources retain historical dates. |
+| C | NOT RUN | No tenant integration/schema/import, consumer configuration, or host-native acceptance was tested. |
+| E | NOT RUN | No feed fetch, enrichment, lifecycle mutation, export service, consumer request, control action, or rollback was executed. |
+
+Plugin identity, build results, independent release decisions, and final artifact hashes must be recorded by the release workflow. This ledger does not certify them.
+
+Author-side checks on 2026-10-23: framework quick validation and whitespace/diff checks passed. The source audit passed local-link, anchor, fence, UTF-8, required-file, runtime-isolation, and authored-case checks at the inspected working snapshot. These are structural checks, not independent S evidence or a final release identity.
+
 ## Current completion decision — 2026-09-06
 
 **Current reviewed runtime:** 21 files / 126,788 bytes; ordinal SHA-256 `e2e49820268e45ee8017ce67d397cb73d9d08cdfd80fc7dc9b16e1f58b2de0fb`.

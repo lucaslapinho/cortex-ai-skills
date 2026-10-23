@@ -24,11 +24,17 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Install validation dependency
+        run: python -m pip install -r requirements-dev.txt
       - name: Verify publication, links, archives and source identity
         run: python -I scripts/validate_publication.py
       - name: Test publication validator
         run: python -I -m unittest discover -s scripts -p "test_*.py" -v
       - name: Audit preserved skills
-        run: python -I source/tools/release.py audit --release
+        run: python -I source/tools/release.py audit
       - name: Test preserved release tooling
         run: python -I scripts/run_source_tests.py
+      - name: Rebuild plugin from canonical source
+        run: python -I scripts/build_plugin.py build --output dist/ci-build
+      - name: Validate rebuilt plugin archive
+        run: python -I scripts/build_plugin.py validate --zip dist/ci-build/cortex-ai-skills-plugin-0.1.1.zip

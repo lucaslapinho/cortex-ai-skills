@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 — 2026-10-23
+
+- Reopened seven official XSIAM pages for parent/sub-playbook inputs and outputs, context scope, script errors, debugger effects, manual tasks, settings, and best practices.
+- Added a dated, standalone refresh record with exact URLs, product applicability, preview boundaries, and the source's inconsistent `parentIncidentContent` example spelling.
+- Preserved project conventions and historical evidence. Current documentation review does not extend prior independent behavioral passes to this revision; S/C/E remain NOT RUN for 0.1.1.
+
 ### Independent Astra closure correction — 2026-09-06
 
 - Separated author-side structural/link checks from independently adjudicated S in the testing reference; no product behavior, fixture or oracle changed.

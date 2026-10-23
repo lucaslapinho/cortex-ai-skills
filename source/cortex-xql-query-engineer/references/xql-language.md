@@ -131,6 +131,8 @@ A path or payload supplied by the requester is not proof of an API contract. Unt
 
 Source: [Cortex XSIAM Platform XQL query API](https://cortex-docs.paloaltonetworks.com/xsiam-api/cortex-platform/xql-query.md).
 
+**2026-10-23 API qualification:** the current page contains query-origin and multi-tenant counting inconsistencies, recorded in the [dated refresh](2026-10-23-refresh.md). Keep UI-origin acceptance and a multi-tenant count formula `UNVERIFIED` until target-specific contract clarification and controlled validation. Retain the documented API-started/stream path; no tenant API was called.
+
 ## Review checklist
 
 Before accepting a query:
