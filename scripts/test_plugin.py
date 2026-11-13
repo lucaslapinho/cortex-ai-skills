@@ -26,10 +26,22 @@ class PluginTests(unittest.TestCase):
         files[plugin.MANIFEST] = json.dumps(manifest).encode()
         return files
 
-    def test_seven_skills_and_links(self):
+    def test_registered_skills_and_links(self):
         report = plugin.validate_payload(self.files, self.root)
-        self.assertEqual(len(report["skills"]), 7)
+        self.assertEqual(len(report["skills"]), 11)
+        self.assertEqual(set(report["skills"]), set(plugin.release_module(self.root).SKILLS))
         self.assertGreater(report["relative_references"], 200)
+
+    def test_missing_cloud_skill_rejected(self):
+        files = {k: v for k, v in self.files.items() if not k.startswith("skills/cortex-cloud-engineer/")}
+        with self.assertRaisesRegex(ValueError, "registered skill directories"):
+            plugin.validate_payload(files, self.root)
+
+    def test_new_skill_cannot_depend_on_sibling(self):
+        files = self.files.copy()
+        files["skills/prisma-airs-engineer/SKILL.md"] += b"\n[dependency](../cortex-cloud-engineer/SKILL.md)\n"
+        with self.assertRaisesRegex(ValueError, "escaping resource"):
+            plugin.validate_payload(files, self.root)
 
     def test_missing_manifest(self):
         files = self.files.copy()

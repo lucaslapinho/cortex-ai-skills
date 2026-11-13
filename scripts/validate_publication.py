@@ -18,6 +18,7 @@ ROOT_FILES = {"README.md", "LICENSE", "CONTRIBUTING.md", ".gitignore", ".gitattr
 ROOT_FILES |= {"CHANGELOG.md", "requirements-dev.txt"}
 ROOT_DIRS = {"source", "packages", "docs", "scripts", ".github", "plugin"}
 BASELINE_MANIFEST_SHA256 = "66d7a34594fac43d2291ecccfef93c6b8d52296f9d7709041b355ed299f07742"
+PLUGIN_011_MANIFEST_SHA256 = "f6e3c3fb306f40b34c2fcc972dbd86a67dbb9c977795ebcc589e36d06dea1208"
 SKIP = {".git", "__pycache__", ".pytest_cache"}
 TEXT_EXTENSIONS = {".md", ".py", ".yaml", ".yml", ".json"}
 PATTERNS = (
@@ -78,6 +79,61 @@ def validate_archive(path: Path, prefix: str, entries: list[dict]) -> int:
             if len(data) != entry["bytes"] or sha256(data) != entry["sha256"]:
                 raise ValueError("Archive member identity mismatch")
     return len(expected)
+
+
+def validate_plugin_release(directory: Path, plugin, canonical=None, pinned_manifest=None) -> int:
+    """Validate a release against its own snapshot; only current bytes use source/."""
+    data = (directory / "release-manifest.json").read_bytes()
+    if pinned_manifest and sha256(data) != pinned_manifest:
+        raise ValueError("Historical plugin manifest changed")
+    manifest = json.loads(data)
+    version = manifest["plugin_version"]
+    if directory.name != version:
+        raise ValueError("Release version/directory mismatch")
+    records = manifest["archives"]
+    names = [r["file"] for r in records]
+    checksum_rows = [line.split("  ", 1) for line in (directory / "SHA256SUMS").read_text().splitlines()]
+    checksums = {name: digest for digest, name in checksum_rows}
+    if any(not re.fullmatch(r"[0-9a-f]{64}", digest) for digest in checksums.values()):
+        raise ValueError("Invalid release checksum format")
+    if (len(names) != len(set(names)) or len(checksums) != len(checksum_rows)
+            or set(names) != set(checksums) or set(names) != {p.name for p in directory.glob("*.zip")}):
+        raise ValueError("Release ZIPs differ from manifest/checksums")
+    opened = {}
+    for record in records:
+        name = safe_relative(record["file"])
+        if len(name.parts) != 1:
+            raise ValueError("Archive filename must be a basename")
+        path = directory / name.name
+        raw = path.read_bytes()
+        if (sha256(raw) != record["sha256"] or len(raw) != record["bytes"]
+                or checksums[name.name] != record["sha256"]):
+            raise ValueError("Release checksum mismatch: " + name.name)
+        opened[name.name] = plugin.read_zip(path)
+    plugin_name = f"cortex-ai-skills-plugin-{version}.zip"
+    payload = opened.get(plugin_name)
+    if payload is None or plugin.inventory(payload) != manifest["files"]:
+        raise ValueError("Plugin inventory differs from release manifest")
+    if json.loads(payload[plugin.MANIFEST])["version"] != version:
+        raise ValueError("Plugin version differs from release manifest")
+    payload_skills = {key.split("/")[1] for key in payload if key.startswith("skills/")}
+    if payload_skills != set(manifest["skill_versions"]):
+        raise ValueError("Skill set differs from release manifest")
+    if canonical is not None and payload != canonical:
+        raise ValueError("Current plugin differs from canonical source")
+    expected_names = {plugin_name}
+    for skill, skill_version in manifest["skill_versions"].items():
+        if payload.get(f"skills/{skill}/VERSION", b"").decode().strip() != skill_version:
+            raise ValueError("Skill version differs from release manifest")
+        filename = f"{skill}-{skill_version}-runtime.zip"
+        expected_names.add(filename)
+        expected = {f"{skill}/{key.removeprefix(f'skills/{skill}/')}": value
+                    for key, value in payload.items() if key.startswith(f"skills/{skill}/")}
+        if not expected or opened.get(filename) != expected:
+            raise ValueError("Standalone runtime differs from release snapshot")
+    if set(opened) != expected_names:
+        raise ValueError("Unexpected release archive")
+    return len(opened)
 
 
 def validate(root: Path = ROOT) -> dict:
@@ -186,41 +242,18 @@ def validate(root: Path = ROOT) -> dict:
     plugin_spec = importlib.util.spec_from_file_location("current_plugin_builder", root / "scripts/build_plugin.py")
     plugin = importlib.util.module_from_spec(plugin_spec)
     plugin_spec.loader.exec_module(plugin)
-    plugin.validate_payload(plugin.payload(root), root)
-    current_packages = root / "packages/0.1.1"
-    if current_packages.exists():
-        current_manifest = json.loads((current_packages / "release-manifest.json").read_text(encoding="utf-8"))
-        current_checksums = dict(line.split("  ", 1)[::-1] for line in
-                                 (current_packages / "SHA256SUMS").read_text(encoding="utf-8").splitlines())
-        current_records = current_manifest["archives"]
-        if ({record["file"] for record in current_records} != set(current_checksums)
-                or set(current_checksums) != {p.name for p in current_packages.glob("*.zip")}):
-            errors.append("Current release ZIPs differ from manifest/checksums")
-        for record in current_records:
-            safe_relative(record["file"])
-            archive_path = current_packages / record["file"]
-            data = archive_path.read_bytes()
-            if (sha256(data) != record["sha256"] or len(data) != record["bytes"]
-                    or current_checksums.get(record["file"]) != record["sha256"]):
-                errors.append("Current release checksum mismatch: " + record["file"])
-                continue
-            reopened = plugin.read_zip(archive_path)
-            if "-plugin-" in archive_path.name:
-                plugin.validate_zip(archive_path, root)
-                if plugin.inventory(reopened) != current_manifest["files"]:
-                    errors.append("Plugin file inventory differs from release manifest")
-            else:
-                skill = archive_path.name.removesuffix("-0.1.1-runtime.zip")
-                expected = {f"{skill}/{path.removeprefix(f'skills/{skill}/')}": contents
-                            for path, contents in plugin.payload(root).items()
-                            if path.startswith(f"skills/{skill}/")}
-                if skill not in release.SKILLS or reopened != expected:
-                    errors.append("Standalone runtime differs from canonical source")
+    current_payload = plugin.payload(root)
+    current_report = plugin.validate_payload(current_payload, root)
+    plugin_archives = validate_plugin_release(root / "packages/0.1.1", plugin,
+                                             pinned_manifest=PLUGIN_011_MANIFEST_SHA256)
+    current_packages = root / "packages" / current_report["plugin_version"]
+    if current_packages.name != "0.1.1":
+        plugin_archives += validate_plugin_release(current_packages, plugin, canonical=current_payload)
     return {
         "result": "FAIL" if errors else "PASS",
         "files": len(files),
         "source_files": len(source_files),
-        "archives": len(archive_records),
+        "archives": len(archive_records) + plugin_archives,
         "archive_members": members,
         "local_links": local_links,
         "errors": errors,

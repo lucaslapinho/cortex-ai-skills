@@ -7,6 +7,10 @@ description: Builds, reviews, troubleshoots, and optimizes evidence-scoped XQL f
 
 Engineer XQL that is useful without overstating what has been verified. Bind every executable-looking query to a product, execution surface, evidence status, and explicit tenant gap.
 
+## Knowledge update — 2026-11-13
+
+Read the [current scoped knowledge refresh](references/2026-11-13-refresh.md) for changed product boundaries and claims. It supplements historical references only for its explicitly reviewed scope; do not promote old validation records to the new runtime. Match the user's language (default PT-BR), preserve technical identifiers and honor existing authorization without asking for the same permission again.
+
 ## Route the request
 
 Use this Skill when the main deliverable is one or more of:

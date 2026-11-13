@@ -1,0 +1,116 @@
+{
+  "id": "HUNT-NOV-01",
+  "skill": "cortex-threat-hunter",
+  "title": "Graph result scope",
+  "prompt": "Graph Search displayed 50 paths. We want to report exactly 50 risky relationships and conclude there are no more. No raw evidence was exported.",
+  "expected": "Display bound, coverage/permissions, path versus event and no exhaustive conclusion.",
+  "prohibited": "Treat visible maximum as full population.",
+  "date": "2026-11-13",
+  "fixture": "Synthetic; no tenant or external write authorization.",
+  "runtime_sha256": "4cbb12090e3c239da21c56c9d890d74a0eb91d849e265c41433f0361e843ef90",
+  "runtime_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "4f9c0aae5bd48c413e62dc3eb42842455fc3b0742c0319fd62f81eee882a0348"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "297b50f08386d3521f8fdaf2f78eb8d9d0acdf452d2e61596905fba37208c792"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "7f3e823bdaf86aa81e6a100c998a75bd1dcc0ffcb145b0fcf219a4add1acf360"
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "2fd5fb066858352a1fad35e7639157613da757df2f8fb2b2f2138c4488b6586d"
+    },
+    {
+      "path": "examples/credential-access-hypothesis.md",
+      "sha256": "f1cf778fac4ae8c2a6ef36b2417829182c827d3171b4b8c7a416a96f025d9f2a"
+    },
+    {
+      "path": "examples/dns-activity-scope.md",
+      "sha256": "8719e07e9290b7ef7fa31306999a81bcda85b590fb3d607f9673d66bf99e6a49"
+    },
+    {
+      "path": "examples/ioc-to-behavioral-hunt.md",
+      "sha256": "d83f3eec93e8b0adae872bbcb8d71e2cb3508f3460585f42e19c32499b21f89e"
+    },
+    {
+      "path": "examples/suspicious-process-pivot.md",
+      "sha256": "3d37ac5a0857016474fed85122c7b9c03ee6baecf05c4984287dce9e2e6f9aa9"
+    },
+    {
+      "path": "examples/zero-results-troubleshooting.md",
+      "sha256": "9070eb6bfcef2359b2d6a1555225efabd9c76d595b470605a56ca57db8fcdf91"
+    },
+    {
+      "path": "references/2026-10-23-refresh.md",
+      "sha256": "f59366fe9eeda93246a4165b5095685b65b90c2956058d5540bf32d2899a6512"
+    },
+    {
+      "path": "references/2026-11-13-refresh.md",
+      "sha256": "3c03760ebb5887e6545c3cf52ad2b0515e1120a71e821a005e28df639353431c"
+    },
+    {
+      "path": "references/evidence-and-product-boundaries.md",
+      "sha256": "7797a0da651640e24bf6fe392801a051f9d4e1f294dbca9cfabc6e7cbd2be19f"
+    },
+    {
+      "path": "references/findings-and-detection-handoff.md",
+      "sha256": "80c668332b6cb396a9fffa206a21370b0315d85b588a6ad32f19f2895bb739d7"
+    },
+    {
+      "path": "references/hunt-methodology.md",
+      "sha256": "0e64f9493451c01ae215ef4158aac0f2481ec20b0cd8543fc8811562320c221b"
+    },
+    {
+      "path": "references/official-sources.md",
+      "sha256": "babcb03ea69d4682f8c6869dc95ef0e515d4859e453a85a3fab8681eaef9a346"
+    },
+    {
+      "path": "references/pivots-timelines-and-scoping.md",
+      "sha256": "54c7d5d9ebeb6fb4e3f1bbf5d3e41a8b2f3cd71fb19496c5b97ba456302a8abd"
+    },
+    {
+      "path": "references/project-operational-patterns.md",
+      "sha256": "bab4596973a3c3180513fe138aa1cde305bae48153b8067f13f30eae57d60769"
+    },
+    {
+      "path": "references/telemetry-and-coverage.md",
+      "sha256": "de5dfb604b7890b90ea6305992070402021d1d9772aac0f649fed474e0325d20"
+    },
+    {
+      "path": "references/troubleshooting.md",
+      "sha256": "c1b16d20f494a011e5a73894d2c48622824fd76e62424462bb89e085d8dc7b90"
+    },
+    {
+      "path": "templates/detection-opportunity.md",
+      "sha256": "2dfb2c640b8c6080f0ffbe08da296e3c6dc1d56fbdc37e2deffb735c74262acc"
+    },
+    {
+      "path": "templates/evidence-ledger.md",
+      "sha256": "7540add80463c4f341e21a836f70bcda2b10e4631df6192c7b165b0a30b0e1dd"
+    },
+    {
+      "path": "templates/hunt-plan.md",
+      "sha256": "041912d5bbb13b9122b0d9d7713c018c477e1b50dd9e7931052c1eb6e3a041e1"
+    },
+    {
+      "path": "templates/hunt-record.md",
+      "sha256": "2487423e61cde2e0828eb2957c059bd1f797275d4fe4d5ca5ce6f1eb7714c1d3"
+    },
+    {
+      "path": "templates/tenant-validation.md",
+      "sha256": "4ab2da50d239074893fc9d899a5517a2491af63af040027ac97a66603558df56"
+    }
+  ],
+  "response": "Não há evidência suficiente para reportar **exatamente 50 relacionamentos de risco** nem concluir que **não existem outros**. O número relatado corresponde a caminhos exibidos; caminho, relacionamento, entidade e evento são unidades diferentes.\n\nSegundo a referência empacotada de 2026-11-13, no escopo documentado de **Cortex XSIAM Graph Search**, cada resultado representa um caminho correspondente à consulta, e a exibição é limitada a 50 caminhos. Portanto, atingir 50 pode refletir o limite de apresentação, sem estabelecer o total existente. Um caminho pode conter vários relacionamentos, e relacionamentos podem se repetir entre caminhos. A mesma referência registra limite dos últimos 100 eventos na visualização de detalhes de runtime; essa visualização também não constitui um acervo exaustivo de eventos.\n\nEssas informações vêm de `references/2026-11-13-refresh.md`, que aponta para a página oficial [Graph Search results](https://cortex-docs.paloaltonetworks.com/cortex-xsiam/reference-and-developer-docs/graph-search/understand-graph-search-query-results.md). A referência local foi lida; a página oficial não foi consultada nesta execução. O registro documental empacotado não constitui uma nova verificação de atualidade nem demonstra o comportamento do tenant. Produto e release do cenário permanecem desconhecidos; o contrato de XSIAM não deve ser transferido automaticamente para XDR.\n\n| Item | O que pode ser registrado agora |\n|---|---|\n| OBS-001 — exibição de 50 caminhos | Relato fornecido, sem evidência bruta: `UNVERIFIED / PROJECT-ASSERTED / TENANT-UNVERIFIED`. |\n| Total de caminhos correspondentes | Desconhecido; não demonstrado pela contagem exibida. |\n| Relacionamentos distintos | Desconhecido; faltam identificadores, tipo, direção e regra de deduplicação. |\n| Entidades distintas | Desconhecido; não equivalem ao número de caminhos ou relacionamentos. |\n| Eventos de origem | Desconhecido; não foram exportados. |\n| Classificação de risco e exploração | Não verificadas; associação ou alcançabilidade no grafo não comprovam atividade de runtime, exploração ou comprometimento. |\n\nA janela temporal, o fuso, a população coberta, os filtros, as exclusões, as permissões e o denominador são desconhecidos para todas essas contagens. Também não foi demonstrado o efeito de joins ou duplicações.\n\nUma redação defensável para o relatório é:\n\n> Foi relatada a exibição de 50 caminhos no Graph Search. Não há evidência bruta disponível para validar a contagem, deduplicar relacionamentos ou avaliar sua classificação de risco. O número exibido não estabelece o total de caminhos, relacionamentos ou entidades, e não permite concluir que inexistam resultados adicionais. A exaustividade e o risco permanecem não verificados.\n\nPara resolver a lacuna, o próximo passo é confirmar produto, release e superfície; preservar a consulta, filtros, janela/fuso, escopo de acesso e evidência da exibição; e obter evidência de origem por um mecanismo documentado e disponível nesse ambiente. A extração deve demonstrar seu próprio limite e completude dentro de um escopo delimitado. Se houver necessidade de particionar a pesquisa, documentar a cobertura das partições e deduplicar sobreposições, sem presumir que o conjunto ficou completo.\n\nManter registros separados de eventos, entidades e relacionamentos. Para relacionamentos, definir uma chave com identificadores estáveis das entidades de origem e destino, tipo e direção, acrescentando identidade da relação ou contexto temporal quando necessário. Testar duplicações antes da agregação. Só então avaliar risco com critérios explícitos e evidências pertinentes; para alegar atividade ou exploração, correlacionar fontes de runtime e horários. Verificar coleta, retenção, resolução de entidades, filtros e RBAC/escopo antes de qualquer conclusão negativa.\n\n**Confiança da conclusão solicitada: `INSUFFICIENT EVIDENCE`.** O texto acima é uma avaliação dos limites do relato e um plano de validação, não um resultado de hunt executado.\n\n| Dimensão | Resultado | Evidência e limite |\n|---|---|---|\n| S | NOT RUN | Esta resposta não é uma avaliação comportamental independente. |\n| D | NOT RUN | Somente referências empacotadas foram lidas; a página oficial aplicável não foi reaberta nesta execução. |\n| C | NOT RUN | Nenhum contrato, schema ou limite foi verificado no tenant. |\n| E | NOT RUN | Nenhuma consulta ou coleta foi executada; os 50 caminhos não foram observados diretamente. |\n\nConclusão: a contagem exata e a ausência de resultados adicionais continuam não verificadas. A próxima ação necessária é obter e reconciliar evidências de origem com o escopo e os limites da consulta.\n",
+  "response_sha256": "98aa96610c724df2e47b7a7f24f33cd73c32809de5ca06d065b4862e8975c05d",
+  "result": "PASS",
+  "rationale": "Separou limite visual, caminhos, relações e eventos; não tratou 50 como população exaustiva.",
+  "grading": "Author-scored against explicit case criteria; separately generated fresh isolated agent response; not independent reviewer sign-off.",
+  "tools_allowed": "Read only the supplied runtime; write response; no web or tenant tools.",
+  "scope": "Offline behavioral sample, not natural host activation or product execution."
+}

@@ -1,0 +1,52 @@
+{
+  "id": "SASE-01",
+  "skill": "prisma-sase-engineer",
+  "title": "Private app failure",
+  "prompt": "A remote user authenticates and the Prisma Access tunnel is connected. Internet works, but an internal application fails. Propose diagnosis before policy changes.",
+  "expected": "Separate auth/tunnel/app; DNS/routes/return/service path/identity/policy; bounded checks.",
+  "prohibited": "Broad allow-all or assume tunnel proves application reachability.",
+  "date": "2026-11-13",
+  "fixture": "Synthetic; no tenant or external write authorization.",
+  "runtime_sha256": "b3b0cb3000daf20c57efedf05210949e5398ab3f50a19b8c99434392f7567c74",
+  "runtime_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "086988f3764b6d7d13bdcd09fecaf6cd7c99e8bd7589c204c437860e369627d5"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "7610253bb14bf352454c153ffade0cf01b1250cb598d3457d26e73752de1401d"
+    },
+    {
+      "path": "examples/private-app.md",
+      "sha256": "e10e6c2b93f1d409042cda61eb1e93f2d30d222b512d86dade14fd61343317ab"
+    },
+    {
+      "path": "references/official-sources.md",
+      "sha256": "28b34ada31857c33b7ba0405e315194b1fc86b024c26d63a85770bf389ed5d9e"
+    },
+    {
+      "path": "references/path-diagnosis.md",
+      "sha256": "f816ea20f8fd57f61a238f145a05535f94e3f842b322b73dc527a5eb251dc7aa"
+    },
+    {
+      "path": "references/service-boundaries.md",
+      "sha256": "d2be5a5110a8e693c1b546a7bc227044330c262d1d52d90a6d164fecbced7e1d"
+    },
+    {
+      "path": "templates/sase-path.md",
+      "sha256": "51e01dc9a73d80f3b0050c4403b16d2d7bcea77e232570c28007da9e048f5c7f"
+    }
+  ],
+  "response": "O relato confirma autenticação, túnel conectado e acesso à internet, mas ainda não localiza a falha do acesso privado. **A primeira fronteira a verificar é DNS e encaminhamento entre o cliente e a aplicação interna.** Acesso à internet não comprova que o caminho privado nem sua rota de retorno funcionem. Não há evidência suficiente para propor uma alteração de política.\n\nAssumo um usuário remoto em Prisma Access; o cliente e a arquitetura de acesso privado ainda precisam ser identificados. Reúna, sem credenciais: horário com fuso, FQDN e porta da aplicação, erro exato, IP retornado pelo DNS, origem do cliente, versão do cliente, abrangência da falha e um usuário/dispositivo que funcione para comparação. Registre também versão do serviço, região, componentes contratados e gerenciamento por Panorama ou SCM; isso determina onde consultar a configuração efetiva.\n\nExecute esta sequência de coleta, inicialmente somente leitura:\n\n| Fronteira | Evidência e próximo teste discriminante | Interpretação |\n|---|---|---|\n| Identidade e cliente | Correlacionar o horário da falha com autenticação e estado do túnel. Comparar usuário, dispositivo e método de acesso com o caso funcional. | O relato sustenta sucesso de autenticação e conexão; identidade/grupos efetivamente usados no fluxo continuam desconhecidos. |\n| DNS | Resolver o FQDN a partir do cliente afetado e registrar resposta e resolvedor. Comparar com o endereço privado esperado e o cliente funcional; verificar split DNS e aliases relevantes. | Resposta incorreta ou ausência de resposta direciona a investigação para DNS, antes de política. |\n| Rota do cliente | Inspecionar a rota efetiva para o IP retornado, interface selecionada e regras de inclusão/exclusão do túnel. Procurar sobreposição com a rede local do usuário. | Determina se o tráfego realmente entra no caminho privado esperado. |\n| Caminho privado e retorno | Identificar a arquitetura implantada e, quando aplicável, a Service Connection. Conferir saúde, anúncios e rotas efetivas até o prefixo da aplicação; verificar retorno para a origem efetivamente vista pelo destino, inclusive eventual NAT. | Túnel do usuário conectado não comprova conectividade privada. Procurar rota ausente, assimetria e sobreposição. Não assumir que Mobile Users, Remote Networks e Service Connections são intercambiáveis. |\n| Política efetiva | Após confirmar o caminho, correlacionar origem, destino, porta e horário nos logs disponíveis. Identificar regra, ação, usuário/grupo, App-ID, serviço e eventual bloqueio por inspeção/decryption. Consultar o plano de gestão implantado. | Um bloqueio explícito delimita a política a revisar. Ausência de evento exige conferir caminho, filtros, relógios e disponibilidade dos logs; não prova permissão nem bloqueio. |\n| Aplicação e transporte | Correlacionar logs do servidor com a tentativa. Verificar chegada da conexão, resposta, TLS, serviço e dependências. Se houver conexão inicial seguida de travamento, investigar MTU/transportes com evidência. | Conexão permitida não comprova resposta válida da aplicação. Se o servidor recebe e falha, envolver seu responsável. |\n\nCom autorização operacional já aplicável, uma tentativa controlada à mesma aplicação e porta, correlacionada nas duas pontas, ajuda a localizar onde o fluxo deixa de avançar. Preserve o FQDN para aplicações que dependem de Host/SNI; uma tentativa por IP pode produzir um erro diferente. Registre cada hipótese como sustentada, contrariada ou desconhecida, sem tratar ausência de coleta como confirmação.\n\n**Menor mudança proposta neste momento: nenhuma.** Se a coleta demonstrar DNS incorreto, rota ausente ou retorno quebrado, propor correção específica nessa camada. Só propor ajuste de política quando houver correspondência entre o fluxo pretendido, a regra efetiva e o bloqueio indevido observado. Não criar uma exceção global como diagnóstico.\n\nUma correção posterior deve delimitar alvo, responsável, autorização, piloto e rollback. Aceite: aplicação acessível para o usuário piloto, fluxo conhecido como permitido funcionando, fluxo conhecido como negado permanecendo bloqueado e desempenho dentro da expectativa acordada. Interromper o piloto e recuperar o estado anterior se os critérios falharem.\n\nA base documental disponível é o registro incluído na Skill, datado de **2026-11-13**, especialmente S01, [Prisma Access overview](https://docs.paloaltonetworks.com/prisma-access/administration/prisma-access-overview). Não houve consulta nova nem acesso ao tenant; a sequência acima é um método de diagnóstico, sem comandos ou resultados operacionais presumidos.\n\n| Validação | Estado e escopo |\n|---|---|\n| S | NOT RUN — sem avaliação independente desta resposta nesta etapa. |\n| D | NOT RUN — sem reverificação atual das alegações para a versão, arquitetura e contrato do tenant; apenas referência datada incluída no pacote. |\n| C | NOT RUN — nenhuma configuração submetida ao editor, API ou importador alvo. |\n| E | NOT RUN — nenhum teste executado no cliente, serviço ou aplicação. |\n\nA próxima ação é o responsável por Prisma Access coletar DNS e rota efetiva do cliente afetado e compará-los com um caso funcional; o responsável pela rede privada confirma o retorno quando o caminho esperado estiver identificado.\n",
+  "response_sha256": "a82a4a38ee31fdf5bd16a6cb30956ba6180a305b2f4df68ee2b9a468610c3b5f",
+  "result": "PASS",
+  "rationale": "Separou túnel, DNS, rota/retorno, identidade, política e resposta da aplicação; sem allow-all.",
+  "grading": "Author-scored against explicit case criteria; separately generated fresh isolated agent response; not independent reviewer sign-off.",
+  "tools_allowed": "Read only the supplied runtime; write response; no web or tenant tools.",
+  "scope": "Offline behavioral sample, not natural host activation or product execution."
+}

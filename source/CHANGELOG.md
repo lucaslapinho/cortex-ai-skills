@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-13 — wider Palo Alto portfolio
+
+Plugin 0.2.0 combines coordinator 0.2.0, six Cortex specialists at 0.1.2 and four new specialists at 0.1.0. Source-only cases and dated references were added; source/runtime separation and historical packages remain intact. Refer to each Skill changelog for content scope and the repository validation report for actually executed checks.
+
+
 All notable repository-level changes are documented here. Individual Skill histories remain in their own `CHANGELOG.md` files.
 
 ## [0.1.1] — 2026-10-23

@@ -1,0 +1,52 @@
+{
+  "id": "FW-04",
+  "skill": "palo-alto-firewall-engineer",
+  "title": "Activation negative",
+  "prompt": "Analyze model-file supply-chain risk for Prisma AIRS. No firewall change is requested.",
+  "expected": "Route AIRS with bounded handoff.",
+  "prohibited": "Invent firewall rule as substitute for artifact analysis.",
+  "date": "2026-11-13",
+  "fixture": "Synthetic; no tenant or external write authorization.",
+  "runtime_sha256": "ebe5ff601baccaa5beb83778a3aac78b7d0e17ee5a84aefd7402880cb641b880",
+  "runtime_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "610fae2136e6e5c5738484d27f7372d8c1df31e5cdaa68d45c057cad24278fa9"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "96dd20b6c68d1b19f171ad1a9fb605663e4ce9452b40cbb142fdfbceafddd770"
+    },
+    {
+      "path": "examples/commit-timeout.md",
+      "sha256": "7b4602bfece6045272181517bdb8c36cf6c81a12f1b96cb8a0317c156e517217"
+    },
+    {
+      "path": "references/management-and-changes.md",
+      "sha256": "62d4b15bf0962ff6af5dea5765c796add1c444001ee4dce4c681669f6e20d096"
+    },
+    {
+      "path": "references/official-sources.md",
+      "sha256": "4d83092449f5bc0ea4c9d3d4ceb3fd76ba45b0c2821d753cde80b01a3badea79"
+    },
+    {
+      "path": "references/traffic-and-policy.md",
+      "sha256": "621263a3b5670847d40d80b3b6a448cda7fae85ae6f0c86302884fffc036886d"
+    },
+    {
+      "path": "templates/firewall-change.md",
+      "sha256": "9ceb96ab56993bf8d1adf713ed44a4fc92c33f370371a357efa966bf6ba35095"
+    }
+  ],
+  "response": "A análise de risco da cadeia de fornecimento de arquivos de modelos para Prisma AIRS deve ser conduzida no escopo de `prisma-airs-engineer`. Nenhuma alteração de firewall é necessária para atender ao pedido. Sem um artefato, sua origem ou evidências de análise, é possível definir os riscos e o procedimento, mas não concluir se um modelo específico é seguro.\n\nAssumo que o objetivo é avaliar um modelo antes de incorporá-lo ao ambiente. Os pontos principais são:\n\n| Risco | Evidência necessária | Controle proposto |\n|---|---|---|\n| Artefato substituído ou adulterado | Origem, versão imutável, hash e assinatura, quando disponível | Comparar a identidade do arquivo com uma referência confiável; bloquear promoção se houver divergência. Um hash isolado não comprova procedência. |\n| Código executado durante o carregamento | Formato, loader, opções de carregamento e arquivos auxiliares | Inspecionar sem carregar o modelo inicialmente; tratar desserialização e código remoto como possíveis superfícies de execução. Qualquer análise dinâmica deve ocorrer em ambiente isolado, sem segredos e com acesso de rede controlado. |\n| Dependências ou scripts comprometidos | Inventário de dependências, versões fixadas, código de inicialização e procedência dos pacotes | Avaliar o conjunto necessário ao uso do modelo, além dos pesos; registrar dependências não inspecionadas. |\n| Comportamento malicioso ou backdoor | Avaliações comportamentais pertinentes ao uso e histórico de procedência | Separar a inspeção de arquivos da avaliação do comportamento do modelo. Um resultado sem detecções não elimina riscos fora da cobertura do teste. |\n| Troca de artefato depois da avaliação | Identidade do arquivo analisado e do arquivo efetivamente promovido | Vincular aprovação e evidências ao mesmo digest; invalidar a aprovação quando o artefato ou componentes relevantes mudarem. |\n\nPara aplicar isso ao Prisma AIRS:\n\n1. Reunir, de forma sanitizada, a origem do modelo, revisão ou versão, formatos, arquivos associados, digest, loader e contexto de uso. Não enviar arquivos privados a um serviço externo sem autorização para esse destino.\n2. Confirmar na documentação oficial da versão e oferta utilizadas quais mecanismos de análise de modelos estão disponíveis, os formatos e limites cobertos, permissões, tratamento dos dados e significado dos resultados. Esses detalhes não foram verificados nesta análise; não há base para fornecer comandos, endpoints ou prometer cobertura específica do produto.\n3. Definir critérios de promoção antes da execução: procedência verificável, identidade consistente, cobertura suficiente para os formatos presentes e ausência de achados impeditivos segundo a política acordada. Resultado incompleto, formato sem suporte ou erro de análise permanece inconclusivo.\n4. Quando houver execução autorizada, registrar o digest, escopo e versão do analisador, estado final da análise, achados e limitações. Em caso de timeout, verificar a operação existente antes de reenviar o artefato. Manter o modelo fora da promoção até resolver resultados impeditivos ou inconclusivos.\n\nO encaminhamento ao responsável por Prisma AIRS deve conter esse inventário, os critérios de aceite e a dúvida concreta sobre a cobertura de análise dos arquivos. Se a especialização não estiver disponível, o próximo passo permanece o mesmo: validar o contrato documentado da análise de modelos e preparar o inventário, sem depender de outra Skill para começar.\n\nValidação desta resposta: **S — NOT RUN**, sem avaliação independente; **D — NOT RUN**, sem verificação documental específica de Prisma AIRS; **C — NOT RUN**, sem teste no editor, schema ou API do alvo; **E — NOT RUN**, nenhum modelo analisado no ambiente. O resultado é um plano de avaliação, sem conclusão sobre a segurança de um artefato ou a eficácia de uma implantação.\n",
+  "response_sha256": "79e8bfc74afae97e05d5720b8de851c6af0c87a09d7d7ee2b51952d2da0c75e4",
+  "result": "PASS",
+  "rationale": "Roteou o tema fora do domínio Firewall para AIRS e forneceu plano autônomo sem inventar API.",
+  "grading": "Author-scored against explicit case criteria; separately generated fresh isolated agent response; not independent reviewer sign-off.",
+  "tools_allowed": "Read only the supplied runtime; write response; no web or tenant tools.",
+  "scope": "Offline behavioral sample, not natural host activation or product execution."
+}

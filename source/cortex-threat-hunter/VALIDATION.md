@@ -1,5 +1,18 @@
 # Validation ledger
 
+## Version 0.1.2 — 2026-11-13
+
+Runtime identity: `4cbb12090e3c239da21c56c9d890d74a0eb91d849e265c41433f0361e843ef90` (24 files). Historical records below apply to their own bytes, not this revision.
+
+| Level | Result | Scope/evidence |
+|---|---|---|
+| S | PASS | 1 fresh isolated offline response scenario(s): HUNT-NOV-01. Responses generated separately with runtime-only context; author-scored, not independent reviewer approval. |
+| D | PASS | Only the specific claims inspected in the 2026-11-13 reference register/refresh; not every historical source. |
+| C | NOT RUN | No host import, discovery, target editor/schema or tenant acceptance. |
+| E | NOT RUN | No actual query, integration, playbook, policy, scan or application execution. |
+
+Static structure/build checks are separate from S. Unexecuted authored cases remain NOT RUN; this sample does not certify the full behavioral corpus. Exact prompts, runtime inventories, raw answers, initial failures and scoring are in the [release evidence](https://github.com/lucaslapinho/cortex-ai-skills/tree/main/docs/evaluation-2026-11-13). The [release validation report](https://github.com/lucaslapinho/cortex-ai-skills/blob/main/docs/validacao.md) defines methodology and limits.
+
 ## Version 0.1.1 refresh snapshot — 2026-10-23
 
 **Scope:** the bounded source inspection and dataset-population refinement in [references/2026-10-23-refresh.md](references/2026-10-23-refresh.md). The September hashes, evaluations and approvals below are historical identities, not approval of these changed bytes.

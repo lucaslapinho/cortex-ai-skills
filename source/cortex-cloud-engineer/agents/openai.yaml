@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cortex Cloud Engineer"
+  short_description: "Cloud posture, runtime and application security"
+  default_prompt: "Use $cortex-cloud-engineer to review this cloud onboarding and risk scenario."

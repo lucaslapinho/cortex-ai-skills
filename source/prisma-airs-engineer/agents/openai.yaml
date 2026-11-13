@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prisma AIRS Engineer"
+  short_description: "AI runtime, supply chain and red teaming"
+  default_prompt: "Use $prisma-airs-engineer to design security controls for this AI application or agent."

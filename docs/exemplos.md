@@ -1,5 +1,30 @@
 # Usage examples
 
+## Novos especialistas — 0.2.0
+
+```text
+Use cortex-cloud-engineer para revisar a cobertura de nossas subscriptions Azure.
+Separe Entra ID, inventário, auditoria, scanning e runtime. Mostre as evidências faltantes.
+```
+
+```text
+Use palo-alto-firewall-engineer para revisar esta mudança no Panorama/SCM.
+Confira escopo, herança, NAT, política efetiva, commit/push, verificação e rollback.
+```
+
+```text
+Use prisma-sase-engineer para diagnosticar acesso à aplicação privada pelo Prisma Access.
+O túnel está conectado. Investigue DNS, rota, retorno, identidade e política com as evidências anexas.
+```
+
+```text
+Use prisma-airs-engineer para desenhar proteção para uma aplicação RAG.
+Compare os modos documentados, as fronteiras de confiança, os testes e o tratamento de falhas.
+```
+
+Os exemplos abaixo permanecem aplicáveis às especialidades Cortex; confirme sempre o produto, versão, contexto e autorização.
+
+
 [Home](../README.md) · [Installation](instalacao.md) · [Limitations](validacao.md)
 
 The prompts below are example requests, not executed queries, enabled rules, or importable playbooks. Before using them, make the Skill available through your application's supported mechanism. Do not assume that mentioning a name loads a package that is not present.

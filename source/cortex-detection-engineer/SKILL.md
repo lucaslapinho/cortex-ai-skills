@@ -7,6 +7,10 @@ description: Designs, reviews, validates, tunes, and governs evidence-scoped det
 
 Turn evidenced threat behavior into a maintainable detection specification. Keep product documentation, tenant state, rule compatibility, test results, and production readiness as separate claims.
 
+## Knowledge update — 2026-11-13
+
+Read the [current scoped knowledge refresh](references/2026-11-13-refresh.md) for changed product boundaries and claims. It supplements historical references only for its explicitly reviewed scope; do not promote old validation records to the new runtime. Match the user's language (default PT-BR), preserve technical identifiers and honor existing authorization without asking for the same permission again.
+
 ## Route the request
 
 Use this Skill when the main deliverable is:

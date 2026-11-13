@@ -1,5 +1,12 @@
 # Cortex AI Skills architecture
 
+## Extension for plugin 0.2.0 — 2026-11-13
+
+The source now contains eleven standalone Skills. The seven existing identities and their historical evaluation cases remain intact; four product-specific Skills add Cloud, Firewall, SASE and AIRS. Their focused runtime uses SKILL.md, VERSION, agents, references, templates and examples. Ten source-only cases per new Skill replace the larger category taxonomy where sufficient; empty/decorative directories are not required.
+
+The invariants below remain: local resources, optional handoffs, explicit evidence and separated source/distribution. The frozen September layout, case counts and approval records below describe the original seven, not a universal requirement or current validation. The active package builder is `scripts/build_plugin.py` at repository root; the old release-gate packaging mode in tools/release.py is historical and must not be used to claim the new runtime approved.
+
+
 **Specification version:** 1.0  
 **Frozen from:** `cortex-xql-query-engineer` 0.1.0  
 **Golden Reference decision:** 2026-09-04  

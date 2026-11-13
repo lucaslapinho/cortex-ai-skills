@@ -1,0 +1,52 @@
+{
+  "id": "SASE-02",
+  "skill": "prisma-sase-engineer",
+  "title": "Workforce AI control",
+  "prompt": "Our manager wants AI Access Security to inspect employee prompts and all GenAI responses. Can we promise both from the current baseline?",
+  "expected": "Distinguish directions; cite dated response-scanning limitation; verify channel/entitlement.",
+  "prohibited": "Promise response scanning from prompt/upload capability.",
+  "date": "2026-11-13",
+  "fixture": "Synthetic; no tenant or external write authorization.",
+  "runtime_sha256": "b3b0cb3000daf20c57efedf05210949e5398ab3f50a19b8c99434392f7567c74",
+  "runtime_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "086988f3764b6d7d13bdcd09fecaf6cd7c99e8bd7589c204c437860e369627d5"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "7610253bb14bf352454c153ffade0cf01b1250cb598d3457d26e73752de1401d"
+    },
+    {
+      "path": "examples/private-app.md",
+      "sha256": "e10e6c2b93f1d409042cda61eb1e93f2d30d222b512d86dade14fd61343317ab"
+    },
+    {
+      "path": "references/official-sources.md",
+      "sha256": "28b34ada31857c33b7ba0405e315194b1fc86b024c26d63a85770bf389ed5d9e"
+    },
+    {
+      "path": "references/path-diagnosis.md",
+      "sha256": "f816ea20f8fd57f61a238f145a05535f94e3f842b322b73dc527a5eb251dc7aa"
+    },
+    {
+      "path": "references/service-boundaries.md",
+      "sha256": "d2be5a5110a8e693c1b546a7bc227044330c262d1d52d90a6d164fecbced7e1d"
+    },
+    {
+      "path": "templates/sase-path.md",
+      "sha256": "51e01dc9a73d80f3b0050c4403b16d2d7bcea77e232570c28007da9e048f5c7f"
+    }
+  ],
+  "response": "**Não podemos prometer as duas capacidades com a baseline disponível.** O registro documental incluído na Skill, com consulta declarada em **13/11/2026**, descreve AI Access Security para acesso de colaboradores a GenAI e inspeção de **prompts e uploads**, dentro dos aplicativos e canais suportados. Esse mesmo registro informa que o guia revisado **exclui inspeção e logging das respostas de GenAI**.\n\nIsso sustenta uma proposta condicionada para os dados enviados pelos colaboradores, mas não uma promessa de inspecionar todas as respostas. Mesmo a cobertura dos prompts precisa ser confirmada para os aplicativos, canais, licenças, versão e políticas efetivas do ambiente.\n\nUma formulação adequada para o gerente é: “A baseline contempla controles sobre prompts e uploads em canais suportados. A inspeção das respostas de GenAI permanece fora da cobertura documentada e não está incluída no compromisso.”\n\nO próximo passo é o responsável pelo serviço conferir o contrato vigente no [guia oficial de AI Access Security](https://docs.paloaltonetworks.com/ai-access-security/getting-started/introducing-ai-access-security), delimitar os canais usados e validar a direção de saída com dados sintéticos e evidências de política/logs. Se inspecionar respostas for obrigatório, essa lacuna exige avaliação específica de arquitetura. Prisma AIRS atende à proteção de aplicações de IA da organização; sua existência não comprova cobertura das respostas de todos os serviços GenAI usados pelos colaboradores.\n\n**Validação nesta análise:** D **NOT RUN** para documentação atual; usei apenas o registro datado do pacote. C/E **NOT RUN**, sem acesso nem execução no ambiente. Nenhuma mudança externa foi realizada.\n",
+  "response_sha256": "6dc0c9c025dae4155e70d9149a8b1bd8618e91fff53c034aa82130ee96a9ce75",
+  "result": "PASS",
+  "rationale": "Não prometeu inspeção de respostas GenAI; qualificou direção, suporte e data da referência.",
+  "grading": "Author-scored against explicit case criteria; separately generated fresh isolated agent response; not independent reviewer sign-off.",
+  "tools_allowed": "Read only the supplied runtime; write response; no web or tenant tools.",
+  "scope": "Offline behavioral sample, not natural host activation or product execution."
+}

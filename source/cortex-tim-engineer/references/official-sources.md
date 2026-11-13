@@ -1,5 +1,7 @@
 # Official source register
 
+Current scoped update: [2026-11-13 refresh](2026-11-13-refresh.md). Historical entries below retain their original dates and applicability.
+
 ## Contents
 
 - [Use and precedence](#use-and-precedence)

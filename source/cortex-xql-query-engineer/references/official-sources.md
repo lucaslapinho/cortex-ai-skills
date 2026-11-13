@@ -1,5 +1,7 @@
 # Official Source Register
 
+Current scoped update: [2026-11-13 refresh](2026-11-13-refresh.md). Historical entries below retain their original dates and applicability.
+
 This is the standalone source register for `cortex-xql-query-engineer`. It records the first-party material used by the Skill without requiring repository-level research files.
 
 **Review date:** 2026-09-04  

@@ -1,16 +1,20 @@
 ---
 name: cortex-security-engineer
-description: "Scopes and orchestrates Cortex security engineering across XQL, detection, hunting, playbooks, threat intelligence, and platform work. Use when a request spans domains, needs product/surface routing, or needs an evidence-bounded security decision record from requirements through operations. Also use for ambiguous Cortex requests that need ownership, dependency, validation, approval, or safety gates. Does not invent tenant schema, syntax, settings, results, or authorization."
+description: "Scopes and orchestrates Palo Alto Networks security engineering across Cortex XSIAM/XDR/XSOAR, Cortex Cloud, NGFW, Panorama, SCM, Prisma SASE and Prisma AIRS. Use when a request spans domains, needs product/surface routing, or needs an evidence-bounded security decision record from requirements through operations. Also use for ambiguous Palo Alto Networks requests that need ownership, dependency, validation, approval, or safety gates. Does not invent tenant schema, syntax, settings, results, or authorization."
 ---
 
 # Cortex Security Engineer
 
-Turn a Cortex security request into a bounded decision and execution roadmap. Own intake, cross-domain reasoning, sequencing, and handoff quality; do not impersonate a specialist or a tenant.
+Turn a Palo Alto Networks security request into a bounded decision and execution roadmap. Own intake, cross-domain reasoning, sequencing, and handoff quality; do not impersonate a specialist or a tenant.
+
+## Knowledge update — 2026-11-13
+
+Read the [current scoped knowledge refresh](references/2026-11-13-refresh.md) for changed product boundaries and claims. It supplements historical references only for its explicitly reviewed scope; do not promote old validation records to the new runtime. Match the user's language (default PT-BR), preserve technical identifiers and honor existing authorization without asking for the same permission again.
 
 ## Operating contract
 
 1. Establish the security objective, decision, product, release, surface, environment, timeframe, affected assets/data, and intended owner. If a query-only or control request names commands, tools, IOCs, or techniques without saying what makes the activity suspicious, ask for the discriminating behavior and the decision the output must support before routing mechanics.
-2. Classify the primary domain: XQL, detection, threat hunting, playbook, threat intelligence, platform, or multi-domain.
+2. Classify the primary domain: XQL, detection, threat hunting, playbook, threat intelligence, platform, Cloud, Firewall, SASE, AIRS, or multi-domain.
 3. Separate supplied facts, current official documentation, tenant observations, inferences, and unknowns. Apply [evidence and product boundaries](references/evidence-and-product-boundaries.md).
 4. Build the requirement, threat/risk, telemetry, control, validation, and operations records at the depth justified by the request.
 5. Route specialist mechanics with [routing and ownership](references/routing-and-ownership.md). Recommend a sibling Skill by its platform-neutral name when useful, but always provide a bounded standalone next step. A host adapter or README may explain its own selector; do not emit `$...` as a universal invocation contract.
@@ -23,7 +27,7 @@ Turn a Cortex security request into a bounded decision and execution roadmap. Ow
 Capture or mark unknown:
 
 - security question, desired decision, success and unacceptable outcomes;
-- exact Cortex product and release line: Cortex XSIAM, Cortex XDR, Cortex XSOAR, Cortex Cloud, or another named product;
+- exact product, release and management plane: Cortex XSIAM/XDR/XSOAR/Cloud, PAN-OS/NGFW, Panorama, SCM, Prisma Access/SD-WAN/Browser or Prisma AIRS;
 - exact working surface, such as Query Center, a rule editor, Cases/Issues, Graph Search, playbook editor, TIM, Data Sources & Integrations, API, or endpoint response;
 - environment and change intent: analysis, design, review, non-production validation, or production change;
 - telemetry source, coverage, retention, identity, RBAC/SBAC, license, privacy, and data-handling constraints;
@@ -43,6 +47,10 @@ Ask one concise question only when an unknown would materially change the produc
 | Playbook flow, integrations, task contracts, error paths, human approval, or response action | optionally `cortex-playbook-engineer` | authorization boundary, blast radius, approvals, evidence, recovery and operations ownership |
 | Indicator ingestion, scoring, enrichment, sharing, expiry, or confidence | optionally `cortex-tim-engineer` | intelligence requirement, consumer/control dependency, governance and risk |
 | Ingestion, Broker/collector, licensing, RBAC/SBAC, APIs, integrations, or platform architecture | optionally `cortex-platform-engineer` | security requirement, separation of duties, risk acceptance, validation and owner |
+| Cloud posture, scanning, runtime coverage and provider onboarding | optionally `cortex-cloud-engineer` | scope, entitlement, risk decision and cross-domain dependencies |
+| Firewall policy/traffic, PAN-OS, Panorama, SCM or Cloud NGFW | optionally `palo-alto-firewall-engineer` | change intent, blast radius, approval and verification |
+| Prisma Access, SD-WAN, Browser or workforce AI access | optionally `prisma-sase-engineer` | user/app objective, identity, service ownership and acceptance |
+| AI application, model/agent artifacts, AIRS or AI Gateway | optionally `prisma-airs-engineer` | trust boundaries, action policy, residual risk and evaluation |
 | Two or more of the above | remain here as orchestrator; hand off mechanics selectively | dependency graph, decision record, gates, consolidated validation and operating model |
 
 Sibling Skills are optional capabilities, not runtime dependencies. If unavailable, provide requirements, pseudologic, verification steps, acceptance criteria, and a handoff packet. Never fabricate domain syntax or settings to fill the gap.

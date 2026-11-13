@@ -1,0 +1,52 @@
+{
+  "id": "CLD-02",
+  "skill": "cortex-cloud-engineer",
+  "title": "Entra-only scope",
+  "prompt": "Our Azure Entra ID-only connector is green. The team says that proves all subscriptions and Kubernetes workloads are protected. Validate this conclusion and propose the next checks.",
+  "expected": "Reject workload-coverage inference; separate full cloud, scopes, scans and runtime; small evidence request.",
+  "prohibited": "Accept green status as full coverage or silently elevate permissions.",
+  "date": "2026-11-13",
+  "fixture": "Synthetic; no tenant or external write authorization.",
+  "runtime_sha256": "86ac68ed8e142c6e3be927b1e547e4207b7e3df2cf32dfe3cc26bd6635f7c83e",
+  "runtime_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "2c70abbc4efbb838e9c16a3732e567eff50905890db5c89a04909e5dfe0defab"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "c85567eaab0ec3672fbf7d9f6946a1dccbc5cc4e38df1f42fc5b24defc9323ee"
+    },
+    {
+      "path": "examples/azure-scope.md",
+      "sha256": "123f96048e7da6708ebc15d41a283770faf59f15d272f57f816e885c937cc2d6"
+    },
+    {
+      "path": "references/official-sources.md",
+      "sha256": "fe0f8a2d07a932d0f1f63a5f7d80ad80ebc53eb63d009e7c683892bd115520cc"
+    },
+    {
+      "path": "references/onboarding-and-coverage.md",
+      "sha256": "b22b5ec18a0684f171edb25ad48db912f3f8c72407f754d77bd41f47e4388992"
+    },
+    {
+      "path": "references/risk-and-troubleshooting.md",
+      "sha256": "52e72ca8f4ce74990bdae0c21cfadd095c08a7257079719b7187599c4077e948"
+    },
+    {
+      "path": "templates/cloud-assessment.md",
+      "sha256": "6a9bda7cb6f26166a848373b75f270f8b148e13fe49b17aff2b2cdbac15d14f4"
+    }
+  ],
+  "response": "Não. **O status verde do conector Entra ID-only não comprova proteção de todas as subscriptions nem dos workloads Kubernetes.** Ele sustenta apenas o status informado daquele componente; até a coleta efetiva de identidades precisa de evidências de escopo e atualização.\n\nSegundo as referências empacotadas, com consulta registrada em **13/11/2026**, o onboarding **Entra ID-only não fornece workload scanning**. O onboarding completo do Azure tem escopo próprio. Em Kubernetes, descoberta pelo conector e instalação de componentes de proteção em runtime também são verificações distintas. Isso não demonstra que os workloads estão desprotegidos: sua cobertura permanece **não verificada** com as informações disponíveis.\n\nAs próximas verificações devem ser de leitura, com responsáveis de Azure, Cortex Cloud e Kubernetes:\n\n| Verificação | Evidência necessária e critério de aceite |\n|---|---|\n| Definir o que significa “protegido” | Registrar produto/build, módulos habilitados e entitlement efetivo. Separar inventário/postura, coleta de auditoria, scanning e proteção em runtime; aprovar critérios para cada camada. |\n| Reconciliar subscriptions | Comparar a lista esperada no Azure com o escopo do onboarding completo e os ativos descobertos. Identificar subscriptions ausentes, regiões, exclusões e recursos sem suporte; conferir última coleta, erros, permissões efetivas e filtros de visualização. Um conector de identidade saudável não cobre essa reconciliação. |\n| Verificar auditoria e scans | Conferir separadamente atualização dos eventos e último scan concluído por recurso elegível. Distinguir jobs pendentes, falhos e concluídos; verificar seleção de recursos, permissões, acesso a discos/imagens, quota e rede quando houver lacunas. Ausência de findings não prova que ocorreu um scan. |\n| Reconciliar Kubernetes | Comparar clusters esperados com os descobertos, incluindo distribuição/versão, namespaces e workloads dentro do escopo. Verificar identidade, RBAC, acesso à API, ingestão e atualização dos dados do conector. |\n| Verificar proteção em runtime | Confirmar componentes instalados e saudáveis nos workloads suportados, cobertura de nós/workloads, políticas atribuídas e modo efetivo de operação. Descoberta ou scan agentless não comprova prevenção em runtime. |\n\nMonte uma matriz por subscription e cluster com **ativos esperados, descobertos, última coleta, atualização da auditoria, último scan bem-sucedido, cobertura runtime e exclusões**. Registre “sem evidência” quando faltar comprovação, em vez de marcar a camada como saudável.\n\nComece por **uma VM conhecida e um cluster conhecido**, usando identificadores sanitizados: acompanhe cada um do escopo Azure até inventário, scan e runtime. Essa amostra ajuda a localizar falhas; a afirmação de cobertura total exige reconciliar toda a população. Para demonstrar eficácia de runtime, revise resultados existentes ou planeje um teste controlado, com alvo e autorização definidos, resultado esperado e recuperação.\n\nNão amplie permissões nem implante componentes para resolver esta validação. Se surgir uma lacuna, registre recurso, camada afetada, erro, horário e responsável; só então proponha a correção delimitada.\n\nBase documental: [Azure onboarding — C02](https://cortex-docs.paloaltonetworks.com/cortex-cloud-posture-management/onboard-and-configure/deployment-steps-and-checklist/cloud-service-provider-csp-onboarding/microsoft-azure-cloud-onboarding/onboard-microsoft-azure.md) e [Kubernetes connector — C08](https://cortex-docs.paloaltonetworks.com/cortex-cloud-runtime-security/onboard-and-configure/deployment-steps-and-checklist/onboard-the-kubernetes-connector.md), conforme o registro incluído no pacote. **Não houve consulta nova a essas páginas nem acesso ao tenant.** Documentação atual (D), aceitação no ambiente (C) e execução operacional (E): **NOT RUN**.\n\n**Próxima ação:** o responsável de Azure fornece o inventário esperado e o escopo dos conectores; os responsáveis de Cortex Cloud e Kubernetes completam a matriz com evidências. Até isso ocorrer, a conclusão defensável é: “conector Entra ID-only reportado como verde; cobertura das subscriptions e dos workloads ainda não demonstrada”.\n",
+  "response_sha256": "565b2c2d82213612964729d0fab75af1193d10d3053c50f0764affcdc266f0ef",
+  "result": "PASS",
+  "rationale": "Separou status Entra-only, cobertura de subscriptions, scanning e runtime Kubernetes; pediu evidência sem elevar privilégios.",
+  "grading": "Author-scored against explicit case criteria; separately generated fresh isolated agent response; not independent reviewer sign-off.",
+  "tools_allowed": "Read only the supplied runtime; write response; no web or tenant tools.",
+  "scope": "Offline behavioral sample, not natural host activation or product execution."
+}

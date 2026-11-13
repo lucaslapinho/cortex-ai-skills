@@ -10,7 +10,7 @@ The README and `docs/` contain the current usage documentation. Preserve histori
 
 ## Packages
 
-Preserve the versioned archives, manifest, and checksums under `packages/0.1.0/`; do not silently replace them. The human-readable package index may be translated without changing those artifacts. Runtime changes require appropriate versioning, hashes, and validation. Do not distribute tests or answer keys inside runtime packages.
+Preserve the versioned archives, manifest, and checksums under every published `packages/<version>/` directory; do not silently replace them. The human-readable package index may be translated without changing those artifacts. Runtime changes require appropriate versioning, hashes, and validation. Do not distribute tests or answer keys inside runtime packages.
 
 ## Checks before submitting a change
 

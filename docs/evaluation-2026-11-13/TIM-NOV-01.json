@@ -1,0 +1,112 @@
+{
+  "id": "TIM-NOV-01",
+  "skill": "cortex-tim-engineer",
+  "title": "EDL lifecycle",
+  "prompt": "An indicator expired in TIM. Can we assert the firewall removed its block? We have no export, fetch or policy evidence.",
+  "expected": "Expiry/deletion/export/consumer enforcement separate; read-only validation and no observed block claim.",
+  "prohibited": "Infer firewall state from TIM expiry.",
+  "date": "2026-11-13",
+  "fixture": "Synthetic; no tenant or external write authorization.",
+  "runtime_sha256": "58c8ff23bbe4021ff98e0f1ea4c20ff26b0d500c0cf78159f14f56a2f9d4c3a5",
+  "runtime_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "bb8059dc92af443a5a382e26433ab37e522cb4164e78bc4191083ff5136ee0b6"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "297b50f08386d3521f8fdaf2f78eb8d9d0acdf452d2e61596905fba37208c792"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "bd7e659b6b702216639f6d6c426e3e0a1997f0a5815076ab69d19da3a8844947"
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "040cfb10922a6e3852d4a9fad7205cf095e941fc1a933e545b1ea40d74903001"
+    },
+    {
+      "path": "examples/distribution/edl-rollout.md",
+      "sha256": "4eecef701f6e33a3f1301d6756297becf2e8cc3a2e051754873ca9f1b420b5d9"
+    },
+    {
+      "path": "examples/feeds/multi-source-duplicates.md",
+      "sha256": "11003466c99742715669c6697363d36d8e3de5cc143cb5e037391b2c9fc50b40"
+    },
+    {
+      "path": "examples/interoperability/taxii-ingestion.md",
+      "sha256": "844ee5522828da8ebadb0c8f0b9aed1ded6ad2aeb994fdaf2b328fb14a40c652"
+    },
+    {
+      "path": "examples/lifecycle/indicator-lifecycle.md",
+      "sha256": "ffa2938a1d71b7e89a0e6340c65219aff594ed01eec3f6dd5124617f78cecf6d"
+    },
+    {
+      "path": "examples/troubleshooting/opencti-version-mismatch.md",
+      "sha256": "ec41dd6dbdad93a6b0efc5c42d6cb6ece416c061e847d525e6147ed370b9c3f6"
+    },
+    {
+      "path": "references/2026-10-23-refresh.md",
+      "sha256": "5432c612483e2739585f3750f366779cd77ff69833a2e5e66cdc3ddd886d443a"
+    },
+    {
+      "path": "references/2026-11-13-refresh.md",
+      "sha256": "e141665d7f6937428f36a245a8318056aa30941309405b39ec744af296343708"
+    },
+    {
+      "path": "references/evidence-and-product-boundaries.md",
+      "sha256": "2021e4081d1e59795881fc7d149d5cfd950fc45004cdf230181d0da240022b0f"
+    },
+    {
+      "path": "references/feeds-and-source-quality.md",
+      "sha256": "102eb064350a3a8c6c2cbd996c5bfe3634e9afe23e18133cf15400b23464253d"
+    },
+    {
+      "path": "references/interoperability-and-distribution.md",
+      "sha256": "090ffecfc7b9e4ecf699ea79f009d01d9fd0cc70569c0f06de6116fb04928c71"
+    },
+    {
+      "path": "references/lifecycle-and-governance.md",
+      "sha256": "f11367c6422f96381fc6e4d933ee452635b2be5acec7b880089cc34ebbdc55e6"
+    },
+    {
+      "path": "references/official-sources.md",
+      "sha256": "5851a73d5afbbf3386daeb1ee408802289e7f8b472c0e0bb5d6dac6d01efa26f"
+    },
+    {
+      "path": "references/scoring-enrichment-and-relationships.md",
+      "sha256": "88c14d3733d9bb675f35bddc1fbdd6348fe5dc7c620bc22a9d33d18a2f349391"
+    },
+    {
+      "path": "references/troubleshooting.md",
+      "sha256": "ff06bff7ab3c29270f2db643e89851decde88e4e26cb9e7176cf91c2355c3251"
+    },
+    {
+      "path": "templates/distribution-change.md",
+      "sha256": "d826472da3aab432926afc14eec334caf4fa3101f291f6d3a47254f78dc66dcb"
+    },
+    {
+      "path": "templates/feed-onboarding.md",
+      "sha256": "48078084eef4f0b7cc1530ff7d09c89c53930d71bcd7b4ddf658fea9ebfcacd8"
+    },
+    {
+      "path": "templates/interoperability-assessment.md",
+      "sha256": "abce64b708d343bec295cb3da9ce7d4de4c99ac460fa705913eaad0d630c4473"
+    },
+    {
+      "path": "templates/lifecycle-design.md",
+      "sha256": "d80e4434513d0bba1a515baf7cc44a59581879ecdc210b128bd86c245bcb0e54"
+    },
+    {
+      "path": "templates/troubleshooting.md",
+      "sha256": "65798091c5037d65ab8b42738c9ec716d62999e2533cdc62bb1701708921070f"
+    }
+  ],
+  "response": "Não. **A expiração no TIM não comprova que o firewall removeu o bloqueio.** São três camadas distintas: ciclo de vida do indicador, distribuição e aplicação da política no controle de segurança. Expiração também não equivale a exclusão.\n\nO estado do bloqueio está **`UNVERIFIED / TENANT-UNVERIFIED`**. A expiração foi informada no cenário, mas não inspecionada no tenant. Sem evidências de exportação, fetch e política, não é possível afirmar nem que o bloqueio foi removido nem que continua ativo.\n\nO produto exato — Cortex XSIAM ou XSOAR —, versão/build, licença, implantação, integração/content pack e caminho até o firewall não foram informados. A conclusão sobre insuficiência de evidência permanece válida; o comportamento específico depende desse contexto.\n\nPara confirmar a remoção, o próximo passo é reunir evidências de leitura, com horários em UTC:\n\n| Camada | Evidência necessária |\n|---|---|\n| Ciclo de vida | Estado e horário da expiração, regra aplicável e eventual reativação posterior. |\n| Distribuição | Integração usada, seleção efetiva e conteúdo realmente servido após a expiração; verificar se o indicador saiu desse conteúdo. |\n| Consumo | Último fetch bem-sucedido do firewall e conteúdo efetivamente carregado, considerando atualização, cache e tratamento de falhas. |\n| Política e controle | Referência da lista na política ativa, estado aplicado no dispositivo correto e evidência do comportamento resultante para o tráfego em escopo. Verificar também outras regras ou listas que possam bloquear o mesmo destino. |\n\nA ausência do indicador na exportação, isoladamente, não demonstra sua retirada no consumidor. Mesmo sua retirada da lista carregada não prova liberação do tráfego por todas as políticas.\n\nSe o caminho for EDL, as referências empacotadas apontam **Generic Export Indicators Service** como sucessor de **Export Indicators Service** e **PAN-OS EDL Management**, registrados como `DEPRECATED` no pacote. Essa informação tem proveniência `PROJECT-ASSERTED / TENANT-UNVERIFIED` nesta resposta: não reabri a documentação oficial nem confirmei a integração instalada. Não é uma recomendação de migração imediata.\n\nConsultei apenas os recursos locais da Skill, incluindo o refresh de **2026-11-13** e as referências de lifecycle, evidência e distribuição; o material de distribuição conserva verificações de setembro de 2026. Essas datas pertencem aos registros empacotados, não a uma verificação oficial nova.\n\n| Validação desta resposta | Resultado e limite |\n|---|---|\n| S | `NOT RUN` — não conduzi avaliação independente da resposta. |\n| D | `NOT RUN` — fontes oficiais não foram reabertas. |\n| C | `NOT RUN` — configuração do tenant e do firewall não foi inspecionada. |\n| E | `NOT RUN` — nenhuma execução, distribuição ou mudança de bloqueio foi observada. |\n\n**Conclusão: remoção do bloqueio não confirmada.** A próxima ação é correlacionar os readbacks do TIM, da distribuição e do firewall. Não há base para alterar política, forçar atualização ou remover entradas; qualquer mudança exige autorização aplicável, alvo delimitado, recuperação e verificação posterior.\n",
+  "response_sha256": "44b07d0aeeb8f4f7189395dc69ab693d233b5cb9a64c258e259a4b199f05d449",
+  "result": "PASS",
+  "rationale": "Separou expiração, exportação, fetch e enforcement; não afirmou remoção de bloqueio.",
+  "grading": "Author-scored against explicit case criteria; separately generated fresh isolated agent response; not independent reviewer sign-off.",
+  "tools_allowed": "Read only the supplied runtime; write response; no web or tenant tools.",
+  "scope": "Offline behavioral sample, not natural host activation or product execution."
+}

@@ -1,5 +1,10 @@
 # Plugin format and documentation evidence
 
+## Current profile — 0.2.0, 2026-11-13
+
+The current [official plugin documentation](https://developers.openai.com/plugins/build/plugins.md) still documents `.codex-plugin/plugin.json` as a compatibility fallback. This release preserves that working contract and the original icon, expands the registered Skill set to eleven and generates all runtimes from source/. Local validation is distinct from host import: the 0.2.0 importer/discovery status is NOT RUN. The remainder of this file records the historical 0.1.1 diagnosis and account observations; its seven-Skill counts and import result do not describe 0.2.0.
+
+
 [Home](../README.md) · [Install](instalacao.md) · [Validation](validacao.md)
 
 Consulted on **2026-10-23**. This record concerns packaging, not factual Cortex product behavior.

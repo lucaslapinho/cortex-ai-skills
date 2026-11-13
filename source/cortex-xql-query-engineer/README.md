@@ -1,5 +1,7 @@
 # Cortex XQL Query Engineer
 
+Current content version 0.1.2: read the [2026-11-13 refresh](references/2026-11-13-refresh.md) and current [validation ledger](VALIDATION.md). Earlier review and installation results retain their historical scope.
+
 Standalone AI Skill for building, reviewing, explaining, troubleshooting, and optimizing evidence-scoped Cortex XQL.
 
 ## What it provides
@@ -17,7 +19,7 @@ It does not provide tenant access, deploy detections, configure ingestion, execu
 
 ## Maturity
 
-Current version: `0.1.1`
+Current version: `0.1.2`
 
 This is a pre-1.0 release because no live tenant, tenant schema export, compiler result, execution result, or production performance observation was available during construction. Documentation-grounded bundled examples use `VERIFIED / OFFICIAL-CURRENT / TENANT-UNVERIFIED` with `D: PASS`, `C: NOT RUN`, and `E: NOT RUN`; they are not represented as tenant-validated.
 

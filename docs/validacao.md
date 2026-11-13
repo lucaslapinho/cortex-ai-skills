@@ -1,77 +1,35 @@
-# Validation, provenance, and limitations
+# Validação — versão 0.2.0
 
-[Home](../README.md) · [Install](instalacao.md) · [Format evidence](plugin-format.md)
+[Início](../README.md) · [Pacotes](../packages/0.2.0/README.md) · [Avaliação comportamental](behavior-evaluation-2026-11-13.md) · [Fontes](knowledge-review-2026-11-13.md)
 
-## Version and evidence boundaries
+Revisão de 13/11/2026. As dimensões abaixo são independentes; nenhuma comprova automaticamente a seguinte.
 
-Plugin distribution **0.1.1** includes seven Skills currently at **0.1.1**, following a targeted official-source refresh on **2026-10-23**. The canonical source is `source/`. Build output is a generated view, with every packaged runtime byte compared against that source.
+| Dimensão | Resultado | Evidência e limite |
+|---|---|---|
+| Estrutura e empacotamento | PASS | 40 testes automatizados (32 de publicação/plugin e 8 de source), auditoria dos 303 casos escritos, links, hashes, isolamento e build determinístico. |
+| Documentação oficial | PASS | 42 páginas, revisão de alegações delimitadas; não é atualização exaustiva de todo o histórico nem evidência do tenant. |
+| Comportamento offline | PASS | 15 cenários selecionados nos runtimes finais; respostas isoladas e julgamento pelo autor, sem aprovação de revisor independente. |
+| Corpus completo | NOT RUN | 303 casos escritos; 288 não executados nesta revisão. |
+| Descoberta natural e importação no ChatGPT/Codex | NOT RUN | O harness carregou cada Skill explicitamente. Nenhuma instalação foi feita. |
+| Aceitação no produto, compilação e execução | NOT RUN | Sem tenant XSIAM, Cloud, Firewall, SASE ou AIRS. |
+| Revisão independente da release | NOT RUN | Avaliações e verificações do autor não são aprovação externa. |
 
-The eight historical archives, their manifest, and SHA256SUMS in `packages/0.1.0/` remain unchanged. The historical source ZIP is checked member by member against its original manifest. Current source is separately validated against the new release rather than falsely required to equal 0.1.0.
+Resultados locais completos: [comandos, saídas e ambiente](static-checks-2026-11-13.json). Foram verificados 28 ZIPs entre as três versões. O ambiente local foi Linux; os jobs remotos da matriz Linux/Windows precisam ser consultados no GitHub para o commit publicado.
 
-## What the checks establish
+## Métodos e correção encontrada
 
-| Check | Evidence boundary |
-|---|---|
-| Manifest and metadata | JSON/YAML parsing; exactly seven unique names; valid paths, SemVer and presentation asset |
-| Canonical preservation | All runtime files identical to current source; changes from 0.1.0 listed in the new manifest |
-| Runtime completeness | Local references and anchors resolve within each standalone Skill |
-| Archive integrity | Actual ZIP re-read/CRC checks, unsafe paths/types/collisions rejected, hidden manifest retained |
-| Determinism | Two complete builds produce identical archives and release metadata |
-| Individual distribution | Seven independently rooted runtime ZIPs generated alongside the plugin |
-| Regression tooling | Missing manifests, incomplete Skills, missing references, malformed metadata, altered files, unsafe ZIPs and invalid SemVer exercised |
-| Knowledge refresh | Selected current Palo Alto source claims inspected; every Skill includes a dated scope record |
+A auditoria verifica YAML/JSON, nomes, recursos locais, referências, isolamento dos runtimes e separação dos gabaritos. Os testes de código exercitam rejeição de pacotes malformados, caminhos indevidos, recursos ausentes, modificações de artefatos históricos e divergência da fonte. O builder compara reconstruções determinísticas e identidade dos arquivos distribuídos.
 
-The [release manifest](../packages/0.1.1/release-manifest.json) and [SHA256SUMS](../packages/0.1.1/SHA256SUMS) identify the artifacts. Independent review and executed test counts are recorded in the [0.1.1 package index](../packages/0.1.1/README.md).
+A avaliação comportamental usou 16 agentes novos para 15 cenários. A primeira execução do cenário de AI Task omitiu o JSON Schema completo. Foi corrigida uma instrução ampla demais sobre exports YAML/JSON e o cenário foi repetido em contexto novo. A resposta final incluiu o schema; ambas as respostas e seus hashes foram preservados. A primeira falha não foi reclassificada como sucesso.
 
-## Account import and remaining tests
+Os casos cobrem os onze agentes e incluem confusão entre produtos, escopo incompleto, timeout, fronteira negativa e prompt injection. É uma amostra limitada, não prova de acerto geral. Os [registros integrais](evaluation-2026-11-13/README.md) ficam fora dos pacotes de uso.
 
-| Layer | Result |
-|---|---|
-| Personal ChatGPT import acceptance | PASS — observed in the user's account on 2026-10-23 |
-| Installation and seven-Skill interface listing | PASS — installed entry, Manage/Try in chat and seven names observed |
-| Supporting-reference loading after installation | NOT RUN |
-| Fresh controlled behavioral evaluation of all revised Skills | NOT RUN |
-| Cortex tenant schema/compiler or playbook import | NOT RUN |
-| Cortex execution, deployment, efficacy, or performance | NOT RUN |
+## Distribuição e histórico
 
-**Local validation and one-account import/installation completed.** See [UI test evidence](plugin-ui-test.md) and the [independent review](plugin-review-0.1.1.md).
+O pacote atual contém um plugin e onze runtimes individuais, totalizando doze ZIPs. O plugin possui 204 arquivos e mantém os nomes existentes, o ícone e o formato de compatibilidade. As versões 0.1.0 e 0.1.1 permanecem intactas e são verificadas contra seus próprios inventários; somente a versão atual é comparada com a fonte atual.
 
-With the user's explicit confirmation, Add plugin accepted the generated ZIP. Install plugin then completed, and the installed details showed version 0.1.1 and all seven Skill names. No task was sent or tenant accessed during this UI check. The deterministic build manifest retains its build-time NOT RUN labels; this separate UI record adds the later observation without changing archive bytes.
+O registro de [importação de outubro](plugin-ui-test.md) refere-se apenas à versão 0.1.1. O campo `discovery_and_behavior` do manifest atual refere-se à validação no host real, que permanece NOT RUN, separada das respostas offline.
 
-## Historical results remain historical
+## Próximas validações no ambiente
 
-The September 0.1.0 record includes 23 final targeted Astra cases, 74 cumulative reviewed decisions from a 253-case catalog, and 179 cases not run. Those numbers do not become fresh passes for 0.1.1.
-
-Three additional October scenarios address updated behavior and documented contradictions. They are authored separately from the 253 historical cases and remain NOT RUN unless an independent evaluation is explicitly retained. Historical source reports and old runtime hashes remain traceable in the archived source and dated ledgers.
-
-## Source and review findings
-
-The refresh preserves contradictory official examples and APIs instead of choosing an unsupported method or context path. See the [difference register](../source/research/project-vs-official-differences.md) and each Skill's dated refresh reference.
-
-Independent packaging review found two malformed-input issues during development: permissive SemVer prerelease parsing and ZIP names normalized/truncated by Python before validation. Both were corrected, regression-tested, and independently rechecked. Neither finding required changing technical Skill content.
-
-The historical helper's Windows temporary-path spelling limitation remains documented in its source context; the existing test runner canonicalizes its fixture directory. This does not change packaged runtime behavior.
-
-## Reproduce the checks
-
-With Python 3.11+ from the repository root:
-
-```text
-python -m pip install -r requirements-dev.txt
-python -I scripts/validate_publication.py
-python -I -m unittest discover -s scripts -p "test_*.py" -v
-python -I source/tools/release.py audit
-python -I scripts/run_source_tests.py
-python -I scripts/build_plugin.py build --output dist/review-build
-python -I scripts/build_plugin.py validate --zip dist/review-build/cortex-ai-skills-plugin-0.1.1.zip
-```
-
-Use a new build directory. The CI matrix runs the checks on Linux and Windows with Python 3.11/3.13. Inspect the actual Actions run rather than inferring success from workflow presence.
-
-Repository-level research inventory and prior case evidence are developer material and are excluded from the importable ZIP. Each Skill retains its bundled official-source register. Public-reference links are retained, but host network access is never presumed.
-
-## Project knowledge
-
-The [inventory](../source/research/project-knowledge-inventory.md) records material that was actually accessible and consumed, including this task's repository ZIP. No additional ChatGPT project library, original private tenant export, or live tenant was fabricated or claimed as ingested.
-
-The current source review is a targeted refresh, not a fresh verification of every historical source. Respect each record's dates, scope, and limitations.
+Importar o plugin no host compatível, confirmar as onze Skills e o carregamento de recursos locais, exercitar os fluxos prioritários com dados sanitizados e validar artefatos/ações em ambiente Palo Alto autorizado. Critérios de aceite precisam incluir falhas, permissões, readback e recuperação conforme o produto. Nenhum teste escrito ou sucesso de importação substitui essa execução.

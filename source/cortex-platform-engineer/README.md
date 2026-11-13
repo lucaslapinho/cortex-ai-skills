@@ -1,5 +1,7 @@
 # Cortex Platform Engineer
 
+Current content version 0.1.2: read the [2026-11-13 refresh](references/2026-11-13-refresh.md) and current [validation ledger](VALIDATION.md). Earlier review and installation results retain their historical scope.
+
 Standalone AI Skill for architecture, deployment design, access review, ingestion planning, and layered troubleshooting across Cortex XSIAM, Cortex XDR, and Cortex XSOAR.
 
 ## What it provides
@@ -12,7 +14,7 @@ It records product, deployment, version, license, trust boundary, owner, health 
 
 ## Maturity
 
-Current version: `0.1.1`
+Current version: `0.1.2`
 
 Independent technical, architecture, adversarial, compatibility, and domain reviews
 are retained for the historical `0.1.0` snapshot. The `0.1.1` update adds a

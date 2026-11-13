@@ -1,5 +1,7 @@
 # Official Source Register
 
+Current scoped update: [2026-11-13 refresh](2026-11-13-refresh.md). Historical entries below retain their original dates and applicability.
+
 **Scoped refresh — 2026-10-23:** see [the dated refresh](2026-10-23-refresh.md)
 for the exact pages reopened and their product-level conclusions. Unlisted rows
 retain their prior dates; this does not establish tenant state or host acceptance.

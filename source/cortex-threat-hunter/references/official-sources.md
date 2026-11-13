@@ -1,5 +1,7 @@
 # Official sources
 
+Current scoped update: [2026-11-13 refresh](2026-11-13-refresh.md). Historical entries below retain their original dates and applicability.
+
 ## Focused refresh — 2026-10-23
 
 Read the [dated semantic refresh](2026-10-23-refresh.md) for newly inspected query/graph permissions, XDR issue-dataset exclusions, iterative investigation and grouping-population claims. Those bounded observations have `D: PASS`; new-runtime `S/C/E: NOT RUN`. The remaining register and evaluation dates are historical.

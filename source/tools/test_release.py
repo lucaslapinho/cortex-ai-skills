@@ -88,6 +88,17 @@ class ReleaseTests(unittest.TestCase):
             self.assertEqual(evaluate.publication_links(response, skill, root / "reviews/output.md"),
                              "Read [SKILL.md](../skill/SKILL.md).")
 
+    def test_new_and_refresh_inputs_exclude_oracles(self):
+        root = Path(__file__).resolve().parents[1]
+        for name, case_id in (("cortex-cloud-engineer", "CLD-02"),
+                              ("cortex-playbook-engineer", "PB-NOV-01")):
+            with self.subTest(skill=name):
+                inputs = evaluate.case_inputs(root / name, [case_id])
+                self.assertEqual(len(inputs), 1)
+                self.assertEqual(set(inputs[0]), {"id", "Fixture", "Prompt"})
+                self.assertNotIn("Expected observations", inputs[0]["Prompt"])
+                self.assertNotIn("Prohibited behaviors", inputs[0]["Prompt"])
+
 
 if __name__ == "__main__":
     unittest.main()

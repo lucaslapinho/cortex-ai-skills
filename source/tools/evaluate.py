@@ -39,8 +39,8 @@ def publication_links(response: str, skill: Path, destination: Path) -> str:
 
 def case_inputs(skill: Path, selected: list[str]) -> list[dict]:
     found = {}
-    for category in release.CATEGORIES:
-        text = (skill / f"tests/{category}.md").read_text(encoding="utf-8")
+    for test_file in sorted((skill / "tests").glob("*.md")):
+        text = test_file.read_text(encoding="utf-8")
         matches = list(release.CASE.finditer(text))
         for index, match in enumerate(matches):
             if match[1] not in selected:

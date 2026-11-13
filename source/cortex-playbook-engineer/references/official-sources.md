@@ -1,5 +1,7 @@
 # Official Source Register
 
+Current scoped update: [2026-11-13 refresh](2026-11-13-refresh.md). Historical entries below retain their original dates and applicability.
+
 **Review date:** 2026-09-04  
 **Scope:** current first-party Palo Alto Networks documentation and version-pinned official repositories.  
 **Freshness rule:** re-open the exact product/release page before a production or import decision. HTTP reachability does not prove tenant availability.

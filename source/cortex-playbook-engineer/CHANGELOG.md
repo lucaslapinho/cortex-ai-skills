@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 — 2026-11-13
+
+Added a scoped official-document refresh and source-only regression fixtures. Preserved existing identity, runtime contracts and historical evidence. Expanded Palo Alto product routing and knowledge boundaries without claiming new tenant compilation/execution. See references/2026-11-13-refresh.md for claim-level scope.
+
+Corrected an overbroad JSON prohibition: an unverified playbook export remains prohibited, while a documented custom AI output schema can be delivered as a clearly labeled proposal. The implementation contract now explicitly requires the complete schema alongside prompt, inputs and output name; the first isolated regression omitted it.
+
+
 ## 0.1.1 — 2026-10-23
 
 - Reopened seven official XSIAM pages for parent/sub-playbook inputs and outputs, context scope, script errors, debugger effects, manual tasks, settings, and best practices.

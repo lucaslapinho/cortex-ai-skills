@@ -30,11 +30,11 @@ jobs:
         run: python -I scripts/validate_publication.py
       - name: Test publication validator
         run: python -I -m unittest discover -s scripts -p "test_*.py" -v
-      - name: Audit preserved skills
+      - name: Audit all Skills
         run: python -I source/tools/release.py audit
-      - name: Test preserved release tooling
+      - name: Test source audit and evaluation tooling
         run: python -I scripts/run_source_tests.py
       - name: Rebuild plugin from canonical source
         run: python -I scripts/build_plugin.py build --output dist/ci-build
       - name: Validate rebuilt plugin archive
-        run: python -I scripts/build_plugin.py validate --zip dist/ci-build/cortex-ai-skills-plugin-0.1.1.zip
+        run: python -I scripts/build_plugin.py validate --zip dist/ci-build/cortex-ai-skills-plugin-0.2.0.zip

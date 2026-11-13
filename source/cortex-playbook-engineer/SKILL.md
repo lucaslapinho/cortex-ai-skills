@@ -7,6 +7,10 @@ description: Designs, reviews, refactors, and troubleshoots evidence-scoped Cort
 
 Design useful Cortex automation without inventing a command, context path, task identifier, integration parameter, or import schema. Bind every design to one product, deployment/version scope, artifact class, evidence status, and explicit tenant gap.
 
+## Knowledge update — 2026-11-13
+
+Read the [current scoped knowledge refresh](references/2026-11-13-refresh.md) for changed product boundaries and claims. It supplements historical references only for its explicitly reviewed scope; do not promote old validation records to the new runtime. Match the user's language (default PT-BR), preserve technical identifiers and honor existing authorization without asking for the same permission again.
+
 ## Route the request
 
 Use this Skill when the primary deliverable is:
@@ -47,7 +51,9 @@ Use exactly one artifact class:
 - `CONFIGURATION GUIDANCE`: product-scoped implementation guidance grounded in current official documentation, but tenant content, schema, permissions, dependencies, import, and execution remain unverified.
 - `VERIFIED IMPORTABLE ARTIFACT`: an exact artifact whose target product/version, export schema, dependencies, commands, validator results, controlled import, and bounded functional test are retained.
 
-The third class is prohibited unless all required evidence exists. A plausible YAML/JSON structure, a Marketplace example, a static lint pass, or an author's confidence is insufficient. When exact export schema is unavailable, do not emit executable-looking YAML or JSON.
+The third class is prohibited unless all required evidence exists. A plausible YAML/JSON structure, a Marketplace example, a static lint pass, or an author's confidence is insufficient. When the exact playbook export schema is unavailable, do not fabricate a playbook YAML/JSON export.
+
+This export restriction does not prohibit a documented custom AI output JSON Schema template. For an AI-task implementation contract, provide the complete prompt, input mapping table, proposed output/context name and a separate complete JSON Schema code block, using [AI triage contract](templates/ai-triage-contract.md) when applicable. Do not substitute prose or field tables for the schema. Label the schema as a task-output proposal, not a playbook import artifact; keep unobserved context mappings explicit and C/E NOT RUN.
 
 For the detailed evidence ladder, read [evidence and product boundaries](references/evidence-and-product-boundaries.md).
 

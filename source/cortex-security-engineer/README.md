@@ -1,5 +1,7 @@
 # Cortex Security Engineer
 
+Current content version 0.2.0: read the [2026-11-13 refresh](references/2026-11-13-refresh.md) and current [validation ledger](VALIDATION.md). Earlier review and installation results retain their historical scope.
+
 `cortex-security-engineer` is the cross-domain intake and orchestration Skill for Cortex security engineering. It converts an ambiguous or multi-domain request into an evidence-bounded decision record, routes specialist mechanics, sequences dependencies, and preserves ownership, approval, validation, and operations gates.
 
 It is useful without any sibling Skill installed. It does not contain a second full XQL, detection, hunting, playbook, TIM, or platform manual.
@@ -16,7 +18,7 @@ It is useful without any sibling Skill installed. It does not contain a second f
 
 The package contains no tenant state, schema, credentials, API responses, configuration exports, compiler output, execution results, deployments, or efficacy measurements. Examples and tests are authored fixtures, not tenant evidence. Version `0.1.0` has independent static, documentation, domain, adversarial, and selected behavioral review for source publication only; it is not a tenant or deployment certification.
 
-Current version `0.1.1` adds a [scoped documentation refresh](references/2026-10-23-refresh.md).
+Current version `0.2.0` expands Palo Alto portfolio routing and adds a [scoped knowledge refresh](references/2026-11-13-refresh.md).
 Historical evaluations are retained for their original artifacts; new behavioral
 evaluation, tenant acceptance, execution, and host import remain `NOT RUN`.
 

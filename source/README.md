@@ -1,5 +1,12 @@
 # Cortex AI Skills
 
+## Current source — plugin 0.2.0, 2026-11-13
+
+Eleven Skills are maintained here: the seven original identities plus [Cloud](cortex-cloud-engineer/README.md), [Firewall](palo-alto-firewall-engineer/README.md), [SASE](prisma-sase-engineer/README.md) and [AIRS](prisma-airs-engineer/README.md). The coordinator now routes the wider Palo Alto portfolio. See the [current catalog](https://github.com/lucaslapinho/cortex-ai-skills/blob/main/README.md) and [validation](https://github.com/lucaslapinho/cortex-ai-skills/blob/main/docs/validacao.md).
+
+All seven original Skills received scoped knowledge updates. Their historical source registers and evaluation ledgers remain dated evidence; they are not blanket certification of the new bytes. The original architecture and catalog discussion below is retained as development context for the first seven.
+
+
 Seven modular AI Skills for evidence-scoped work across the Palo Alto Networks Cortex ecosystem. Each Skill can be installed and used independently; the repository adds shared development research and review evidence but is never required at runtime.
 
 ## Skills

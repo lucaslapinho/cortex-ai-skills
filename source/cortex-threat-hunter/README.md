@@ -1,6 +1,8 @@
 # Cortex Threat Hunter
 
-Version 0.1.1
+Current content version 0.1.2: read the [2026-11-13 refresh](references/2026-11-13-refresh.md) and current [validation ledger](VALIDATION.md). Earlier review and installation results retain their historical scope.
+
+Version 0.1.2
 
 An evidence-scoped, hypothesis-driven threat-hunting Skill for Cortex XSIAM and Cortex XDR. It produces hunt plans, coverage matrices, pivot strategies, evidence ledgers, conclusions, and detection-opportunity handoffs without claiming access to a tenant.
 

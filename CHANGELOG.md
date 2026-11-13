@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.0 — 2026-11-13
+
+- Added four standalone Skills: Cortex Cloud, Palo Alto Firewall, Prisma SASE and Prisma AIRS.
+- Expanded cortex-security-engineer to coordinate the Palo Alto portfolio while preserving its identifier.
+- Refreshed selected knowledge in all seven existing Skills; recorded official sources, consultation dates, conflicts and tenant-validation limits.
+- Added a custom AI triage prompt/input/output-schema template and 47 source-only evaluation cases.
+- Extended audits/builds to eleven Skills, added regression checks and pinned historical 0.1.1 release identity independently of current source.
+- Preserved original icon and compatibility manifest; generated one plugin plus eleven individual runtimes from canonical source.
+- Preserved all historical packages; no installation or production action is performed by this release.
+
+
 ## 0.1.1 — 2026-10-23
 
 - Added a supported Codex compatibility plugin manifest with original presentation asset and all seven Skills.

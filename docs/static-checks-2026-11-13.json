@@ -1,0 +1,99 @@
+{
+  "date": "2026-11-13",
+  "platform": "Linux",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "records": [
+    {
+      "command": [
+        "python",
+        "-I",
+        "source/tools/release.py",
+        "audit"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"result\": \"PASS\",\n  \"publication_files\": 364,\n  \"markdown_files\": 337,\n  \"local_links_including_anchors\": 846,\n  \"runtime_links_including_anchors\": 568,\n  \"local_path_links\": 590,\n  \"runtime_path_links\": 312,\n  \"authored_cases\": 303,\n  \"supplemental_cases\": 10,\n  \"errors\": []\n}\n",
+      "stderr": "",
+      "result": "PASS"
+    },
+    {
+      "command": [
+        "python",
+        "-I",
+        "scripts/run_source_tests.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Canonical temporary-directory spelling changed: False\n",
+      "stderr": "test_all_case_inputs_exclude_oracle_sections (test_release.ReleaseTests.test_all_case_inputs_exclude_oracle_sections) ... ok\ntest_archives_deterministic_and_exclusive (test_release.ReleaseTests.test_archives_deterministic_and_exclusive) ... ok\ntest_identity_ordinal_no_terminal_newline (test_release.ReleaseTests.test_identity_ordinal_no_terminal_newline) ... ok\ntest_markdown_anchors (test_release.ReleaseTests.test_markdown_anchors) ... ok\ntest_new_and_refresh_inputs_exclude_oracles (test_release.ReleaseTests.test_new_and_refresh_inputs_exclude_oracles) ... ok\ntest_output_scope_checked_before_writes (test_release.ReleaseTests.test_output_scope_checked_before_writes) ... ok\ntest_publication_link_rebase_keeps_label (test_release.ReleaseTests.test_publication_link_rebase_keeps_label) ... ok\ntest_runtime_excludes_oracles (test_release.ReleaseTests.test_runtime_excludes_oracles) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.014s\n\nOK\n",
+      "result": "PASS"
+    },
+    {
+      "command": [
+        "python",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_adapter_invalid_yaml (test_plugin.PluginTests.test_adapter_invalid_yaml) ... ok\ntest_canonical_tampering_rejected (test_plugin.PluginTests.test_canonical_tampering_rejected) ... ok\ntest_empty_skill_body (test_plugin.PluginTests.test_empty_skill_body) ... ok\ntest_manifest_skills_wrong_type (test_plugin.PluginTests.test_manifest_skills_wrong_type) ... ok\ntest_manifest_unknown_dependency_rejected (test_plugin.PluginTests.test_manifest_unknown_dependency_rejected) ... ok\ntest_missing_cloud_skill_rejected (test_plugin.PluginTests.test_missing_cloud_skill_rejected) ... ok\ntest_missing_manifest (test_plugin.PluginTests.test_missing_manifest) ... ok\ntest_missing_presentation_icon (test_plugin.PluginTests.test_missing_presentation_icon) ... ok\ntest_missing_referenced_resource (test_plugin.PluginTests.test_missing_referenced_resource) ... ok\ntest_missing_skill_entrypoint (test_plugin.PluginTests.test_missing_skill_entrypoint) ... ok\ntest_new_skill_cannot_depend_on_sibling (test_plugin.PluginTests.test_new_skill_cannot_depend_on_sibling) ... ok\ntest_registered_skills_and_links (test_plugin.PluginTests.test_registered_skills_and_links) ... ok\ntest_scorer_and_nested_zip_excluded (test_plugin.PluginTests.test_scorer_and_nested_zip_excluded) ... ok\ntest_semver_rejects_invalid_identifiers (test_plugin.PluginTests.test_semver_rejects_invalid_identifiers) ... ok\ntest_two_full_builds_have_identical_artifacts (test_plugin.PluginTests.test_two_full_builds_have_identical_artifacts) ... ok\ntest_yaml_duplicate_and_malformed (test_plugin.PluginTests.test_yaml_duplicate_and_malformed) ... ok\ntest_zip_deterministic_and_hidden_manifest_retained (test_plugin.PluginTests.test_zip_deterministic_and_hidden_manifest_retained) ... ok\ntest_zip_duplicates_and_case_collisions (test_plugin.PluginTests.test_zip_duplicates_and_case_collisions) ... ok\ntest_zip_escaping_and_type_conflicts (test_plugin.PluginTests.test_zip_escaping_and_type_conflicts) ... ok\ntest_zip_original_nul_name_rejected (test_plugin.PluginTests.test_zip_original_nul_name_rejected) ... ok\ntest_zip_symlink_rejected (test_plugin.PluginTests.test_zip_symlink_rejected) ... ok\ntest_current_source_drift_rejected (test_publication.PublicationTests.test_current_source_drift_rejected) ... ok\ntest_extra_archive_member_rejected (test_publication.PublicationTests.test_extra_archive_member_rejected) ... ok\ntest_historical_pin_rejects_mutation (test_publication.PublicationTests.test_historical_pin_rejects_mutation) ... ok\ntest_historical_release_validates_own_snapshot (test_publication.PublicationTests.test_historical_release_validates_own_snapshot) ... ok\ntest_paths_reject_escapes (test_publication.PublicationTests.test_paths_reject_escapes) ... ok\ntest_release_checksum_detects_tampered_zip (test_publication.PublicationTests.test_release_checksum_detects_tampered_zip) ... ok\ntest_release_directory_version_checked (test_publication.PublicationTests.test_release_directory_version_checked) ... ok\ntest_safe_path (test_publication.PublicationTests.test_safe_path) ... ok\ntest_secret_pattern_and_safe_placeholder (test_publication.PublicationTests.test_secret_pattern_and_safe_placeholder) ... ok\ntest_tampered_archive_rejected (test_publication.PublicationTests.test_tampered_archive_rejected) ... ok\ntest_valid_archive (test_publication.PublicationTests.test_valid_archive) ... ok\n\n----------------------------------------------------------------------\nRan 32 tests in 4.068s\n\nOK\n",
+      "result": "PASS"
+    },
+    {
+      "command": [
+        "python",
+        "-I",
+        "scripts/build_plugin.py",
+        "validate",
+        "--zip",
+        "packages/0.2.0/cortex-ai-skills-plugin-0.2.0.zip"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"result\": \"PASS\",\n  \"plugin_version\": \"0.2.0\",\n  \"skills\": [\n    \"cortex-cloud-engineer\",\n    \"cortex-detection-engineer\",\n    \"cortex-platform-engineer\",\n    \"cortex-playbook-engineer\",\n    \"cortex-security-engineer\",\n    \"cortex-threat-hunter\",\n    \"cortex-tim-engineer\",\n    \"cortex-xql-query-engineer\",\n    \"palo-alto-firewall-engineer\",\n    \"prisma-airs-engineer\",\n    \"prisma-sase-engineer\"\n  ],\n  \"files\": 204,\n  \"relative_references\": 568,\n  \"sha256\": \"f00491a098f3c5e55991eb2f72fb523b1f1085b7f723daa1cd64b82536a60d93\",\n  \"canonical_files_identical\": true\n}\n",
+      "stderr": "",
+      "result": "PASS"
+    },
+    {
+      "command": [
+        "python",
+        "-I",
+        "scripts/validate_publication.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"result\": \"PASS\",\n  \"files\": 443,\n  \"source_files\": 364,\n  \"archives\": 28,\n  \"archive_members\": 443,\n  \"local_links\": 969,\n  \"errors\": []\n}\n",
+      "stderr": "",
+      "result": "PASS"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "result": "PASS"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "packages/0.1.0",
+        "packages/0.1.1"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "result": "PASS"
+    }
+  ],
+  "scope": "Local static/unit/archive checks; no product/host installation or tenant execution."
+}

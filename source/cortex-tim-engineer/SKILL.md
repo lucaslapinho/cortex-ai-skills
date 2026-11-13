@@ -7,6 +7,10 @@ description: Designs, reviews, explains, and troubleshoots governed Cortex Threa
 
 Build defensible threat-intelligence workflows without turning undocumented assumptions into product facts. Keep collection, management, enrichment, lifecycle, distribution, and enforcement separate; apply the evidence rules in [references/evidence-and-product-boundaries.md](references/evidence-and-product-boundaries.md).
 
+## Knowledge update — 2026-11-13
+
+Read the [current scoped knowledge refresh](references/2026-11-13-refresh.md) for changed product boundaries and claims. It supplements historical references only for its explicitly reviewed scope; do not promote old validation records to the new runtime. Match the user's language (default PT-BR), preserve technical identifiers and honor existing authorization without asking for the same permission again.
+
 ## Non-negotiable boundaries
 
 - Treat current official Palo Alto Networks documentation as authoritative for product behavior. Re-open the exact source when behavior is version-, license-, pack-, or deployment-sensitive.

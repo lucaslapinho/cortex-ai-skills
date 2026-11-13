@@ -1,0 +1,116 @@
+{
+  "id": "DET-NOV-01",
+  "skill": "cortex-detection-engineer",
+  "title": "BIOC surface",
+  "prompt": "A Query Center query aggregates events by account. The team wants to paste it into a BIOC rule without any event_type filter. Is Query Center success sufficient?",
+  "expected": "BIOC source/stage/event_type restrictions; distinguish scheduled correlation and validate target.",
+  "prohibited": "Claim universal query portability.",
+  "date": "2026-11-13",
+  "fixture": "Synthetic; no tenant or external write authorization.",
+  "runtime_sha256": "60f17a04fac6e4b0d3ae4ebfbe0246845500c73f191533f30ef4df1c1c8ad9e1",
+  "runtime_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "11e47cf633ed61f3421ae6ba796444675fd2067e22fba1da8de4515f8db3bf3e"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "297b50f08386d3521f8fdaf2f78eb8d9d0acdf452d2e61596905fba37208c792"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "1f155ac45102162537a44e24622044c7f42507b58eed1229394c644639f86d2a"
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "e8dc9f5dc9bded9a17947946c4b6baced634d92a335385b7d5021513c2557292"
+    },
+    {
+      "path": "examples/design/hunt-to-detection.md",
+      "sha256": "03c8f33010052aff16cb011a3a36e7c168cd146b05249f914a3eecfb1a507e2a"
+    },
+    {
+      "path": "examples/design/scheduled-vs-real-time.md",
+      "sha256": "367e7152657baa9ec9c63cf59fa70cb4e87429088a26840f6aa9ea703e76a5ae"
+    },
+    {
+      "path": "examples/design/suspicious-powershell.md",
+      "sha256": "ea1ef76873279fb4c915b2743c79d06b99c506ad7b56be84aedb2f6471ed7a0c"
+    },
+    {
+      "path": "examples/troubleshooting/missing-telemetry.md",
+      "sha256": "e95915c4bc2fab0ef8b1b516a203ba2263cd8e30e2b8a296388c953892f4cbad"
+    },
+    {
+      "path": "examples/tuning/overbroad-correlation.md",
+      "sha256": "8933e4cd74ae2b445006e0de93d335d8ba118ecc509caf5bc8d97b55ae240fef"
+    },
+    {
+      "path": "references/2026-10-23-refresh.md",
+      "sha256": "1605fdae98ed4d9baa5aa5bc5b9406e0ec58233feb5966ca4235a39f0d16aac6"
+    },
+    {
+      "path": "references/2026-11-13-refresh.md",
+      "sha256": "ab8caa23314a4f366aacce8d804aac498d371290ad0f0fe07f4a00c46b3f804b"
+    },
+    {
+      "path": "references/baselines-thresholds-and-tuning.md",
+      "sha256": "62a008d4a7033fd80929252aa083092d83786cc3a5c15478856f2eb1c3247691"
+    },
+    {
+      "path": "references/detection-lifecycle.md",
+      "sha256": "bc4cecee9c8a39d43ecff7bed0cd956a76c027aec447b06550dc34176f365a6f"
+    },
+    {
+      "path": "references/evidence-and-product-boundaries.md",
+      "sha256": "3b1fc4df96f6b35774aa066e2dccdebac686843bf2faedb634be4e8a9144c019"
+    },
+    {
+      "path": "references/official-sources.md",
+      "sha256": "5aa700a766d18e1a5d9067996c89f7313abbecb462ad18aa092ef2c56ba56c70"
+    },
+    {
+      "path": "references/rule-surfaces.md",
+      "sha256": "45fd9ee83c122298488e70acfb5c196a2564d48023c1652d8336355b106f686e"
+    },
+    {
+      "path": "references/telemetry-signal-and-query-handoff.md",
+      "sha256": "430f82464a9a2dadaad92f4e3f12017732bb7a711205ea34479c66b05092007b"
+    },
+    {
+      "path": "references/troubleshooting.md",
+      "sha256": "a6dc2cafb94efffbc2cea18e2276fd227b180284fea9ecdad403dd0a2fe7a94d"
+    },
+    {
+      "path": "references/validation-monitoring-and-governance.md",
+      "sha256": "555f6aff41bf120f4c00b75a2a040cd6b705024614e9d687f32fa26c0a59af23"
+    },
+    {
+      "path": "templates/detection-specification.md",
+      "sha256": "129e2ac4bc9d382ce30d64fb7fb092b355a366659ec0e19efce71f4186ac932b"
+    },
+    {
+      "path": "templates/monitoring-and-retirement.md",
+      "sha256": "94ef59e15e4b81d54509865f636fe55b67beb0e12f15da5e26d962490e4ba040"
+    },
+    {
+      "path": "templates/rule-readiness-review.md",
+      "sha256": "73349e24835e141dcbed27b8807ac8e4dc41cea5dafd1fb86559332da6b3f325"
+    },
+    {
+      "path": "templates/tuning-plan.md",
+      "sha256": "e7158177d346f5b3bc4d0406e8eb2118afc6684f88440cfc0ba7ed92eb59254e"
+    },
+    {
+      "path": "templates/validation-plan.md",
+      "sha256": "64f85066406733c912a090b6afa518d60b4208666b25570cd76ce3a62b726710"
+    }
+  ],
+  "response": "**Não. A consulta está `NOT READY` para promoção direta a BIOC.** O sucesso relatado no Query Center não comprova compatibilidade com o editor BIOC, geração de Issues ou eficácia da detecção.\n\nO produto e a versão do tenant não foram informados. Para os contratos BIOC de Cortex XSIAM e Cortex XDR 5 descritos nas referências locais, há dois impedimentos distintos:\n\n| Característica da consulta | Consequência para BIOC |\n|---|---|\n| Ausência de filtro em `event_type` | O contrato documentado exige esse filtro. |\n| Agregação de eventos por conta | O contrato documentado admite `filter`, `alter` e funções sem agregação; uma linha agregada por conta não equivale a um evento elegível para BIOC. |\n\nEssas restrições estão classificadas aqui como `VERSION-DEPENDENT / REFERENCED-ONLY / TENANT-UNVERIFIED`: foram consultados os registros incluídos no pacote, sem reabrir documentação oficial ou acessar o tenant nesta resposta. Adicionar apenas `event_type` não resolve a agregação. Remover a agregação pode alterar o comportamento detectado e exige revisão semântica.\n\nSe o objetivo depende de contagem, limiar ou relação entre vários eventos por conta, **avaliar scheduled correlation** é a alternativa conceitual adequada (`CONCEPTUAL / DERIVATIVE`), sujeita às restrições do produto e do editor. Não presumir compatibilidade com real-time correlation. Se o comportamento puder ser identificado em um único evento, redesenhar uma BIOC sem agregação, com `event_type` apropriado, dataset elegível e campos de triagem preservados. Nenhum valor de `event_type`, nome de campo ou limiar pode ser definido com segurança a partir das informações fornecidas.\n\nO próximo passo é obter o XQL exato, produto/versão/licença e significado esperado de uma linha de saída; conferir a página oficial aplicável e validar o artefato no editor da superfície escolhida, em ambiente não produtivo autorizado. Verificar fontes elegíveis, tipos/nulos, chave de conta, janela temporal e contexto que sobrevive às transformações. Usar casos positivos, benignos, negativos, conta ausente, limites de contagem, duplicatas, atraso e volume. Comparar os resultados com o comportamento original antes de aceitar qualquer reescrita.\n\n| Nível | Resultado nesta resposta | Evidência/limite |\n|---|---|---|\n| S — avaliação controlada | NOT RUN | Esta orientação não é sua própria avaliação independente. |\n| D — documentação oficial atual | NOT RUN | O pacote registra revisão XSIAM em 2026-11-13 e rechecagem XDR em 2026-10-23; são registros datados, não verificação nova. |\n| C — aceitação no editor BIOC/correlation | NOT RUN | Não há artefato exato nem evidência retida do editor alvo. |\n| E — execução da regra | NOT RUN | O sucesso relatado no Query Center não demonstra execução de regra. |\n\nFixtures offline, shadow/advisory autorizado e canário limitado permanecem **NOT RUN**. Uma promoção posterior exige critérios de aceite, responsável, monitoramento de volume/FP/FN e recuperação; ativação ampla depende da aprovação aplicável. Nenhuma regra foi criada ou habilitada.\n\nReferências oficiais **citadas pelo pacote, não acessadas nesta avaliação**: [Create a BIOC rule — XSIAM](https://cortex-docs.paloaltonetworks.com/cortex-xsiam/detect-investigate-and-respond-to-threats/threat-management/detection-rules/what-are-detection-rules/whats-a-bioc/create-a-bioc-rule.md), [Create a BIOC rule — XDR 5](https://cortex-docs.paloaltonetworks.com/cortex-xdr-5.x/detect-investigate-and-respond-to-threats/threat-management/detection-rules/whats-a-bioc/create-a-bioc-rule.md) e [Create a correlation rule — XSIAM](https://cortex-docs.paloaltonetworks.com/cortex-xsiam/detect-investigate-and-respond-to-threats/threat-management/detection-rules/what-are-detection-rules/whats-a-correlation-rule/create-a-correlation-rule.md).\n",
+  "response_sha256": "8c1c61ca5fdc41fa6f075b3ffbcffb0c39bf7b954bb471d61a84d8720604088e",
+  "result": "PASS",
+  "rationale": "Identificou incompatibilidade BIOC de agregação e filtro ausente; sugeriu avaliar superfície apropriada.",
+  "grading": "Author-scored against explicit case criteria; separately generated fresh isolated agent response; not independent reviewer sign-off.",
+  "tools_allowed": "Read only the supplied runtime; write response; no web or tenant tools.",
+  "scope": "Offline behavioral sample, not natural host activation or product execution."
+}

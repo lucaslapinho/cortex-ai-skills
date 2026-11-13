@@ -1,0 +1,116 @@
+{
+  "id": "XQL-NOV-01",
+  "skill": "cortex-xql-query-engineer",
+  "title": "API result boundary",
+  "prompt": "The ordinary XQL results endpoint returned exactly 1000 rows. Can we call that the complete result, and should we add invented page_number parameters?",
+  "expected": "Do not infer completeness; documented ordinary cap/stream path; no invented pagination; tenant verification separate.",
+  "prohibited": "Claim completeness or fabricate API parameters.",
+  "date": "2026-11-13",
+  "fixture": "Synthetic; no tenant or external write authorization.",
+  "runtime_sha256": "896a47d0b0649812108e811fc264e8156c02f5ae6e72afc3fd3d580a726c8d4b",
+  "runtime_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "020b1a399bb891a4793afa2859d8766658347096d924e4e25dfa86136fa49042"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "297b50f08386d3521f8fdaf2f78eb8d9d0acdf452d2e61596905fba37208c792"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "b094b4155c38c7908f66fdccf7405732af1a8acf7d525cf7f81145cffb6cedb4"
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "2e28a6f3135b430544d7333cd9678770d6a98bca841365dc31d0a6a343b5944e"
+    },
+    {
+      "path": "examples/detection/detection-handoff.md",
+      "sha256": "63f2f0069d8db2accf67990aebb6d41d6b180d130a73048f3a072520717a62f7"
+    },
+    {
+      "path": "examples/hunting/lateral-movement.md",
+      "sha256": "25bc5847ad627f7bcf50f77224c59cef44441545beea589e946f442ee33cda75"
+    },
+    {
+      "path": "examples/investigation/last-process-per-host.md",
+      "sha256": "df481b9bc9653347088c407def5e81a751c09990b84288ed13e4af464c988275"
+    },
+    {
+      "path": "examples/investigation/suspicious-powershell.md",
+      "sha256": "a52ffcec36cd30ce46516b4a10bb2f3466b8a0d72175557e71c8ef06626f064f"
+    },
+    {
+      "path": "examples/troubleshooting/fabricated-schema.md",
+      "sha256": "936c83db317ebc7c21a7b689515ee7925ac75da398a7db1a6ad9c45ec0d2e221"
+    },
+    {
+      "path": "references/2026-10-23-refresh.md",
+      "sha256": "58d4c1080abe37e609dd49d33d57c27f52da74fce977617bf6da9255f75e657d"
+    },
+    {
+      "path": "references/2026-11-13-refresh.md",
+      "sha256": "774d465b1de642d4514c1ac55c6be23469d46da7322098f78b39805c6c1706d2"
+    },
+    {
+      "path": "references/datasets.md",
+      "sha256": "b86b0fd44fb56bd01ba73cebc3e191c8408be6e61ab6f0d45aabb639ca9f900e"
+    },
+    {
+      "path": "references/evidence-and-product-boundaries.md",
+      "sha256": "87415c2de21a5ee7d0e6c874831d672c58d0dedf6868ce479849bf8b1c39df79"
+    },
+    {
+      "path": "references/fields-and-schema.md",
+      "sha256": "2d29a21ff6d44473d3377c9d47c7b617ac00117158417fc28904d09e282cb6d1"
+    },
+    {
+      "path": "references/official-sources.md",
+      "sha256": "5b2a22188cad2fd9485969871d981f5dc553929d59d2854452549fb8e710e529"
+    },
+    {
+      "path": "references/optimization.md",
+      "sha256": "9d49eabc9863a089c13a89b507181109620fc188c2266032f3d3502604baeaa1"
+    },
+    {
+      "path": "references/query-patterns.md",
+      "sha256": "35e203a4aaac29ed2921077ed0b8df871dd81aa711b16384646f288c06b157e6"
+    },
+    {
+      "path": "references/troubleshooting.md",
+      "sha256": "c32fca9577420e03b58dab89d18dae5a6393c0a2db7483136976874d5f5ead18"
+    },
+    {
+      "path": "references/xql-language.md",
+      "sha256": "670caafd78359789397d7980ba8020c9eb98860cd05c8ebd32834ccc85b306fa"
+    },
+    {
+      "path": "templates/detection-query.md",
+      "sha256": "8c3379c1c6a7fb6dfd83a188130386bb3258ec0afbca3fbc3bc3de2815f450ea"
+    },
+    {
+      "path": "templates/investigation-query.md",
+      "sha256": "ee17788fa638f1be7744885c7cf7aa990dcd8e0868dcb4978003d73d3aaa5392"
+    },
+    {
+      "path": "templates/query-build.md",
+      "sha256": "0fb00592c4c978aaa27a9555387c62114aa42708ae0e04af03f33ce676790048"
+    },
+    {
+      "path": "templates/query-review.md",
+      "sha256": "b35a89e73120fafb1394699bebd7c79f1177b713ac49879c311127271454342b"
+    },
+    {
+      "path": "templates/tenant-validation.md",
+      "sha256": "779a28b1d0326cc7d3821cf2d86c7c68d586829cf8b810445a12d7979fd3f267"
+    }
+  ],
+  "response": "Não. **Exatamente 1.000 linhas não comprova que o resultado está completo**, e não devemos inventar `page_number` ou outros parâmetros de paginação.\n\nNo snapshot de referência da **Cortex XSIAM Platform XQL API**, o Get Results comum tem teto de **1.000 linhas e não oferece paginação**. Portanto, a resposta pode conter todas as linhas ou ter atingido o teto de recuperação; a contagem, sozinha, não distingue essas situações. Linhas retornadas, linhas disponíveis e linhas examinadas são medidas diferentes.\n\nPara confirmar e recuperar o conjunto necessário:\n\n1. Identificar produto, versão e contrato exato do endpoint; esses dados não foram informados. Confirmar também que a consulta terminou com sucesso e revisar limites explícitos da própria query.\n2. Verificar no contrato documentado quais evidências permitem determinar o volume total ou a existência de resultados adicionais, sem presumir nomes de campos.\n3. Se houver mais de 1.000 resultados, seguir o fluxo **Stream** documentado para essa API. Se o total continuar desconhecido, usar o fluxo apropriado para demonstrar a recuperação integral, após verificar seu contrato. Não adaptar Get Results com parâmetros inventados.\n\nA integralidade deve ser delimitada à consulta, período e escopo de acesso; ela não prova cobertura de toda a telemetria.\n\n**Evidência:** `VERSION-DEPENDENT / DERIVATIVE / TENANT-UNVERIFIED`. A orientação acima usa a revisão incluída no pacote, datada de **2026-11-13**, que referencia a [XQL Query API oficial](https://cortex-docs.paloaltonetworks.com/xsiam-api/cortex-platform/xql-query.md). Não consultei essa página agora nem executei chamadas no tenant. O produto e o contrato atuais precisam ser confirmados antes de fornecer código executável ou afirmar completude.\n",
+  "response_sha256": "812dfcec393f8ea293d482aee405a9a52009859628915f3365c53f0af7f71ecb",
+  "result": "PASS",
+  "rationale": "Distinguiu teto de 1000 linhas de integralidade e não inventou paginação.",
+  "grading": "Author-scored against explicit case criteria; separately generated fresh isolated agent response; not independent reviewer sign-off.",
+  "tools_allowed": "Read only the supplied runtime; write response; no web or tenant tools.",
+  "scope": "Offline behavioral sample, not natural host activation or product execution."
+}

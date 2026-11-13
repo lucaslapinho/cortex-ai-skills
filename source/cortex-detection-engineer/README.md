@@ -1,5 +1,7 @@
 # Cortex Detection Engineer
 
+Current content version 0.1.2: read the [2026-11-13 refresh](references/2026-11-13-refresh.md) and current [validation ledger](VALIDATION.md). Earlier review and installation results retain their historical scope.
+
 Standalone AI Skill for designing, reviewing, validating, tuning, monitoring, and retiring evidence-scoped detections for Cortex XSIAM and Cortex XDR.
 
 ## What it provides
@@ -27,7 +29,7 @@ It does not provide tenant access, author an entire XQL language solution, confi
 
 ## Maturity
 
-Current version: `0.1.1`
+Current version: `0.1.2`
 
 This release is pre-1.0 because no live tenant, schema export, rule editor/compiler, representative tenant telemetry, controlled deployment, generated Issue/Case, or production outcome was available during authoring. Product behavior documented in current official sources remains distinct from tenant validation.
 

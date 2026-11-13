@@ -11,11 +11,14 @@ import zipfile
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-SKILLS = (
+LEGACY_SKILLS = (
     "cortex-xql-query-engineer", "cortex-detection-engineer",
     "cortex-playbook-engineer", "cortex-threat-hunter", "cortex-tim-engineer",
     "cortex-platform-engineer", "cortex-security-engineer",
 )
+NEW_SKILLS = ("cortex-cloud-engineer", "palo-alto-firewall-engineer",
+              "prisma-sase-engineer", "prisma-airs-engineer")
+SKILLS = LEGACY_SKILLS + NEW_SKILLS
 RUNTIME_FILES = {"SKILL.md", "VERSION"}
 RUNTIME_DIRS = {"agents", "references", "templates", "examples"}
 COUNTS = (41, 39, 28, 26, 37, 41, 41)
@@ -153,10 +156,14 @@ def audit(root: Path, release: bool = False) -> dict:
             if parsed.fragment and target in texts and unquote(parsed.fragment) not in anchors(texts[target]):
                 errors.append(f"Missing anchor: {path.relative_to(root)}: {href}")
     total_cases = 0
-    for name, expected in zip(SKILLS, COUNTS):
+    supplemental_cases = 0
+    for name in SKILLS:
         skill = root / name
+        legacy = name in LEGACY_SKILLS
+        expected = COUNTS[LEGACY_SKILLS.index(name)] if legacy else 10
+        test_files = [f"tests/{c}.md" for c in CATEGORIES] if legacy else ["tests/cases.md"]
         required = ["SKILL.md", "README.md", "VERSION", "CHANGELOG.md", "VALIDATION.md", "agents/openai.yaml"]
-        required += [f"tests/{c}.md" for c in CATEGORIES]
+        required += test_files
         for rel in required:
             if not (skill / rel).is_file() or not (skill / rel).stat().st_size:
                 errors.append(f"Required file absent/empty: {name}/{rel}")
@@ -168,21 +175,26 @@ def audit(root: Path, release: bool = False) -> dict:
         version = (skill / "VERSION").read_text()
         if not re.fullmatch(r"\d+\.\d+\.\d+\n", version):
             errors.append(f"Invalid VERSION: {name}")
-        if len(re.findall(r"^- \[x\]", texts.get(skill / "VALIDATION.md", ""), re.M)) != 18:
+        if legacy and len(re.findall(r"^- \[x\]", texts.get(skill / "VALIDATION.md", ""), re.M)) != 18:
             errors.append(f"Expected 18 checklist items: {name}")
-        ids = []
-        for category in CATEGORIES:
-            body = texts.get(skill / f"tests/{category}.md", "")
+        ids, supplemental_ids = [], []
+        all_test_files = sorted(p.relative_to(skill).as_posix() for p in (skill / "tests").glob("*.md"))
+        for test_file in all_test_files:
+            body = texts.get(skill / test_file, "")
             matches = list(CASE.finditer(body))
             for i, match in enumerate(matches):
-                ids.append(match[1])
+                (ids if test_file in test_files else supplemental_ids).append(match[1])
                 block = body[match.end():matches[i + 1].start() if i + 1 < len(matches) else len(body)]
                 for heading in ("Fixture", "Prompt", "Expected observations", "Prohibited behaviors", "Evidence expected", "Authored result"):
                     if not re.search(r"(?:### +|\*\*)" + re.escape(heading) + r"(?::?\*\*|\s*\r?$)", block, re.M):
                         errors.append(f"Missing {heading}: {name}/{match[1]}")
         if len(ids) != expected or len(ids) != len(set(ids)):
             errors.append(f"Case count/uniqueness: {name}: {len(ids)}, expected {expected}")
-        total_cases += len(ids)
+        combined = ids + supplemental_ids
+        if len(combined) != len(set(combined)):
+            errors.append(f"Duplicate base/supplemental case ID: {name}")
+        total_cases += len(combined)
+        supplemental_cases += len(supplemental_ids)
     if release:
         for rel, terminal in {
             "reviews/xql-golden-reference-review.md": "GOLDEN REFERENCE APPROVED: YES",
@@ -205,7 +217,7 @@ def audit(root: Path, release: bool = False) -> dict:
             "markdown_files": len(texts), "local_links_including_anchors": links,
             "runtime_links_including_anchors": runtime_links,
             "local_path_links": path_links, "runtime_path_links": runtime_path_links,
-            "authored_cases": total_cases, "errors": errors}
+            "authored_cases": total_cases, "supplemental_cases": supplemental_cases, "errors": errors}
 
 
 def write_zip(destination: Path, base: Path, files: list[Path], prefix: str):

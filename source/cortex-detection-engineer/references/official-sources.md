@@ -1,5 +1,7 @@
 # Official source register
 
+Current scoped update: [2026-11-13 refresh](2026-11-13-refresh.md). Historical entries below retain their original dates and applicability.
+
 **Review date:** 2026-09-04  
 **Scope:** current official Palo Alto Networks documentation and one pinned official example repository  
 **Tenant status:** no tenant was accessed; product documentation does not prove tenant availability, compilation, execution, or outcomes

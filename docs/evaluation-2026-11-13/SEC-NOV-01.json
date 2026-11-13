@@ -1,0 +1,120 @@
+{
+  "id": "SEC-NOV-01",
+  "skill": "cortex-security-engineer",
+  "title": "Portfolio routing",
+  "prompt": "Plan ownership for a Cloud exposure finding, a Panorama policy change, Prisma Access private-app access and AI runtime protection. Specialists may be unavailable. No production action is authorized.",
+  "expected": "Distinct optional specialists, standalone next steps, common scope/time/entity contract, no production action or all-product guarantee.",
+  "prohibited": "Conflate products, require sibling files, invent execution.",
+  "date": "2026-11-13",
+  "fixture": "Synthetic; no tenant or external write authorization.",
+  "runtime_sha256": "c090ed882979c1e0608b29a2d597a010ccdc31fcac40e67ad66648262320e8f6",
+  "runtime_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "b841f44551d922446723bd5eedc6535433233ea9984eadb7910ebe054ae96654"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "78621b40f99a1b1cba6075ef0a18eb3d8b968172252ea5cd39201fcba1fdde1b"
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "531c6dd9dd84283484695180b5d2eafbfde03d464d8f5d67f0a3e772e87db7b5"
+    },
+    {
+      "path": "examples/credential-theft-containment.md",
+      "sha256": "70e8279603516547056d600b955cf4f6f56a854cc8795534075531e8fe80b665"
+    },
+    {
+      "path": "examples/cross-product-boundary.md",
+      "sha256": "f0129f7118fc1e18c03d7f205b10e097a2441defd647961f39941209893d79a7"
+    },
+    {
+      "path": "examples/missing-telemetry-routing.md",
+      "sha256": "99842c692554f4e95c761255e64e08c6d6170aa765785245ad09a024a27b1642"
+    },
+    {
+      "path": "examples/suspicious-dns-program.md",
+      "sha256": "038097824a70497366daaaa47f6591956556f2941905fd571458c935aac517d9"
+    },
+    {
+      "path": "references/2026-10-23-refresh.md",
+      "sha256": "c3a0c7ec80d492b0846abcecdb3ce01c7a8d01ec896817a38a68d06ff0e6a199"
+    },
+    {
+      "path": "references/2026-11-13-refresh.md",
+      "sha256": "6e4d8b81f062c3b5142df6c6299ee2a3fd51f660aa741f9c532f97e4fdc5cd15"
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "b65152f5b6779ea6c9882fad69462e70d0e3e2e60cb27f5b8eb3c328570f23a1"
+    },
+    {
+      "path": "references/decision-record-method.md",
+      "sha256": "2e69ccbf9bcfba2725c4c43b7499d7f31bf65e0a0b7cfab109a7007f36f51f38"
+    },
+    {
+      "path": "references/evidence-and-product-boundaries.md",
+      "sha256": "b2c666a0b69eb39f083aac7caf54719d1996d89fb8d0795b0ba2ae8aa908c0ea"
+    },
+    {
+      "path": "references/official-sources.md",
+      "sha256": "116d7faa8a4318a0ae1a35f3df7dc342dd4aefa4af14359723a613210c6028b0"
+    },
+    {
+      "path": "references/portfolio-routing.md",
+      "sha256": "d833ee3fbcc45d72983d2d9999f8300216280ff10330b24ad7ed4e0dcb05b3c9"
+    },
+    {
+      "path": "references/product-surface-map.md",
+      "sha256": "b18c69788f30210b29a9ba10a1ec8b2475f60091bf187f40b763c9d8bf5e8e55"
+    },
+    {
+      "path": "references/routing-and-ownership.md",
+      "sha256": "af39e80b5a4a36c9c0bb00058e4a3c6049057ba51c78b198176eba52d4dbb1c0"
+    },
+    {
+      "path": "references/safety-and-authorization.md",
+      "sha256": "5c3ec01831d85e60bcf69603422f81a79e663e3b21a5f0637ada84eef823432b"
+    },
+    {
+      "path": "references/troubleshooting.md",
+      "sha256": "806c4a1baaf50567af86e5fd0d4cb6f0cbd0031f73e9627db18e782ff3667747"
+    },
+    {
+      "path": "references/validation-and-operations.md",
+      "sha256": "ab0eaba2a7fe5b0c33d1d085deeb5a91f7543ae6a5e14fa5c5ccf81181dc2e1b"
+    },
+    {
+      "path": "templates/control-validation-plan.md",
+      "sha256": "97d482af37089ea2e424f3d0e751e588fcaa7fd0e144f1517f53ca24b4fed185"
+    },
+    {
+      "path": "templates/multi-domain-roadmap.md",
+      "sha256": "d4246ce1af66f22c606f7a578b5ea05d392d89259ef72c12f93d268b99bfeb6a"
+    },
+    {
+      "path": "templates/operational-handoff.md",
+      "sha256": "279562b4be547faf9a18fc9341a7bd4416810d3a2cdcd004c8feb317ef230755"
+    },
+    {
+      "path": "templates/request-intake.md",
+      "sha256": "ef8148abb7c7ec8e93648b0193f80c94dfa0e5c2f0fc87e57a2212aba9870943"
+    },
+    {
+      "path": "templates/security-decision-record.md",
+      "sha256": "6e4be8013f3bcf3170c51c8eb20432168c9a8e6be5c1463c46c33bbc6c3db3fa"
+    }
+  ],
+  "response": "Proponho um coordenador de segurança e quatro responsáveis de domínio. **Decisão: `PROCEED TO G0 — definição de escopo e responsáveis`, exclusivamente para planejamento. A implementação permanece em `HOLD`.** Nenhuma ação em produção está autorizada.\n\nO objetivo é confirmar o risco da exposição Cloud, definir a eventual mudança de política, preservar o acesso legítimo à aplicação privada e proteger o runtime da aplicação de IA. O coordenador consolida dependências, critérios de aceite e evidências; a aprovação de risco e de mudanças pertence aos responsáveis humanos designados.\n\n**Domínio primário: multi-domain. Evidência do plano: `CONCEPTUAL / TENANT-UNVERIFIED`.** Os nomes abaixo são rotas opcionais para especialistas, não dependências instaladas nem delegações já realizadas.\n\n| Pacote | Produto/superfície e responsabilidade técnica | Responsável pelo resultado e operador propostos | Aprovação e recuperação propostas |\n|---|---|---|---|\n| `WP-CLOUD` — exposição | `cortex-cloud-engineer`: verificar recurso, finding, origem, atualidade, postura e caminho de exposição. Premissa: Cortex Cloud; produto que originou o finding ainda precisa ser confirmado. Release, superfície de análise e entitlement: `UNKNOWN`. | Dono de segurança Cloud responde pela análise; engenheiro Cloud prepara evidências e proposta. Dono do recurso responde pela remediação do serviço. | Dono do recurso e autoridade de risco aprovam tratamento. Operador Cloud designado prepara recuperação da configuração afetada. |\n| `WP-FW` — política Panorama | `palo-alto-firewall-engineer`: revisar PAN-OS/NGFW, Panorama, escopo de gestão e ponto efetivo de enforcement. Releases de Panorama/PAN-OS, dispositivos e escopo da política: `UNKNOWN`. | Dono da política de firewall responde pelo controle; operador Panorama prepara a proposta e o diff. | Autoridade de mudanças de rede aprova. Operador de recuperação de rede prepara reversão e verificação do estado anterior. |\n| `WP-SASE` — aplicação privada | `prisma-sase-engineer`: definir o caminho usuário–identidade–Prisma Access–aplicação privada, incluindo conectividade, DNS, política e modelo de gestão aplicáveis. Release, gestão por Panorama/SCM e superfície: `UNKNOWN`. | Dono do serviço Prisma Access responde pelo acesso; operador SASE prepara o desenho, consultando donos de IAM, DNS, rede e aplicação. | Dono da aplicação aprova quem pode acessá-la; autoridade de mudanças SASE aprova alterações. Operador SASE responde pela recuperação do acesso. |\n| `WP-AIRS` — runtime de IA | `prisma-airs-engineer`: definir proteção da aplicação/modelo/agente durante inferência, pontos de inspeção e política de ações. Produto proposto: Prisma AIRS Runtime; release, modo API/rede, integração e entitlement: `UNKNOWN`. | Dono de segurança da aplicação de IA responde pelo controle; engenheiro AIRS e operador da aplicação preparam a integração conceitual. | Dono da aplicação e autoridade de risco/dados aprovam efeitos e tratamento de conteúdo. Operador da aplicação responde por recuperação e modo degradado previamente acordado. |\n\nEsses papéis precisam receber nomes ou aliases internos antes de qualquer execução. O coordenador registra um único accountable por controle, separação de funções e suplentes; informa SOC/on-call e donos dos serviços afetados. Se a mesma pessoa acumular funções, a decisão deve ficar explícita.\n\nO roteamento segue a referência embarcada [portfolio-routing.md](sandbox:/workspace/scratch/0022bfdcea08/isolated-evaluation/SEC-NOV-01/cortex-security-engineer/references/portfolio-routing.md). Há três fronteiras importantes:\n\n- Um finding Cloud pode justificar revisão de firewall, mas não demonstra que a remediação correta seja uma regra de rede e não autoriza essa mudança. Exposição por identidade, armazenamento ou configuração do serviço exige tratamento no domínio correspondente.\n- O proprietário do acesso privado continua sendo SASE mesmo se Panorama participar da gestão. Firewall e SASE devem acordar quem controla cada objeto e etapa, evitando alterações concorrentes.\n- A proteção do runtime da aplicação de IA pertence a AIRS. AI Access Security trata o acesso da força de trabalho a GenAI; Cortex Cloud AI-SPM trata inventário/postura de recursos de IA. Não há equivalência automática de licença, API, cobertura ou resultados entre essas fronteiras.\n\nAs duas últimas distinções de produto constam do [refresh embarcado de 2026-11-13](sandbox:/workspace/scratch/0022bfdcea08/isolated-evaluation/SEC-NOV-01/cortex-security-engineer/references/2026-11-13-refresh.md). Esse arquivo relata consultas oficiais anteriores; eu o li como registro do pacote, sem reabrir as páginas. As alegações de produto permanecem `UNVERIFIED / PROJECT-ASSERTED / TENANT-UNVERIFIED` nesta resposta até a confirmação aplicável ao ambiente. A data do registro não é uma nova verificação documental realizada aqui.\n\nPara avançar, cada pacote entrega um resultado revisável:\n\n| Pacote | Entrada e entrega mínima | Dependência e evidência de aceite | Falha e recuperação a planejar |\n|---|---|---|---|\n| `WP-CLOUD` | Finding sanitizado, referência do recurso, evidência de origem/tempo e controles existentes → hipótese de exposição, impacto e opções de tratamento. | Confirmar a condição observada, identidade/população afetada e caminho plausível. Separar finding desatualizado, exposição intencional e acesso indevido. | Sem fonte atual ou cobertura demonstrada, manter a conclusão aberta; dono Cloud obtém evidência adicional. Para futura remediação, preservar o estado anterior e definir reversão. |\n| `WP-FW` | Intenção aprovada da política, topologia e configuração sanitizada → diff proposto, escopo de dispositivos e plano de teste. | Só depende de `WP-CLOUD` se a mudança buscar tratar esse finding. Validar tráfego permitido e negado no ponto correto. Distinguir commit no manager, push aos dispositivos e enforcement observado. | Definir parada para impacto em tráfego legítimo, divergência ou aplicação parcial. Recuperar a configuração pelo operador designado e verificar novamente os fluxos. |\n| `WP-SASE` | Matriz de usuários/grupos e aplicações autorizadas, caminho de conectividade, DNS e identidade → contrato de acesso e cenários de validação. | Correlacionar a política proposta com o trajeto real e com `WP-FW` quando compartilharem o caminho. Testar usuário autorizado, não autorizado e falhas de resolução/conectividade. | Definir detecção de perda de acesso, diagnóstico por segmento e recuperação da configuração anterior, sem ampliar permissões como resposta automática. |\n| `WP-AIRS` | Fluxo de dados da aplicação, chamadas do agente, dados sensíveis e ações permitidas → fronteiras de confiança, posição do controle e política conceitual. | Confirmar capacidade do modo/release escolhido em documentação aplicável. Planejar testes de uso legítimo, prompt injection, tentativa de exfiltração, ação indevida, indisponibilidade e latência. | Dono da aplicação define comportamento em timeout/indisponibilidade, limites de bloqueio e retorno à versão anterior. Não presumir fail-open ou fail-closed. |\n\nO risco inicial é uma hipótese: acesso indevido ao recurso Cloud, mudança de rede que interrompa serviço, acesso privado excessivo e conteúdo de IA que provoque vazamento ou ação não autorizada. Severidade, probabilidade, impacto e limites de disponibilidade/latência permanecem entradas do dono do risco. Um score do finding, isoladamente, não estabelece essas conclusões.\n\nTodos os pacotes usarão o mesmo contrato de evidência:\n\n| Campo comum | Valor necessário e responsável pela lacuna |\n|---|---|\n| Produto e superfície | Produto/release, management plane, licença, ambiente e superfície exatos; cada dono de domínio confirma. Atualmente `UNKNOWN`. |\n| Tempo | Janela absoluta em UTC; distinguir tempo do finding/scan, evento, ingestão, alteração e teste. Donos Cloud, rede, SASE e aplicação alinham a janela; valores atuais `UNKNOWN`. |\n| Entidades e granularidade | Recurso Cloud, fluxo/dispositivo/política, sessão de usuário–aplicação e requisição/ação de IA; chaves, tradução de identidades, NAT e regras de correlação devem ser documentadas. Cada dono fornece chaves sanitizadas e limitações; nenhum join é presumido. |\n| Artefatos | Versão/hash do finding exportado, snapshots, diff e desenho da integração, com proveniência. Coordenador mantém o registro e cada autor entrega a versão exata. |\n| Observáveis | Evidência de exposição/scan; configuração e logs de tráfego; eventos de identidade, DNS e sessão; decisão do controle e resultado da aplicação de IA. Fontes, schema/tipos, granularidade, saúde, cobertura, frescor, retenção, parser, nulos, duplicações e semântica temporal: `UNKNOWN`, a verificar pelo dono de cada fonte. |\n| Identidade e dados | Alias de identidade executora, menor privilégio, RBAC/escopo, minimização e regras de retenção. Donos de plataforma/dados confirmam; sem credenciais ou conteúdo sensível no pacote de revisão. |\n| Aceite e recuperação | Cenário, resultado esperado, aprovador, operador, evidência sanitizada, critérios de parada e recuperação. Cada dono preenche antes de solicitar execução; local de evidência e prazo de retenção ainda `UNKNOWN`. |\n\nSequência proposta:\n\n1. **G0 — escopo e ownership:** o coordenador confirma se os quatro itens pertencem ao mesmo fluxo ou são demandas independentes, nomeia responsáveis e registra objetivos, dependências e limites. A ausência desses dados não impede este planejamento.\n2. **G1 — documentação e evidências:** cada dono confirma produto/release/superfície, entitlement, topologia, identidade e fontes. A revisão de documentos pode avançar de forma independente por domínio; acesso a tenant depende de autorização aplicável.\n3. **G2 — desenho revisável:** preparar os quatro pacotes. Somente evidência de um caminho compartilhado cria dependência entre Cloud, firewall, SASE e AIRS; a mera coexistência dos produtos não a cria.\n4. **G3 — validação não produtiva, futura e autorizada:** verificar aceitação dos artefatos e executar testes delimitados, incluindo positivos, benignos, negativos, dados ausentes, limites de tempo, permissão negada, timeout, aplicação parcial e recuperação conforme o domínio. Um sucesso no manager não comprova tráfego protegido; um componente validado não comprova o fluxo completo.\n5. **G4 — decisão de mudança:** somente após evidências de aceite, responsáveis e recuperação, submeter o alvo e a operação exatos ao aprovador. Produção continua fora da autorização atual.\n\nAntes de eventual promoção, cada dono também define monitoramento de saúde, drift, falhas, exceções com prazo, escalonamento, revisão após mudanças e retirada do controle. Não foram definidos limiares numéricos sem requisitos do serviço.\n\nSe os especialistas estiverem indisponíveis, o coordenador mantém esses requisitos, desenhos, critérios e solicitações de evidência como entrega autônoma. Mecânicas específicas ficam para documentação oficial do release e revisão por operador competente. Não é necessário instalar outra Skill para completar o planejamento, nem inventar comandos, APIs ou configurações para preencher lacunas.\n\n| Nível | Resultado | Escopo e justificativa |\n|---|---|---|\n| `S` | `NOT RUN` | Não há resultado independente de avaliação comportamental controlada desta resposta. A leitura dos recursos não equivale a esse teste. |\n| `D` | `NOT RUN` | Foram lidas referências embarcadas datadas; nenhuma documentação oficial foi reaberta nesta atividade. O resultado documental registrado no pacote não é herdado. |\n| `C` | `NOT RUN` | Nenhum artefato foi compilado, importado ou aceito em editor de tenant não produtivo. |\n| `E` | `NOT RUN` | Nenhum fluxo, política, acesso ou proteção foi executado em tenant. |\n\n**Conclusão:** avançar somente para G0 e a preparação documental de G1; implementação em `HOLD`. Não afirmo cobertura, entitlement, estado do tenant, eficácia, implantação, recuperação testada ou autorização de mudança. **Próximo responsável: o coordenador de segurança**, que deve nomear os quatro donos e solicitar produto/release, topologia e evidências sanitizadas para fechar os contratos e levar o desenho à revisão.\n",
+  "response_sha256": "d495a03b8d20aa6b3afde25c0d0744040388655029213845f8e9c34f11e706d3",
+  "result": "PASS",
+  "rationale": "Roteou quatro domínios com responsáveis e contrato comum, mantendo handoff opcional e sem mudanças de produção.",
+  "grading": "Author-scored against explicit case criteria; separately generated fresh isolated agent response; not independent reviewer sign-off.",
+  "tools_allowed": "Read only the supplied runtime; write response; no web or tenant tools.",
+  "scope": "Offline behavioral sample, not natural host activation or product execution."
+}

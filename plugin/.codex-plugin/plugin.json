@@ -1,7 +1,7 @@
 {
   "name": "cortex-ai-skills",
-  "version": "0.1.1",
-  "description": "Seven independent Cortex Skills for XQL, detections, playbooks, hunting, threat intelligence, platform engineering, and security coordination.",
+  "version": "0.2.0",
+  "description": "Eleven independent Palo Alto Networks Skills covering Cortex security operations, Cortex Cloud, NGFW, Panorama, SCM, Prisma SASE and Prisma AIRS.",
   "author": {
     "name": "Cortex AI Skills contributors"
   },
@@ -11,8 +11,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Cortex AI Skills",
-    "shortDescription": "Cortex security workflows",
-    "longDescription": "Seven modular Skills informed by official Palo Alto Networks documentation and verified project experience. Includes instructions, references, templates, and examples for evidence-scoped defensive security work. Independent project; human validation is required.",
+    "shortDescription": "Palo Alto security engineering",
+    "longDescription": "Eleven modular Skills with dated official references, standalone resources and evidence-scoped workflows for Cortex, Cloud, Firewall, SASE and AI application security. Independent project; target validation and applicable authorization remain necessary.",
     "developerName": "Cortex AI Skills contributors",
     "category": "Security",
     "capabilities": [
@@ -22,12 +22,16 @@
       "Plan hypothesis-driven hunts",
       "Review threat intelligence lifecycles",
       "Troubleshoot platform data flows",
-      "Scope security engineering handoffs"
+      "Scope security engineering handoffs",
+      "Review cloud coverage and risk",
+      "Plan firewall policy changes",
+      "Diagnose SASE access paths",
+      "Design AI protection controls"
     ],
     "defaultPrompt": [
-      "Review an XQL query using my supplied schema.",
-      "Design a phishing investigation workflow.",
-      "Plan a hunt and identify telemetry gaps."
+      "Coordinate a Palo Alto security architecture review.",
+      "Review Cortex Cloud coverage and XSIAM integration.",
+      "Plan a scoped Panorama or SCM firewall change."
     ],
     "logo": "./assets/cortex-skills.svg",
     "composerIcon": "./assets/cortex-skills.svg"

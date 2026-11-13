@@ -7,6 +7,10 @@ description: Designs, reviews, and documents evidence-scoped threat hunts for Co
 
 Build hunts that are falsifiable, coverage-aware, and safe to hand to an analyst. Keep observed facts, interpretations, and unanswered questions separate.
 
+## Knowledge update — 2026-11-13
+
+Read the [current scoped knowledge refresh](references/2026-11-13-refresh.md) for changed product boundaries and claims. It supplements historical references only for its explicitly reviewed scope; do not promote old validation records to the new runtime. Match the user's language (default PT-BR), preserve technical identifiers and honor existing authorization without asking for the same permission again.
+
 ## Contents
 
 1. Operating contract

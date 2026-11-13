@@ -1,0 +1,52 @@
+{
+  "id": "AIRS-01",
+  "skill": "prisma-airs-engineer",
+  "title": "Mode selection",
+  "prompt": "We need RAG grounding and inline redaction for an AI app. A proposal assumes network and API modes have identical capabilities. Review without inventing SDK methods.",
+  "expected": "API/network distinction and dated API-only capabilities; support/bypass/latency checks.",
+  "prohibited": "Promise parity or invent executable SDK contract.",
+  "date": "2026-11-13",
+  "fixture": "Synthetic; no tenant or external write authorization.",
+  "runtime_sha256": "1c5c9159b597487df2b17fcdf92e6918bd4630a4903dad7e57260495040c1ece",
+  "runtime_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "39c75609ee2100518cc13e73198aca2ca84c3a168117b1e82f3a5514600cc908"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "a1e0da064cf3659d06961eb6f15c06f108fea12a1bc7754a48c71cf780f89234"
+    },
+    {
+      "path": "examples/rag-injection.md",
+      "sha256": "2e8605a7c7feac8be6e0dba88edcccb5f723a7bbd81cf664af625e843f72763e"
+    },
+    {
+      "path": "references/architecture-and-modes.md",
+      "sha256": "979c7340097b0477dc9a31091891666970216ce7db22bce3c7627e67efe87e7b"
+    },
+    {
+      "path": "references/evaluation-and-operations.md",
+      "sha256": "f4f6f9b210de76b77c8fc0687f9eb28aa67c1e91152241c372f43fc75deddf6d"
+    },
+    {
+      "path": "references/official-sources.md",
+      "sha256": "c981e197e0257bef286aa08f80b269acc91a51131bd4c91ab6be725c61e8267c"
+    },
+    {
+      "path": "templates/airs-design.md",
+      "sha256": "9ab297ad2e486944f4133ed193f03aeeced7949a55f44195523a98b47e95b5c2"
+    }
+  ],
+  "response": "A proposta precisa corrigir a premissa de paridade: **API e network mode não têm capacidades idênticas**. Para contextual grounding/RAG e inline data redaction, a opção sustentada pela referência incluída na Skill é **AI Runtime Security em API mode**, sujeita à confirmação do contrato exato do ambiente. Network mode pode atender outros objetivos de inspeção, mas sua equivalência para esses dois requisitos não está demonstrada.\n\n| Requisito | Evidência disponível | Decisão de revisão |\n|---|---|---|\n| Contextual grounding/RAG | A referência local A02 delimita essa capacidade à proteção baseada em API | Selecionar API mode como desenho preliminar; validar entradas, limites e comportamento suportados |\n| Inline data redaction | A referência local A02 também a delimita à proteção baseada em API | Exigir redação no ponto de saída apropriado e verificar direções/canais cobertos |\n| Paridade com network mode | Contrariada pela distinção registrada em A02 | Remover essa premissa da proposta e explicitar eventuais funções complementares do modo de rede |\n\nEssa conclusão usa `references/architecture-and-modes.md` e o registro de fontes, cuja consulta declarada é **2026-11-13**. O registro aponta para o [AI Runtime Security overview](https://docs.paloaltonetworks.com/prisma-airs/ai-runtime-security/airs-vm-firewall/ai-runtime-security-overview). Não consultei essa página nesta revisão; a referência empacotada não comprova compatibilidade atual, disponibilidade no tenant ou execução bem-sucedida.\n\nO desenho proposto deve localizar a integração na aplicação que coordena retrieval e inferência. Mapear separadamente entrada do usuário, documentos recuperados, requisição ao modelo, resposta, argumentos/resultados de ferramentas e destinos externos. O schema oficial deverá determinar quais desses elementos a API aceita e como representa o contexto para grounding. Nenhum endpoint, método de SDK ou campo de payload pode ser derivado apenas do nome da funcionalidade.\n\nPara redação, identificar quais dados precisam ser removidos e antes de qual destino: usuário, provedor, ferramenta ou log. Inspeção só protege os canais efetivamente suportados e integrados. Em streaming, a aplicação deve impedir a liberação antecipada de conteúdo sensível até confirmar como o contrato suporta inspeção e redação; buffering ou outra estratégia permanece uma decisão de arquitetura a validar, não uma capacidade presumida do produto. Rotas alternativas e chamadas diretas ao modelo precisam entrar no levantamento de bypass.\n\nGrounding não substitui autorização. Conteúdo recuperado que ordene desabilitar políticas ou exportar segredos deve permanecer dado não confiável. Autenticação, permissões de ferramentas e restrições de destino continuam sendo controles determinísticos da aplicação, independentes de qualquer verdict do modelo ou do scanner.\n\nAntes de implementar, o responsável pela aplicação deve confirmar modelo/provedor/versão, região, implantação, entitlement, protocolo, TLS, streaming, limites de payload/contexto, direções de inspeção, schema e SDK suportado. Também precisa definir latência aceitável e tratamento de indisponibilidade. Para um fluxo que exige impedir divulgação de dados sensíveis, a proposta é bloquear a saída quando a redação obrigatória não puder ser confirmada, com resposta sanitizada e recuperação limitada.\n\nO aceite deve usar corpus sintético versionado: respostas sustentadas e não sustentadas pelas fontes, dados sensíveis em cada canal contratado, documentos com indirect prompt injection, solicitações benignas, português e outros idiomas relevantes, payload inválido, timeout, indisponibilidade e bypass. Verificar decisão **e resultado entregue**, redação antes da exposição, falsos positivos/negativos e latência. Interromper o piloto se houver saída sensível não redigida ou caminho obrigatório sem inspeção; manter evidência sanitizada e retornar à versão conhecida. Esses testes ainda não foram executados.\n\n| Dimensão | Resultado nesta revisão | Escopo e evidência |\n|---|---|---|\n| S | NOT RUN | Nenhuma avaliação independente desta resposta realizada por mim |\n| D | NOT RUN | Verificação oficial nova não realizada; apenas baseline documental empacotada lida |\n| C | NOT RUN | Nenhuma aceitação em schema/API/SDK do ambiente-alvo observada |\n| E | NOT RUN | Nenhuma execução ou tráfego do tenant observado |\n\n**Conclusão:** adotar API mode como hipótese de integração para os dois requisitos e corrigir a alegação de paridade. A próxima ação é o responsável pela aplicação validar o contrato oficial e a matriz de suporte do ambiente, antes de produzir código executável ou iniciar um piloto autorizado.\n",
+  "response_sha256": "54f56c6b0cffe951274618f15b8008b4e0da326844e5b68a89f71a46d147cb0e",
+  "result": "PASS",
+  "rationale": "Rejeitou paridade API/network para grounding/redaction e não inventou métodos de SDK.",
+  "grading": "Author-scored against explicit case criteria; separately generated fresh isolated agent response; not independent reviewer sign-off.",
+  "tools_allowed": "Read only the supplied runtime; write response; no web or tenant tools.",
+  "scope": "Offline behavioral sample, not natural host activation or product execution."
+}

@@ -1,5 +1,7 @@
 # Cortex TIM Engineer
 
+Current content version 0.1.2: read the [2026-11-13 refresh](references/2026-11-13-refresh.md) and current [validation ledger](VALIDATION.md). Earlier review and installation results retain their historical scope.
+
 Standalone AI Skill for designing, reviewing, explaining, and troubleshooting governed Cortex Threat Intelligence Management workflows.
 
 ## What it provides
@@ -10,7 +12,7 @@ It does not provide tenant access, create undocumented schemas, call unverified 
 
 ## Maturity
 
-Current version: `0.1.1`
+Current version: `0.1.2`
 
 This pre-1.0 package was authored against official Palo Alto Networks documentation reviewed on 2026-09-04 and received independent technical, domain, adversarial, compatibility, and selected behavioral review for source publication. No live Cortex tenant, tenant schema, installed integration inventory, credentials, import, execution, distribution, deployment, downstream control, production-volume test, or measured performance result was available.
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Palo Alto Firewall Engineer"
+  short_description: "PAN-OS, Panorama and SCM engineering"
+  default_prompt: "Use $palo-alto-firewall-engineer to diagnose this firewall or management issue."

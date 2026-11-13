@@ -182,7 +182,7 @@ def validate_payload(files: dict[str, bytes], root: Path) -> dict:
     manifest = validate_manifest(files[MANIFEST], files)
     names = sorted({p.split("/")[1] for p in files if p.startswith("skills/") and len(p.split("/")) > 2})
     if names != sorted(release.SKILLS):
-        raise ValueError("Expected exactly seven named skill directories")
+        raise ValueError("Expected exactly the registered skill directories")
     expected_allowed = {MANIFEST, "LICENSE", manifest_path(manifest["interface"]["logo"]),
                         manifest_path(manifest["interface"]["composerIcon"])}
     markdown = {}
@@ -397,7 +397,7 @@ def build(root: Path, output: Path) -> dict:
         if old_entries.get(path) != sha(data):
             differences.append({"path": path, "baseline_sha256": old_entries.get(path),
                                 "current_sha256": sha(data),
-                                "reason": "Reviewed 0.1.1 source refresh; see per-Skill CHANGELOG and refresh reference."})
+                                "reason": f"Source at plugin {version}; see per-Skill CHANGELOG and dated source references."})
     removed = set(old_entries) - set(files)
     if removed:
         raise ValueError("Historical runtime resources unexpectedly removed")

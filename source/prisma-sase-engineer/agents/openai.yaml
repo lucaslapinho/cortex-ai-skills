@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prisma SASE Engineer"
+  short_description: "Prisma Access, SD-WAN and secure access"
+  default_prompt: "Use $prisma-sase-engineer to assess this secure access or branch connectivity scenario."

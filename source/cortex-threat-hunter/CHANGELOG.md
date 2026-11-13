@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2 — 2026-11-13
+
+Added a scoped official-document refresh and source-only regression fixtures. Preserved existing identity, runtime contracts and historical evidence. Expanded Palo Alto product routing and knowledge boundaries without claiming new tenant compilation/execution. See references/2026-11-13-refresh.md for claim-level scope.
+
+
 ## 0.1.1 — 2026-10-23
 
 - Added a focused official-source refresh for XSIAM query/graph permissions, investigation and Case grouping, plus XDR 5 issue-dataset scope.
