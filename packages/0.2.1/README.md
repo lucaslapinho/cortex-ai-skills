@@ -2,6 +2,8 @@
 
 Plugin com onze Skills. Apenas cortex-playbook-engineer mudou, de 0.1.2 para 0.2.0. Os outros dez runtimes são idênticos aos distribuídos em 0.2.0.
 
+Para enviar apenas o Playbook Engineer na aba **Skills** do ChatGPT, baixe [cortex-playbook-engineer-0.2.0-runtime.zip](cortex-playbook-engineer-0.2.0-runtime.zip). O ZIP `cortex-ai-skills-plugin-0.2.1.zip` é destinado à importação do plugin completo.
+
 | Arquivo | Bytes |
 |---|---|
 | [cortex-ai-skills-plugin-0.2.1.zip](cortex-ai-skills-plugin-0.2.1.zip) | 508,444 |
