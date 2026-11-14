@@ -65,6 +65,12 @@ class PublicationTests(unittest.TestCase):
             root / "packages/0.1.1", plugin,
             pinned_manifest=validation.PLUGIN_011_MANIFEST_SHA256), 8)
 
+    def test_020_historical_release_validates_own_snapshot(self):
+        root = Path(__file__).resolve().parents[1]
+        self.assertEqual(validation.validate_plugin_release(
+            root / "packages/0.2.0", plugin,
+            pinned_manifest=validation.PLUGIN_020_MANIFEST_SHA256), 12)
+
     def test_current_source_drift_rejected(self):
         root = Path(__file__).resolve().parents[1]
         with self.assertRaisesRegex(ValueError, "canonical source"):

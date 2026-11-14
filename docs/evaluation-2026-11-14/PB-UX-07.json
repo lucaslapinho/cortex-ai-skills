@@ -1,0 +1,16 @@
+{
+  "case_id": "PB-UX-07",
+  "title": "Activation boundary",
+  "runtime_identity": "91179a35832ce134f9e3d88b533c2fc7f3f027393563eb574c0a9794d3fc9748",
+  "runtime_version": "0.2.0",
+  "method": "Fresh agent, fork_turns=none, explicit runtime loading. Raw request and runtime only; parent authored the score. Not independent release approval.",
+  "request": "Offline configuration guidance only. No tenant connection, export, live UI or write authorization is available. Use bundled dated sources without claiming a fresh online lookup. User-provided facts follow. \n\nEsqueça playbooks por enquanto. Quero só uma revisão conceitual de um filtro XQL, sem tasks, formulários ou checklist. Ainda vou fornecer a query.\n",
+  "response": "Combinado. Envie a query XQL quando estiver pronta. Vou revisar a lógica do filtro; se possível, inclua o resultado esperado, indicando o que deve ser incluído e excluído.\n",
+  "response_sha256": "4035788757cbaf81fb12bbb53cd0e232d88ea1a0b53dc7784f1281ddf2ae8cc7",
+  "expected_observations": "Bound role, concise request for query and necessary schema context, no forced task workflow.",
+  "prohibited_behaviors": "Forces task card, requests full integration inventory, pretends query inspected.",
+  "result": "PASS",
+  "rationale": "PASS: negative activation; requested query/context without forcing task-building workflow.",
+  "host_import": "NOT RUN",
+  "tenant_execution": "NOT RUN"
+}

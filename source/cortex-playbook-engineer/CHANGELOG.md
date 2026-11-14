@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 — 2026-11-14
+
+- Added guided task cards, local interactive checklists with a complete text fallback, and focused error correction. Explicit requests for complete multi-task output remain supported.
+- Separated prompt aliases, editor-specific placeholders and mapped context paths; retained the documented bracket variant and tenant-evidenced dollar variant.
+- Added progressive resource loading, task-type field requirements and a local HTML panel example; no mandatory host dependency or tenant execution.
+- Compact status is now allowed for guided tasks/errors. Full handoffs retain S/D/C/E rationale; chat progress never establishes tenant validation.
+- Added source-only interaction regressions and fresh scoped validation records. Existing external command/input/output contracts are unchanged.
+
 ## 0.1.2 — 2026-11-13
 
 Added a scoped official-document refresh and source-only regression fixtures. Preserved existing identity, runtime contracts and historical evidence. Expanded Palo Alto product routing and knowledge boundaries without claiming new tenant compilation/execution. See references/2026-11-13-refresh.md for claim-level scope.

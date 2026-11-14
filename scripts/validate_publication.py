@@ -19,6 +19,7 @@ ROOT_FILES |= {"CHANGELOG.md", "requirements-dev.txt"}
 ROOT_DIRS = {"source", "packages", "docs", "scripts", ".github", "plugin"}
 BASELINE_MANIFEST_SHA256 = "66d7a34594fac43d2291ecccfef93c6b8d52296f9d7709041b355ed299f07742"
 PLUGIN_011_MANIFEST_SHA256 = "f6e3c3fb306f40b34c2fcc972dbd86a67dbb9c977795ebcc589e36d06dea1208"
+PLUGIN_020_MANIFEST_SHA256 = "afcab35d5b72da8d23afb0184dd60979675d447baa6b655a074d59b600bbf48e"
 SKIP = {".git", "__pycache__", ".pytest_cache"}
 TEXT_EXTENSIONS = {".md", ".py", ".yaml", ".yml", ".json"}
 PATTERNS = (
@@ -246,8 +247,10 @@ def validate(root: Path = ROOT) -> dict:
     current_report = plugin.validate_payload(current_payload, root)
     plugin_archives = validate_plugin_release(root / "packages/0.1.1", plugin,
                                              pinned_manifest=PLUGIN_011_MANIFEST_SHA256)
+    plugin_archives += validate_plugin_release(root / "packages/0.2.0", plugin,
+                                             pinned_manifest=PLUGIN_020_MANIFEST_SHA256)
     current_packages = root / "packages" / current_report["plugin_version"]
-    if current_packages.name != "0.1.1":
+    if current_packages.name not in {"0.1.1", "0.2.0"}:
         plugin_archives += validate_plugin_release(current_packages, plugin, canonical=current_payload)
     return {
         "result": "FAIL" if errors else "PASS",

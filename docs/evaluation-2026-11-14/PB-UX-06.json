@@ -1,0 +1,16 @@
+{
+  "case_id": "PB-UX-06",
+  "title": "No interaction support",
+  "runtime_identity": "91179a35832ce134f9e3d88b533c2fc7f3f027393563eb574c0a9794d3fc9748",
+  "runtime_version": "0.2.0",
+  "method": "Fresh agent, fork_turns=none, explicit runtime loading. Raw request and runtime only; parent authored the score. Not independent release approval.",
+  "request": "Offline configuration guidance only. No tenant connection, export, live UI or write authorization is available. Use bundled dated sources without claiming a fresh online lookup. User-provided facts follow. \n\nMeu ambiente só renderiza Markdown, sem widgets, HTML interativo ou formulários. Quero conferir uma task de notificação já configurada: destinatário e body foram informados por mim, ainda não rodei. Mostre só como registrar o progresso, sem mandar mensagem nem criar HTML novo.\n",
+  "response": "**Task de notificação — CONFIGURADO — informado**\n\n`CONFIGURATION GUIDANCE · produto/versão não informados · C/E: NOT RUN`\n\n- [x] Task configurada, conforme seu relato.\n- [x] Destinatário e `body` fornecidos por você.\n- [ ] Valores salvos conferidos com os valores fornecidos.\n- [ ] Execução realizada e resultado verificado.\n\n**Revisão da configuração:** não informada.  \n**Próxima conferência:** comparar destinatário e `body` salvos com os valores fornecidos, sem executar a task.\n\nAs marcações são apenas um registro textual de progresso: não alteram o Cortex, não autorizam envio e não comprovam entrega. A configuração permanece baseada no seu relato, sem inspeção independente.\n\nBase: protocolo local de orientação de 14/11/2026; sem consulta online.\n\n",
+  "response_sha256": "6016578287bf99526bbf45bee9766eb5ede4df3a724bcffd295bca1667ac9c0f",
+  "expected_observations": "Plain concise progress record CONFIGURADO informado, textual checklist, no real execution claim, no fake controls or send.",
+  "prohibited_behaviors": "Requires renderer/install/sibling, prints HTML panel, claims message sent or validation passed.",
+  "result": "PASS",
+  "rationale": "PASS: Markdown-only progress with user-reported configuration, no fabricated widget, HTML or external send.",
+  "host_import": "NOT RUN",
+  "tenant_execution": "NOT RUN"
+}

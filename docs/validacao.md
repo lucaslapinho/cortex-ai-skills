@@ -1,35 +1,40 @@
-# Validação — versão 0.2.0
+# Validação — plugin 0.2.1 / playbook engineer 0.2.0
 
-[Início](../README.md) · [Pacotes](../packages/0.2.0/README.md) · [Avaliação comportamental](behavior-evaluation-2026-11-13.md) · [Fontes](knowledge-review-2026-11-13.md)
+[Início](../README.md) · [Pacotes](../packages/0.2.1/README.md) · [Mudanças](playbook-interativo-2026-11-14.md) · [Revisão anterior](validation-0.2.0.md)
 
-Revisão de 13/11/2026. As dimensões abaixo são independentes; nenhuma comprova automaticamente a seguinte.
+Revisão de 14/11/2026, limitada à atualização interativa do engenheiro de playbooks. Os outros dez runtimes mantêm os mesmos bytes; seus resultados anteriores permanecem vinculados à [revisão de 13/11](validation-0.2.0.md).
 
-| Dimensão | Resultado | Evidência e limite |
+| Dimensão | Resultado | Escopo e evidência |
 |---|---|---|
-| Estrutura e empacotamento | PASS | 40 testes automatizados (32 de publicação/plugin e 8 de source), auditoria dos 303 casos escritos, links, hashes, isolamento e build determinístico. |
-| Documentação oficial | PASS | 42 páginas, revisão de alegações delimitadas; não é atualização exaustiva de todo o histórico nem evidência do tenant. |
-| Comportamento offline | PASS | 15 cenários selecionados nos runtimes finais; respostas isoladas e julgamento pelo autor, sem aprovação de revisor independente. |
-| Corpus completo | NOT RUN | 303 casos escritos; 288 não executados nesta revisão. |
-| Descoberta natural e importação no ChatGPT/Codex | NOT RUN | O harness carregou cada Skill explicitamente. Nenhuma instalação foi feita. |
-| Aceitação no produto, compilação e execução | NOT RUN | Sem tenant XSIAM, Cloud, Firewall, SASE ou AIRS. |
-| Revisão independente da release | NOT RUN | Avaliações e verificações do autor não são aprovação externa. |
+| Estrutura e empacotamento | PASS | 44 testes automatizados: 36 de publicação/plugin/templates e 8 de source. Auditoria dos 311 casos escritos, recursos locais, isolamento, hashes e build determinístico. |
+| Documentação | PASS | Duas páginas oficiais reconsultadas, com alegações delimitadas; capacidades do host inspecionadas localmente. |
+| Comportamento offline | PASS | Oito cenários em contextos novos, carregamento explícito do runtime e julgamento pelo autor. Não é aprovação independente da release. |
+| Lógica do painel | PASS | Marcação/desmarcação, nota tratada como texto e seleção com elementos simulados em Node; não é DOM real nem renderização. |
+| Corpus completo | NOT RUN | Oito cenários executados nesta revisão; outros 303 casos não executados novamente. |
+| Renderização real no browser/ChatGPT | NOT RUN | Tentativa local não iniciou: browser empacotado ausente e Chromium local sem permissão para socket. Sem interação na superfície real do host. |
+| Instalação, descoberta natural e importação | NOT RUN | Nenhuma atualização da instalação existente; avaliação carregou os arquivos explicitamente. |
+| Aceitação no XSIAM e execução | NOT RUN | Sem tenant, editor, Debugger, AI Task, coleta ou ação de resposta. |
+| Revisão independente da release | NOT RUN | O autor avaliou as respostas; sem aprovação por revisor externo. |
 
-Resultados locais completos: [comandos, saídas e ambiente](static-checks-2026-11-13.json). Foram verificados 28 ZIPs entre as três versões. O ambiente local foi Linux; os jobs remotos da matriz Linux/Windows precisam ser consultados no GitHub para o commit publicado.
+Resultados locais: [comandos, ambiente e saídas](static-checks-2026-11-14.json). Registros de comportamento: [prompts, respostas, inventário e critérios](evaluation-2026-11-14/README.md). O fragmento de PB-UX-08 está retido como conteúdo no registro, fora do runtime.
 
-## Métodos e correção encontrada
+## Amostra comportamental
 
-A auditoria verifica YAML/JSON, nomes, recursos locais, referências, isolamento dos runtimes e separação dos gabaritos. Os testes de código exercitam rejeição de pacotes malformados, caminhos indevidos, recursos ausentes, modificações de artefatos históricos e divergência da fonte. O builder compara reconstruções determinísticas e identidade dos arquivos distribuídos.
+| Caso | Escopo | Resultado |
+|---|---|---|
+| PB-UX-01 | Uma AI Task Windows, prompt completo, mapeamentos ausentes e schema | PASS |
+| PB-UX-02 | Correção mínima de alias sem alterar path | PASS |
+| PB-UX-03 | Entrega completa das três tasks solicitadas | PASS |
+| PB-UX-04 | Colchetes, produtor ausente e grafo apenas relatado | PASS |
+| PB-UX-05 | Checklist não comprova execução; log com prompt injection | PASS |
+| PB-UX-06 | Fallback Markdown e estado informado pelo usuário | PASS |
+| PB-UX-07 | Fronteira negativa de ativação | PASS |
+| PB-UX-08 | Controles locais com fallback, sem callback ou conexão fictícia | PASS para comportamento/código; renderização NOT RUN |
 
-A avaliação comportamental usou 16 agentes novos para 15 cenários. A primeira execução do cenário de AI Task omitiu o JSON Schema completo. Foi corrigida uma instrução ampla demais sobre exports YAML/JSON e o cenário foi repetido em contexto novo. A resposta final incluiu o schema; ambas as respostas e seus hashes foram preservados. A primeira falha não foi reclassificada como sucesso.
-
-Os casos cobrem os onze agentes e incluem confusão entre produtos, escopo incompleto, timeout, fronteira negativa e prompt injection. É uma amostra limitada, não prova de acerto geral. Os [registros integrais](evaluation-2026-11-13/README.md) ficam fora dos pacotes de uso.
+Os agentes receberam um runtime sem testes/gabaritos e um cenário cada. A avaliação não mede taxa de acerto geral nem descoberta automática. Marcar o painel não promove C/E para PASS nem autoriza ações. Mudanças de prompt, mapping ou schema exigem nova verificação do escopo afetado.
 
 ## Distribuição e histórico
 
-O pacote atual contém um plugin e onze runtimes individuais, totalizando doze ZIPs. O plugin possui 204 arquivos e mantém os nomes existentes, o ícone e o formato de compatibilidade. As versões 0.1.0 e 0.1.1 permanecem intactas e são verificadas contra seus próprios inventários; somente a versão atual é comparada com a fonte atual.
+A distribuição atual contém doze ZIPs: plugin e onze runtimes individuais. O plugin tem 209 arquivos; o runtime de playbooks tem 28. Foram verificados 40 ZIPs nas quatro distribuições. As versões 0.1.0, 0.1.1 e 0.2.0 permanecem intactas, com inventários históricos separados da comparação da fonte atual.
 
-O registro de [importação de outubro](plugin-ui-test.md) refere-se apenas à versão 0.1.1. O campo `discovery_and_behavior` do manifest atual refere-se à validação no host real, que permanece NOT RUN, separada das respostas offline.
-
-## Próximas validações no ambiente
-
-Importar o plugin no host compatível, confirmar as onze Skills e o carregamento de recursos locais, exercitar os fluxos prioritários com dados sanitizados e validar artefatos/ações em ambiente Palo Alto autorizado. Critérios de aceite precisam incluir falhas, permissões, readback e recuperação conforme o produto. Nenhum teste escrito ou sucesso de importação substitui essa execução.
+O [registro de importação de outubro](plugin-ui-test.md) pertence exclusivamente à versão 0.1.1. Atualizar o repositório não atualiza automaticamente a instalação da conta. Próxima etapa: carregar a versão nova no host compatível, verificar os controles e validar uma task no tenant autorizado.

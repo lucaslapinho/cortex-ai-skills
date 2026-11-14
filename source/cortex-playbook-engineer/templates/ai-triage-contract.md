@@ -6,6 +6,8 @@ Task name proposal: `EvidenceTriage`. Output/context-name proposal: `EvidenceTri
 
 ## Prompt
 
+This variant uses the documented custom-editor `[Alias]` form. Before emitting it, read [AI input dialects](../references/ai-input-dialects.md). When the inspected editor or explicit tenant evidence requires `${Alias}`, replace only the three prompt aliases with `${objective}`, `${evidence}`, and `${decision_context}`. Emit one consistent, complete variant. Never change mapped Context Data paths to match the alias spelling.
+
 ```text
 Você é um analista de triagem do SOC. Analise somente as evidências fornecidas.
 Objetivo: [objective]
@@ -28,7 +30,7 @@ Retorne somente o objeto JSON definido pelo schema. Use português brasileiro e 
 | evidence | Sanitized bounded evidence, each with an ID | Actual task outputs inspected; preserve timestamps and completeness |
 | decision_context | Authorized policy and known business context | May be unknown; must not imply permission to act |
 
-Square-bracket prompt inputs and `${...}` context expressions are different mechanisms. Replace context placeholders only after inspecting real Context Data. No dataset or command output is assumed here.
+Square-bracket prompt inputs and `${...}` context expressions are different mechanisms in the documented custom-editor flow; other prompt examples use `${...}`. Select the dialect using the actual task mode and target evidence. Replace mapped context placeholders only after inspecting real Context Data. No dataset or command output is assumed here.
 
 ## Proposed structured output
 

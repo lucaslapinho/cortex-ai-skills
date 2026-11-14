@@ -37,4 +37,4 @@ jobs:
       - name: Rebuild plugin from canonical source
         run: python -I scripts/build_plugin.py build --output dist/ci-build
       - name: Validate rebuilt plugin archive
-        run: python -I scripts/build_plugin.py validate --zip dist/ci-build/cortex-ai-skills-plugin-0.2.0.zip
+        run: python -I scripts/build_plugin.py validate --zip dist/ci-build/cortex-ai-skills-plugin-0.2.1.zip

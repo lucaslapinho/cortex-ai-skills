@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1 — 2026-11-14
+
+- Updated cortex-playbook-engineer to 0.2.0 with guided task cards, optional local interactive controls, compact error fixes and complete batch delivery when requested.
+- Distinguished editor-specific AI aliases/placeholders from mapped Context Data paths; added a complete Windows-only example and dated source review.
+- Added eight isolated response scenarios, three template checks and a historical 0.2.0 archive pin. Other ten runtimes remain byte-identical to 0.2.0.
+- Preserved all historical distributions. No host installation, real rendering or Cortex tenant execution is claimed.
+
 ## 0.2.0 — 2026-11-13
 
 - Added four standalone Skills: Cortex Cloud, Palo Alto Firewall, Prisma SASE and Prisma AIRS.

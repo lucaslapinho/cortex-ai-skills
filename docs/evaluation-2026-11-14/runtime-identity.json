@@ -1,0 +1,147 @@
+{
+  "files": 28,
+  "bytes": 193137,
+  "sha256": "91179a35832ce134f9e3d88b533c2fc7f3f027393563eb574c0a9794d3fc9748",
+  "entries": [
+    {
+      "path": "SKILL.md",
+      "bytes": 21983,
+      "sha256": "aab28f4cb9358f4b177c8c12d855b5eb6d618baa593b85cf853db65c1b0ee49b"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 280,
+      "sha256": "5d5f4130e51c4cacd31ed2e91634ad3781ee3767d72bdc9e295d68186f1b9632"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 1418,
+      "sha256": "3352f4d0cb45eb071e580a2390c746fc888d020c8e19a64422dc751da15da3e6"
+    },
+    {
+      "path": "examples/design/ransomware-response.md",
+      "bytes": 8286,
+      "sha256": "9419df4623499d3af2da818bd111161538b85ef5080c970d1d72e074040a4df0"
+    },
+    {
+      "path": "examples/refactoring/monolith-to-subplaybooks.md",
+      "bytes": 5841,
+      "sha256": "e95d25770c2e238051182609972caab1f9b7e4766a6b9099d33b4624dc3b3365"
+    },
+    {
+      "path": "examples/safety/endpoint-isolation-approval.md",
+      "bytes": 4539,
+      "sha256": "499b2df70acae77ff01bde6e232821c7c71639fbe39781b431fab58dee8137ed"
+    },
+    {
+      "path": "examples/troubleshooting/missing-parent-output.md",
+      "bytes": 4095,
+      "sha256": "3ce768b9f99ff36beb9619c967f1c539113de9bb1b92ffacb91210b62565e768"
+    },
+    {
+      "path": "examples/windows-ai-task.md",
+      "bytes": 7038,
+      "sha256": "48dedcab05962d245a97557d256e2c9144aaf73e4d0f9853860f4d440e37b5db"
+    },
+    {
+      "path": "references/2026-10-23-refresh.md",
+      "bytes": 6281,
+      "sha256": "fc2c40a2e4d1fa57892a17540cc6458b0e82bb1e95d49f7c2511b5be2c5013c8"
+    },
+    {
+      "path": "references/2026-11-13-refresh.md",
+      "bytes": 3491,
+      "sha256": "032a8806ffa856189e08484a8f7791a2e029d59568650efb4f0003ff7ccd1c93"
+    },
+    {
+      "path": "references/ai-input-dialects.md",
+      "bytes": 4583,
+      "sha256": "fcb33e83ec3f98e5a65149a97d79e02b64942d93004066dc861e75350649002f"
+    },
+    {
+      "path": "references/data-contracts-and-context.md",
+      "bytes": 9150,
+      "sha256": "0cdf084093d4580f13b80c85143b2667580be9bc5208ff662cd4adae24729281"
+    },
+    {
+      "path": "references/evidence-and-product-boundaries.md",
+      "bytes": 10060,
+      "sha256": "685220968b871af0b20c97fecdaf71922dcc81d8ef5ad4362dbe33678525d385"
+    },
+    {
+      "path": "references/interactive-task-guidance.md",
+      "bytes": 7398,
+      "sha256": "f60057082ff285ddcc9cd502fde7cf6beeecfbd3b894fc124193ac3d08028458"
+    },
+    {
+      "path": "references/official-sources.md",
+      "bytes": 14057,
+      "sha256": "fc7472589a6f424bebb9f0e5dc1e3f4bbe2efd0d41ef86088df10602341d096b"
+    },
+    {
+      "path": "references/playbook-concepts.md",
+      "bytes": 11386,
+      "sha256": "134179a219981950f68f18c4e6b5255afce81faffee1b5dc8954adffab6d81e6"
+    },
+    {
+      "path": "references/playbook-design-patterns.md",
+      "bytes": 10636,
+      "sha256": "bd78e29c9e9895cd4b2f18d15f69381227dc08d637df2ce455071d8a0bca3637"
+    },
+    {
+      "path": "references/reliability-safety-security.md",
+      "bytes": 12437,
+      "sha256": "cd79f4aef447e5b71c4baf6e13e1f343ca7d5b6db38b03d484a34fb7b9d8b256"
+    },
+    {
+      "path": "references/testing-deployment-troubleshooting.md",
+      "bytes": 12017,
+      "sha256": "dbe4215a32f3dbe3d8d2b035e5cde5ee3c6e40aedff469984268767623893e1f"
+    },
+    {
+      "path": "templates/action-gate.md",
+      "bytes": 4969,
+      "sha256": "7b3f47faeb35ef78b5da9531d87742547447fb9f995845e6857765215098bb9e"
+    },
+    {
+      "path": "templates/ai-triage-contract.md",
+      "bytes": 3765,
+      "sha256": "c5335a08dbf19f66103cae2a6fd804b28f6d512af545d33b7e8c843dc1ff934a"
+    },
+    {
+      "path": "templates/context-contract.md",
+      "bytes": 4606,
+      "sha256": "93d693284c9e5f6c59645a89ab1057bf0213691e672f796540770edbbc7661fa"
+    },
+    {
+      "path": "templates/interactive-task-panel.md",
+      "bytes": 3475,
+      "sha256": "4e7097ddd8a15472893b5e2352c0090828ee74ab7299ef5691c0e68e92459f1f"
+    },
+    {
+      "path": "templates/playbook-design.md",
+      "bytes": 8506,
+      "sha256": "c3a2e057cc5ecddfe489c3b84f700fc0115e818c1d1fe265e61a723979f81a67"
+    },
+    {
+      "path": "templates/playbook-review.md",
+      "bytes": 4868,
+      "sha256": "cc9bf2a5760b2d6671becb8ffb5fb2db6cecbb25281db14571cc4a94ca2ffa78"
+    },
+    {
+      "path": "templates/task-card.md",
+      "bytes": 2463,
+      "sha256": "5d22b2d0ebe7fa136768d675249d364c21c9e90ae5ad747ce918a2b9addfc5fa"
+    },
+    {
+      "path": "templates/tenant-validation.md",
+      "bytes": 5503,
+      "sha256": "7bf96ec023c411fb140dcacf091806ba0e4bfa86e6a721d803f64f481c1db0d4"
+    }
+  ]
+}

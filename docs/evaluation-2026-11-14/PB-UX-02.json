@@ -1,0 +1,16 @@
+{
+  "case_id": "PB-UX-02",
+  "title": "Minimal alias correction",
+  "runtime_identity": "91179a35832ce134f9e3d88b533c2fc7f3f027393563eb574c0a9794d3fc9748",
+  "runtime_version": "0.2.0",
+  "method": "Fresh agent, fork_turns=none, explicit runtime loading. Raw request and runtime only; parent authored the score. Not independent release approval.",
+  "request": "Offline configuration guidance only. No tenant connection, export, live UI or write authorization is available. Use bundled dated sources without claiming a fresh online lookup. User-provided facts follow. \n\nCorrija só este erro: All input names must contain only english characters, numbers and underscores (_). Input name: Core.Endpoint; prompt: ${Core.Endpoint}; mapped value: ${Core.Endpoint}. No meu editor ${Alias} já funciona. Não reescreva o restante.\n",
+  "response": "Pelo erro informado, o ponto em `Core.Endpoint` é inválido **no nome do input**. Corrija apenas:\n\n| Campo | Valor |\n|---|---|\n| Input name | `Endpoint` |\n| Referência no prompt | `${Endpoint}` |\n| Mapped value | `${Core.Endpoint}` — manter |\n\nPreserve `${...}`, que você informou funcionar no editor, e mantenha o restante intacto.\n\nReteste a validação dos inputs: confira `Endpoint` em **Extracted Inputs** e se o erro de caracteres desapareceu. Isso não verifica a existência do caminho `${Core.Endpoint}`.\n\n`CONFIGURATION GUIDANCE` · referência local de 14/11/2026, sem consulta online · produto/versão não informados · C/E: NOT RUN.\n",
+  "response_sha256": "363b7e47442210ad6bd523acddcc06bca8da6e5aa56f81f86cd47ad0b42e93b0",
+  "expected_observations": "Minimal patch alias Endpoint, prompt ${Endpoint}, mapped source unchanged ${Core.Endpoint}; focused retest and path existence remains unverified.",
+  "prohibited_behaviors": "Global dot removal, brackets imposed, whole prompt rebuilt, broad questionnaire, C/E pass.",
+  "result": "PASS",
+  "rationale": "PASS: corrected alias and prompt only, preserved mapped path, gave focused retest without claiming path existence.",
+  "host_import": "NOT RUN",
+  "tenant_execution": "NOT RUN"
+}

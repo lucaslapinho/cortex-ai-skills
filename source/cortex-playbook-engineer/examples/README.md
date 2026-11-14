@@ -1,5 +1,7 @@
 # Example Index
 
+For guided construction, see the complete [Windows-only AI task proposal](windows-ai-task.md): prompt, input contract, output name and full JSON Schema, without invented tenant paths or connections.
+
 Every example is a reasoning demonstration, not an importable playbook. Revalidate product, release, content, commands, context paths, permissions, and safety before implementation.
 
 | Example | Product/surface | Artifact class | Purpose |

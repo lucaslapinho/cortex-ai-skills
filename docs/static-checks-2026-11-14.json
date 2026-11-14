@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-14",
+  "environment": {
+    "os": "Linux",
+    "python": "3.12.14"
+  },
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "scripts",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_adapter_invalid_yaml (test_plugin.PluginTests.test_adapter_invalid_yaml) ... ok\ntest_canonical_tampering_rejected (test_plugin.PluginTests.test_canonical_tampering_rejected) ... ok\ntest_empty_skill_body (test_plugin.PluginTests.test_empty_skill_body) ... ok\ntest_manifest_skills_wrong_type (test_plugin.PluginTests.test_manifest_skills_wrong_type) ... ok\ntest_manifest_unknown_dependency_rejected (test_plugin.PluginTests.test_manifest_unknown_dependency_rejected) ... ok\ntest_missing_cloud_skill_rejected (test_plugin.PluginTests.test_missing_cloud_skill_rejected) ... ok\ntest_missing_manifest (test_plugin.PluginTests.test_missing_manifest) ... ok\ntest_missing_presentation_icon (test_plugin.PluginTests.test_missing_presentation_icon) ... ok\ntest_missing_referenced_resource (test_plugin.PluginTests.test_missing_referenced_resource) ... ok\ntest_missing_skill_entrypoint (test_plugin.PluginTests.test_missing_skill_entrypoint) ... ok\ntest_new_skill_cannot_depend_on_sibling (test_plugin.PluginTests.test_new_skill_cannot_depend_on_sibling) ... ok\ntest_registered_skills_and_links (test_plugin.PluginTests.test_registered_skills_and_links) ... ok\ntest_scorer_and_nested_zip_excluded (test_plugin.PluginTests.test_scorer_and_nested_zip_excluded) ... ok\ntest_semver_rejects_invalid_identifiers (test_plugin.PluginTests.test_semver_rejects_invalid_identifiers) ... ok\ntest_two_full_builds_have_identical_artifacts (test_plugin.PluginTests.test_two_full_builds_have_identical_artifacts) ... ok\ntest_yaml_duplicate_and_malformed (test_plugin.PluginTests.test_yaml_duplicate_and_malformed) ... ok\ntest_zip_deterministic_and_hidden_manifest_retained (test_plugin.PluginTests.test_zip_deterministic_and_hidden_manifest_retained) ... ok\ntest_zip_duplicates_and_case_collisions (test_plugin.PluginTests.test_zip_duplicates_and_case_collisions) ... ok\ntest_zip_escaping_and_type_conflicts (test_plugin.PluginTests.test_zip_escaping_and_type_conflicts) ... ok\ntest_zip_original_nul_name_rejected (test_plugin.PluginTests.test_zip_original_nul_name_rejected) ... ok\ntest_zip_symlink_rejected (test_plugin.PluginTests.test_zip_symlink_rejected) ... ok\ntest_020_historical_release_validates_own_snapshot (test_publication.PublicationTests.test_020_historical_release_validates_own_snapshot) ... ok\ntest_current_source_drift_rejected (test_publication.PublicationTests.test_current_source_drift_rejected) ... ok\ntest_extra_archive_member_rejected (test_publication.PublicationTests.test_extra_archive_member_rejected) ... ok\ntest_historical_pin_rejects_mutation (test_publication.PublicationTests.test_historical_pin_rejects_mutation) ... ok\ntest_historical_release_validates_own_snapshot (test_publication.PublicationTests.test_historical_release_validates_own_snapshot) ... ok\ntest_paths_reject_escapes (test_publication.PublicationTests.test_paths_reject_escapes) ... ok\ntest_release_checksum_detects_tampered_zip (test_publication.PublicationTests.test_release_checksum_detects_tampered_zip) ... ok\ntest_release_directory_version_checked (test_publication.PublicationTests.test_release_directory_version_checked) ... ok\ntest_safe_path (test_publication.PublicationTests.test_safe_path) ... ok\ntest_secret_pattern_and_safe_placeholder (test_publication.PublicationTests.test_secret_pattern_and_safe_placeholder) ... ok\ntest_tampered_archive_rejected (test_publication.PublicationTests.test_tampered_archive_rejected) ... ok\ntest_valid_archive (test_publication.PublicationTests.test_valid_archive) ... ok\ntest_complete_output_schemas (test_task_templates.TaskTemplateTests.test_complete_output_schemas) ... ok\ntest_panel_handlers_with_minimal_element_doubles (test_task_templates.TaskTemplateTests.test_panel_handlers_with_minimal_element_doubles) ... ok\ntest_windows_aliases_have_explicit_mapping_rows (test_task_templates.TaskTemplateTests.test_windows_aliases_have_explicit_mapping_rows) ... ok\n\n----------------------------------------------------------------------\nRan 36 tests in 4.496s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-I",
+        "scripts/run_source_tests.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Canonical temporary-directory spelling changed: False\n",
+      "stderr": "test_all_case_inputs_exclude_oracle_sections (test_release.ReleaseTests.test_all_case_inputs_exclude_oracle_sections) ... ok\ntest_archives_deterministic_and_exclusive (test_release.ReleaseTests.test_archives_deterministic_and_exclusive) ... ok\ntest_identity_ordinal_no_terminal_newline (test_release.ReleaseTests.test_identity_ordinal_no_terminal_newline) ... ok\ntest_markdown_anchors (test_release.ReleaseTests.test_markdown_anchors) ... ok\ntest_new_and_refresh_inputs_exclude_oracles (test_release.ReleaseTests.test_new_and_refresh_inputs_exclude_oracles) ... ok\ntest_output_scope_checked_before_writes (test_release.ReleaseTests.test_output_scope_checked_before_writes) ... ok\ntest_publication_link_rebase_keeps_label (test_release.ReleaseTests.test_publication_link_rebase_keeps_label) ... ok\ntest_runtime_excludes_oracles (test_release.ReleaseTests.test_runtime_excludes_oracles) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.017s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "-I",
+        "source/tools/release.py",
+        "audit"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"result\": \"PASS\",\n  \"publication_files\": 370,\n  \"markdown_files\": 343,\n  \"local_links_including_anchors\": 859,\n  \"runtime_links_including_anchors\": 578,\n  \"local_path_links\": 603,\n  \"runtime_path_links\": 322,\n  \"authored_cases\": 311,\n  \"supplemental_cases\": 18,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-I",
+        "scripts/build_plugin.py",
+        "validate",
+        "--zip",
+        "packages/0.2.1/cortex-ai-skills-plugin-0.2.1.zip"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"result\": \"PASS\",\n  \"plugin_version\": \"0.2.1\",\n  \"skills\": [\n    \"cortex-cloud-engineer\",\n    \"cortex-detection-engineer\",\n    \"cortex-platform-engineer\",\n    \"cortex-playbook-engineer\",\n    \"cortex-security-engineer\",\n    \"cortex-threat-hunter\",\n    \"cortex-tim-engineer\",\n    \"cortex-xql-query-engineer\",\n    \"palo-alto-firewall-engineer\",\n    \"prisma-airs-engineer\",\n    \"prisma-sase-engineer\"\n  ],\n  \"files\": 209,\n  \"relative_references\": 578,\n  \"sha256\": \"30ef97e4887c3091146d7f7c17d3a0876c4da031cd3f1bfb4b6ab9fe641e3fbb\",\n  \"canonical_files_identical\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-I",
+        "scripts/validate_publication.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"result\": \"PASS\",\n  \"files\": 479,\n  \"source_files\": 370,\n  \"archives\": 40,\n  \"archive_members\": 443,\n  \"local_links\": 1029,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "browser_rendering": {
+    "result": "NOT RUN",
+    "attempts": [
+      "Bundled Playwright browser absent",
+      "Local Chromium launch failed: socket permission denied"
+    ]
+  },
+  "host_import": "NOT RUN",
+  "tenant_execution": "NOT RUN",
+  "result": "PASS"
+}

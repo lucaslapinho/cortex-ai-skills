@@ -1,5 +1,21 @@
 # Validation ledger
 
+## Version 0.2.0 — 2026-11-14
+
+Runtime identity: `91179a35832ce134f9e3d88b533c2fc7f3f027393563eb574c0a9794d3fc9748` (28 files). Historical ledgers below apply only to their original revisions.
+
+| Level | Result | Scope/evidence |
+|---|---|---|
+| S | PASS | Eight fresh isolated response scenarios PB-UX-01 through PB-UX-08, author-scored. Explicit runtime loading; not automatic discovery or independent release approval. |
+| D | PASS | Scoped recheck of AI Prompt tasks and Debugger claims, plus observed host capability documentation; see references/ai-input-dialects.md. |
+| C | NOT RUN | No new host import, target editor/schema acceptance or tenant validation. |
+| E | NOT RUN | No AI task, collector, Debugger, notification or response action executed. |
+
+Template checks cover complete JSON Schemas, alias/mapping coverage and local JavaScript event handlers with minimal element doubles. Real browser rendering was attempted but could not start (missing bundled browser, then local Chromium socket permission denied); browser/host rendering remains NOT RUN. These checks are not Cortex or ChatGPT execution evidence.
+
+Exact requests, raw answers, runtime inventory and grading: [dated records](https://github.com/lucaslapinho/cortex-ai-skills/tree/main/docs/evaluation-2026-11-14). The rest of the 311-case repository corpus was not run in this update. Other ten runtimes remain unchanged. Earlier release approval does not approve this revision.
+
+
 ## Version 0.1.2 — 2026-11-13
 
 Runtime identity: `e6e6c4bc4268c12c50d54219f6ddc2afdacb436454323e58f0efa725f6660e31` (23 files). Historical records below apply to their own bytes, not this revision.

@@ -1,6 +1,6 @@
 {
   "name": "cortex-ai-skills",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Eleven independent Palo Alto Networks Skills covering Cortex security operations, Cortex Cloud, NGFW, Panorama, SCM, Prisma SASE and Prisma AIRS.",
   "author": {
     "name": "Cortex AI Skills contributors"
@@ -18,7 +18,7 @@
     "capabilities": [
       "Review XQL queries",
       "Design evidence-scoped detections",
-      "Design playbooks and approvals",
+      "Guide interactive playbook tasks",
       "Plan hypothesis-driven hunts",
       "Review threat intelligence lifecycles",
       "Troubleshoot platform data flows",
