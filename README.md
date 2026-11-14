@@ -2,7 +2,7 @@
 
 **Versão 0.2.1: onze Skills especializadas para Cortex, Cloud, Firewall, SASE e segurança de aplicações de IA.** O identificador do projeto e os sete agentes originais foram preservados. O `cortex-security-engineer` coordena solicitações que atravessam produtos.
 
-[Baixar Playbook Engineer 0.2.0 — Skill individual](packages/0.2.1/cortex-playbook-engineer-0.2.0-runtime.zip) · [Baixar plugin 0.2.1 — onze Skills](packages/0.2.1/cortex-ai-skills-plugin-0.2.1.zip) · [Outras Skills individuais](packages/0.2.1/README.md) · [Uso e instalação](docs/instalacao.md) · [Validação](docs/validacao.md) · [Changelog](CHANGELOG.md)
+[Baixar as 11 Skills individuais — extrair primeiro](packages/downloads/cortex-ai-skills-0.2.1-extract-first.zip) · [Baixar Playbook Engineer 0.2.0](packages/0.2.1/cortex-playbook-engineer-0.2.0-runtime.zip) · [Baixar plugin 0.2.1](packages/0.2.1/cortex-ai-skills-plugin-0.2.1.zip) · [Uso e instalação](docs/instalacao.md) · [Validação](docs/validacao.md) · [Changelog](CHANGELOG.md)
 
 Projeto independente, sem afiliação à Palo Alto Networks ou OpenAI. “Agente” designa uma Skill com instruções e recursos; o pacote não cria conexões com tenants nem executa ações de segurança automaticamente.
 

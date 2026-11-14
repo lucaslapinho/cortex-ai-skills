@@ -6,11 +6,14 @@
 
 | Artefato | Destino |
 |---|---|
+| [cortex-ai-skills-0.2.1-extract-first.zip](../packages/downloads/cortex-ai-skills-0.2.1-extract-first.zip) | Download dos onze ZIPs individuais. Extraia este primeiro. |
 | [cortex-playbook-engineer-0.2.0-runtime.zip](../packages/0.2.1/cortex-playbook-engineer-0.2.0-runtime.zip) | Upload individual do Playbook Engineer na aba Skills |
 | [cortex-ai-skills-plugin-0.2.1.zip](../packages/0.2.1/cortex-ai-skills-plugin-0.2.1.zip) | Importação de plugin para carregar as onze Skills |
 | ZIP gerado por **Code → Download ZIP** no GitHub | Desenvolvimento, revisão e reconstrução |
 
-## Upload individual do Playbook Engineer no ChatGPT
+## Upload de Skills no ChatGPT
+
+Para carregar as onze Skills pela tela **Upload a skill**, extraia `cortex-ai-skills-0.2.1-extract-first.zip` uma vez. Selecione os arquivos `*-runtime.zip` que saíram da extração, sem descompactá-los. Se o seletor permitir selecionar vários arquivos, envie-os juntos. Caso contrário, envie um por vez. As [Skills também estão disponíveis para download individual](../packages/0.2.1/README.md).
 
 Baixe o ZIP `cortex-playbook-engineer-0.2.0-runtime.zip` diretamente pelo link acima. Envie o ZIP intacto em **Plugins → Skills → Create → Upload from your computer**, se essa opção estiver disponível no seu workspace. O arquivo tem uma única pasta `cortex-playbook-engineer/`, com `SKILL.md` e os recursos associados. Consulte o [fluxo de upload da OpenAI](https://help.openai.com/en/articles/20001066-skills-in-chatgpt).
 
